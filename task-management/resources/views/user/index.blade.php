@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User</title>
+    <title>Task Management</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -29,17 +29,27 @@
                                             <button class="btn btn-default" type="button">
                                                 <span class="fa fa-search" id="searchhover"></span>
                                             </button>
-                                            <a href="#" class="px-2"><span class="fas fa-bell"></span></a>
-                                            <a href="#" class="px-2"><span class="fas fa-user px-1"></span>User</a>
+                                            <a href="#" class="px-2 "><span class="fas fa-bell bellcolor" style="color:  #9b34ae"></span></a>
                                         </span>
-                            </div>
+                                </div>
                     </ul>
+                    <ul>
+                        <div class="btn-group">
+                            <button type="button" class="btn addcolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                User
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="{{route('login')}}">Logout</a></li>
+                            </ul>
+                         </div>
                 </div>
             </div>
         </nav>
     </div>
     <div class="d-flex flex-nowrap">
     <div class="d-flex flex-column p-3 bg-light border border-grey border-top-0 sidelinecontainerwidth">
+        {{-- <ul class="navbar-nav" id="side-menu">
+            <hr> --}}
             <ul class="nav nav-pills flex-column mb-auto mt-2">
                 <li class="nav-item">
                     <a href="#" class="nav-link"><span class="fas fa-dashboard px-2"></span>Dashboard</a>
@@ -52,25 +62,15 @@
                         <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion" >
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="#">All projects</a></li>
-                            </ul>
-                        </div>
-                        <div class="panel-heading mt-2 ">
-                                <a class="nav-link collapsed" href="#collapse2" data-bs-toggle="collapse"> <span class="fas fa-users px-2"></span>Team Members</a>
-                        </div>
-                        <div id="collapse2" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
-                            <ul class="list-group">
-                                <li class="list-group-item"><a href="#">All members</a></li>
+                                {{-- <li class="list-group-item"><a href="#">Edit project</a></li> --}}
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">
-                                <a class="nav-link collapsed" href="#collapse3" data-bs-toggle="collapse"><span class="fas fa-tasks px-2"></span>Assigned Tasks</a>
+                                <a class="nav-link collapsed" href="#collapse3" data-bs-toggle="collapse"><span class="fas fa-tasks px-2"></span>Tasks</a>
                         </div>
                         <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="#">Pending tasks</a></li>
-                                <li class="list-group-item"><a href="#">Tasks on progress</a></li>
-                                <li class="list-group-item"><a href="#">Completed Task</a></li>
-
+                                <li class="list-group-item"><a href="#">All tasks</a></li>
                                 {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
@@ -99,4 +99,3 @@
 
 </body>
 </html>
-

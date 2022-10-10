@@ -42,7 +42,7 @@ a:visited {
 .bellcolor{
     color:  #9b34ae;
 }
-.bellcolor{
+.bellcolor:hover{
     color: #f9e654;
 }
 a:active {

@@ -17,7 +17,7 @@
                     <?php
                         $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                        $query = "SELECT id FROM members ORDER BY id";
+                        $query = "SELECT id FROM users ORDER BY id";
                         $query_run = mysqli_query($connection, $query);
 
                         $row = mysqli_num_rows($query_run);

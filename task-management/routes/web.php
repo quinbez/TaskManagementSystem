@@ -43,6 +43,4 @@ Route::get('/dashboard', 'App\Http\Controllers\AdminDashboardsController@index')
 
 
 Route::get('/login', 'App\Http\Controllers\HomeController@index')->name('login');
-// Route::get('/member/edit', function() {
-//  return view('member.edit');
-// });
+Route::get('/user', 'App\Http\Controllers\UsersController@index')->name('users');
