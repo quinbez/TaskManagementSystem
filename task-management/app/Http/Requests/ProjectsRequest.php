@@ -27,10 +27,10 @@ class ProjectsRequest extends FormRequest
            'title'=>'required',
            'category_id'=>'required',
            'description'=>'required',
-           'member_id'=>'required',
+           'team_member'=>'required',
            'start_date'=>'required',
            'deadline'=>'required',
-           'status_id'=>'required'
+           'status'=>'required'
         ];
     }
 }

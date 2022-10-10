@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('members', function (Blueprint $table) {
             $table->id();
-            // $table->enum('role', ['admin','member'])->default('member');;
+            $table->enum('role', ['admin','member'])->default('member');
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('phone_number')->unique()->default(null);
+            $table->integer('phone_number')->unique();
             $table->text('password');
             $table->timestamps();
         });

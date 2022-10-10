@@ -29,14 +29,14 @@
                                             <button class="btn btn-default" type="button">
                                                 <span class="fa fa-search" id="searchhover"></span>
                                             </button>
-                                            <a href="#" class="px-2"><span class="fas fa-bell"></span></a>
-                                            <a href="{{route('createproj')}}" class="btn btn-default" style="background: #9b34ae; color:white;">+ New Project</a>
+                                            <a href="#" class="px-2 "><span class="fas fa-bell" style="color:  #9b34ae"></span></a>
+                                            <a href="{{route('createproj')}}" class="btn addcolor" style="color: white">+ New Project</a>
                                         </span>
                                 </div>
                     </ul>
                     <ul>
                         <div class="btn-group">
-                            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn addcolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 Admin
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">

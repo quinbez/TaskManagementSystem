@@ -12,6 +12,18 @@ body {
     font-size: x-large;
     color: #9b34ae;
 }
+.addcolor{
+    background-color:#9b34ae ;
+    color: white;
+}
+.addcolor:hover{
+    background-color:#f9e654 ;
+
+}
+.clearcolor:hover{
+    background-color: darkgray;
+    color: white ;
+}
 
 #searchhover:hover,
 #searchhover:visited,
@@ -27,7 +39,12 @@ a {
 a:visited {
     color: grey;
 }
-
+.bellcolor{
+    color:  #9b34ae;
+}
+.bellcolor{
+    color: #f9e654;
+}
 a:active {
     color: #9b34ae;
 }

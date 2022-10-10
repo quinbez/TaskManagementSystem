@@ -9,12 +9,13 @@ class Project extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'status_id',
-        'category_id',
         'title',
+        'category_id',
+        'description',
+        'team_member',
         'start_date',
-        'end_date',
-        'description'
+        'deadline',
+        'status_id'
     ];
     public function tasks(){
         return $this->hasMany('App\Models\Task');
