@@ -3,16 +3,32 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+// use Laratrust\Traits\LaratrustUserTrait;
 
-class Member extends Model
+class Member extends Authenticatable
 {
-    use HasFactory;
+    // use LaratrustUserTrait;
+    use HasApiTokens, HasFactory, Notifiable;
+
     protected $fillable =[
-        'first_name',
-        'last_name',
+        'name',
         'email',
-        'phone_number'
+        'phone_number',
+        'password',
+        'role_id'
     ];
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+    public function setPasswordAttribute($value){
+        $this->attributes['password']= bcrypt($value);
+    }
+    public function role(){
+        return $this->belongsTo('App\Models\Role');
+    }
 }
