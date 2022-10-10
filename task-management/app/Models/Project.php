@@ -11,9 +11,10 @@ class Project extends Model
     protected $fillable =[
         'status_id',
         'category_id',
-        'name',
+        'title',
         'start_date',
-        'end_date'
+        'end_date',
+        'description'
     ];
     public function tasks(){
         return $this->hasMany('App\Models\Task');

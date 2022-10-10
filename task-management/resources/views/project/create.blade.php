@@ -22,8 +22,8 @@
         {!!Form::select('status_id',  [ 1=> 'On Progress',0 =>'Pending', 2 =>'Completed' ],0, ['class'=>'form-control', 'required'])!!}
         </div>
     <div class="form-group col-sm-6">
-        {!!Form::label('team_member','Team member: ')!!}
-        {!!Form::number('team_member',null,['class'=>'form-control','required', 'min'=>1])!!}
+        {!!Form::label('member_id','Team members: ')!!}
+        {!!Form::number('member_id',null,['class'=>'form-control','required', 'min'=>1])!!}
     </div>
  </div>
 <div class="row">

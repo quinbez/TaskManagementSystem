@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->integer('status_id');
             $table->integer('category_id');
-            $table->string('name');
+            $table->string('title');
+            $table->string('description');
+            $table->integer('member_id');
             $table->date('start_date');
             $table->date('end_date');
             $table->timestamps();
