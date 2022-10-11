@@ -19,16 +19,21 @@
         <nav class="navbar navbar-default" id="navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="#" class= "navbar-brand">Task Management</a>
+                    <a href="{{route('dashboards')}}" class= "navbar-brand">Task Management</a>
                 </div>
                 <div class="navbar-header">
                     <ul class="nav navbar-nav navbar-right">
+                    <form  action = "{{url('member/search')}}"  method = "GET">
+@csrf
+
+
                                 <div class="input-group custom-search-form" style="width: 500px;">
-                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <input type="text" class="form-control" placeholder="Search..." name = "search">
                                         <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">
+                                            <button class="btn btn-default" type="submit">
                                                 <span class="fa fa-search" id="searchhover"></span>
                                             </button>
+                                            </form>
                                             <a href="#" class="px-2 "><span class="fas fa-bell" style="color:  #9b34ae"></span></a>
                                             <a href="{{route('createproj')}}" class="btn addcolor" style="color: white">+ New Project</a>
                                         </span>

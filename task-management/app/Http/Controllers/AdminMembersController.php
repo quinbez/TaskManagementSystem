@@ -101,4 +101,11 @@ class AdminMembersController extends Controller
     {
         //
     }
+
+    public function search(Request $request)
+    {
+
+dd($request->search);
+
+    }
 }
