@@ -5,6 +5,23 @@
 {{ csrf_field() }}
 <div class="textcolor">
     <div class="container overflow-hidden px-4">
+        @if(\Session::has('success'))
+        <div class="alert alert-<?php echo 'success'; ?>" role= "alert" id="artMsg">
+        <button type="button" class="close" data-dismiss="alert">
+            <span aria-hidden='true'>&times;</span>
+            <span class ="sr-only">Close</span>
+        </button>
+        {!!\Session::get('success')!!}
+    </div>
+    @endif
+    @if(\Session::has('error'))
+        <div class="alert alert-<?php echo 'danger'; ?>" role= 'alert' id='artMsg'>
+        <button type='button' class='close' data-bs-dismiss='alert'>
+            <span aria-hidden='true'>&times;</span>
+            <span class ='sr-only'>Close</span>
+        </button>{!! \Session::get('error') !!}
+    </div>
+    @endif
         <div class="container row gy-5 colstyle colpadding">
             <div class="col-3 containerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-user icons px-3 py-3" id="icon1"></span></div>

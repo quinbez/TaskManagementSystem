@@ -12,17 +12,19 @@ body {
     font-size: x-large;
     color: #9b34ae;
 }
-.addcolor{
-    background-color:#9b34ae ;
+
+.addcolor {
+    background-color: #9b34ae;
     color: white;
 }
-.addcolor:hover{
-    background-color:#f9e654 ;
 
+.addcolor:hover {
+    background-color: #f9e654;
 }
-.clearcolor:hover{
+
+.clearcolor:hover {
     background-color: darkgray;
-    color: white ;
+    color: white;
 }
 
 #searchhover:hover,
@@ -39,12 +41,14 @@ a {
 a:visited {
     color: grey;
 }
-.bellcolor{
-    color:  #9b34ae;
+
+.bellcolor {
+    color: #9b34ae;
 }
 .bellcolor:hover{
     color: #f9e654;
 }
+
 a:active {
     color: #9b34ae;
 }
@@ -289,10 +293,22 @@ ul a {
 .active {
     background-color: #9b34ae;
 }
+
 .dropdown-item {
     font-size: 15px;
     box-sizing: 5px;
 }
+
+
+/*
+.btn {
+    cursor: pointer;
+}
+
+.active,
+.btn:hover {
+    background-color: rgb(180, 61, 180);
+} */
 
 @media ((max-width: 1399.98px))and (min-width: 1199.98px) {
     .containerstyle {
