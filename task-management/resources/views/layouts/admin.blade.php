@@ -37,7 +37,7 @@
                     <ul>
                         <div class="btn-group">
                             <button type="button" class="btn addcolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin
+                                        {{Auth::user()->name}}
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li><a class="dropdown-item" href="{{route('login')}}">Logout</a></li>

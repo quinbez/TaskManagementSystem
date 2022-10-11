@@ -6,11 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-// use Laratrust\Traits\LaratrustUserTrait;
-
+use Illuminate\Database\Eloquent\Casts\Attribute;
 class Member extends Authenticatable
 {
-    // use LaratrustUserTrait;
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable =[
@@ -18,7 +16,7 @@ class Member extends Authenticatable
         'email',
         'phone_number',
         'password',
-        'role_id'
+        'role'
     ];
 
     protected $hidden = [
@@ -28,7 +26,9 @@ class Member extends Authenticatable
     public function setPasswordAttribute($value){
         $this->attributes['password']= bcrypt($value);
     }
-    public function role(){
-        return $this->belongsTo('App\Models\Role');
+    protected function role():Attribute{
+        return new Attribute(
+            get:fn($value)=>["member","admin"][$value]
+        );
     }
 }
