@@ -40,7 +40,16 @@
                                         {{Auth::user()->name}}
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{route('login')}}">Logout</a></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+
+                                        {{-- <x-jet-dropdown-link href="{{ route('logout') }}" --}}
+                                                 {{-- @click.prevent="$root.submit();"> --}}
+                                          <button type="submit">{{ __('Log Out') }}</button>
+                                        {{-- </x-jet-dropdown-link> --}}
+                                    </form>
+                                </li>
                             </ul>
                          </div>
                 </div>

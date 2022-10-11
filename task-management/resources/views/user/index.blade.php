@@ -19,7 +19,7 @@
         <nav class="navbar navbar-default" id="navbar">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="#" class= "navbar-brand">Task Management</a>
+                    <a href="{{ route('userdashboard') }}" class= "navbar-brand">Task Management</a>
                 </div>
                 <div class="navbar-header">
                     <ul class="nav navbar-nav navbar-right">
@@ -36,10 +36,17 @@
                     <ul>
                         <div class="btn-group">
                             <button type="button" class="btn addcolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                User
+                                {{Auth::user()->name}}
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="{{route('login')}}">Logout</a></li>
+                                <li><form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    {{-- <x-jet-dropdown-link href="{{ route('logout') }}" --}}
+                                             {{-- @click.prevent="$root.submit();"> --}}
+                                      <button type="submit">{{ __('Log Out') }}</button>
+                                    {{-- </x-jet-dropdown-link> --}}
+                                </form></li>
                             </ul>
                          </div>
                 </div>
@@ -52,7 +59,7 @@
             <hr> --}}
             <ul class="nav nav-pills flex-column mb-auto mt-2">
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><span class="fas fa-dashboard px-2"></span>Dashboard</a>
+                    <a href="{{ route('userdashboard') }}" class="nav-link"><span class="fas fa-dashboard px-2"></span>Dashboard</a>
                 </li>
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default mt-2">
@@ -61,7 +68,7 @@
                         </div>
                         <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion" >
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="#">All projects</a></li>
+                                <li class="list-group-item"><a href="{{route('userproject')}}">All projects</a></li>
                                 {{-- <li class="list-group-item"><a href="#">Edit project</a></li> --}}
                             </ul>
                         </div>

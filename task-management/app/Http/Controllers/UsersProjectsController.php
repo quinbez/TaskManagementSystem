@@ -1,15 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Member;
-use App\Http\Requests\MembersRequest;
-use App\Models\User;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class AdminMembersController extends Controller
+class UsersProjectsController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -17,8 +13,7 @@ class AdminMembersController extends Controller
      */
     public function index()
     {
-        $members = User::all();
-        return view('member.index', compact('members'));
+        return view('user.projects');
     }
 
     /**
@@ -28,7 +23,7 @@ class AdminMembersController extends Controller
      */
     public function create()
     {
-        return view('member.create');
+        //
     }
 
     /**
@@ -37,18 +32,9 @@ class AdminMembersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MembersRequest $request)
+    public function store(Request $request)
     {
-        // $request['password']='123456789';
-        $input = $request->all();
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
-            'role' => $request->role,
-            'password' => Hash::make($request->password),
-        ]);
-        return redirect('member/index');
+        //
     }
 
     /**
@@ -70,8 +56,7 @@ class AdminMembersController extends Controller
      */
     public function edit($id)
     {
-        $members = User::findOrFail($id);
-        return view('member.edit', compact('members'));
+        //
     }
 
     /**
@@ -84,11 +69,6 @@ class AdminMembersController extends Controller
     public function update(Request $request, $id)
     {
         //
-
-        $member = User::findOrFail($id);
-        $input = $request->all();
-        $member->update($input);
-        return redirect('member/index');
     }
 
     /**

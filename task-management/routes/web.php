@@ -16,9 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', function() {
-    return view('dashboard.index');
-});
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+    ])->group(function () {
 
 Route::get('/member/create', 'App\Http\Controllers\AdminMembersController@create')->name('create');
 Route::post('/member', 'App\Http\Controllers\AdminMembersController@store')->name('store');
@@ -40,7 +42,7 @@ Route::get('/category/index', 'App\Http\Controllers\AdminCategoriesController@in
 
 Route::get('/dashboard', 'App\Http\Controllers\AdminDashboardsController@index')->name('dashboards');
 
-
-
-Route::get('/login', 'App\Http\Controllers\HomeController@index')->name('login');
 Route::get('/user', 'App\Http\Controllers\UsersController@index')->name('users');
+Route::get('/user/dashboard', 'App\Http\Controllers\UsersDashboardController@index')->name('userdashboard');
+Route::get('/user/project', 'App\Http\Controllers\UsersProjectsController@index')->name('userproject');
+});
