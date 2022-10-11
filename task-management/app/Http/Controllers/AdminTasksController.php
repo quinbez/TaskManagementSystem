@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\Project;
+use App\Models\User;
 use App\Http\Requests\TasksRequest;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,9 @@ class AdminTasksController extends Controller
      */
     public function create()
     {
-        $project = Project::pluck('title','id');
-        return view('task.create', compact('project'));
+        $member= User::pluck('id');
+        $project = Project::pluck('id');
+        return view('task.create', compact('project','member'));
     }
 
     /**

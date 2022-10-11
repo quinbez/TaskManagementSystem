@@ -87,7 +87,6 @@
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="{{route('index')}}">All members</a></li>
                                 <li class="list-group-item"><a href="{{route('create')}}">Create member</a></li>
-                                {{-- <li class="list-group-item"><a href="{{route('update')}}">Edit member</a></li> --}}
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">

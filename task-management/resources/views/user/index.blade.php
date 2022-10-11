@@ -68,8 +68,7 @@
                         </div>
                         <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion" >
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{route('userproject')}}">All projects</a></li>
-                                {{-- <li class="list-group-item"><a href="#">Edit project</a></li> --}}
+                                <li class="list-group-item"><a href="#">All projects</a></li>
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">
@@ -77,7 +76,16 @@
                         </div>
                         <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="#">All tasks</a></li>
+                                <li class="list-group-item"><a href="#">Pending tasks</a></li>
+                                <li class="list-group-item"><a href="#">On progress tasks</a></li>
+                                <li class="list-group-item"><a href="#">Completed tasks</a></li>
+                                <li class="list-group-item"><a href="#">Comments</a></li>
+                                {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
+                            </ul>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="#">Team members</a></li>
                                 {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>

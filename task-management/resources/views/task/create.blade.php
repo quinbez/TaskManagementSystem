@@ -12,7 +12,7 @@
     </div>
     <div class="form-group col-sm-6" >
         {!!Form::label('project_id','Project: ')!!}
-        {!!Form::number('project_id',null,['class'=>'form-control'])!!}
+        {!!Form::select('project_id', [''=>'Choose Options', $project ],null,['class'=>'form-control'])!!}
     </div>
 </div>
 <div class="row">
@@ -27,8 +27,8 @@
 </div>
 <div class="d-grid gap-2">
     <div class="form-group col-sm-6" >
-        {!!Form::label('member_id','Assign to: ')!!}
-        {!!Form::number('member_id',null,['class'=>'form-control'])!!}
+        {!!Form::label('user_id','Assign to: ')!!}
+        {!!Form::select('user_id', [''=>'Choose Options', $member ],null,['class'=>'form-control'])!!}
     </div>
     <div class="form-group col-sm-6" >
         {!!Form::label('description','Description: ')!!}
@@ -37,7 +37,9 @@
 </div>
 <div class="d-grid gap-2">
     <div class="form-group d-grid col-3" style="padding:15px; justify-content:left;" >
-        {!!Form::submit('Submit', ['class' => 'btn btn-primary'])!!}
+        {!!Form::submit('Assign', ['class' => 'btn btn-primary'])!!}
+        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+
     </div>
 </div>
 @if(count($errors)>0)

@@ -11,7 +11,9 @@
         {!!Form::text('type',null,['class'=>'form-control'])!!}
     </div>
     <div class="form-group d-grid col-3" style="justify-content: left">
-        {!!Form::submit('Submit', ['class' => 'btn btn-primary'])!!}
+        {!!Form::submit('+ Add', ['class' => 'btn btn-primary'])!!}
+        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+
     </div>
 </div>
 

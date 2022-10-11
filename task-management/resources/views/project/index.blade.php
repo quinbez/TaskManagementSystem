@@ -24,7 +24,7 @@
                 <tr>
                     <td>{{$project->id}}</td>
                     <td>{{$project->title}}</td>
-                    <td>{{$project->category_id }}</td>
+                    <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
                     <td><a href="#">{{$project->team_member}}</a></td>
                     <td></td>

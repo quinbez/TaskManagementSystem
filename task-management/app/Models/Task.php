@@ -9,13 +9,17 @@ class Task extends Model
 {
     use HasFactory;
     protected $fillable =[
+        'member_id',
         'project_id',
         'name',
         'description',
         'start_date',
         'end_date'
     ];
-    public function members(){
-        return $this->belongsToMany('App\Models\Member');
+    public function member(){
+        return $this->belongsTo('App\Models\User', 'user_id','id');
+    }
+    public function project(){
+        return $this->belongsTo('App\Models\Project', 'project_id','id');
     }
 }

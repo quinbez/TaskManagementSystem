@@ -35,8 +35,8 @@
 </div>
 <div class="row" style="justify-content: right">
     <div class="form-group col-sm-3 p-4">
-        {!!Form::submit('Submit', ['class'=>'btn btn-primary'])!!}
-        {!!Form::reset('Clear', ['class'=>'btn btn-secondary'])!!}
+        {!!Form::submit('+ Add', ['class'=>'btn btn-primary'])!!}
+        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
     </div>
 </div>
 </form>
