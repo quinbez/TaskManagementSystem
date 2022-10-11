@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Http\Requests\MembersRequest;
 use App\Models\User;
+use App\Models\Task;
+use App\Models\Project;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -104,8 +107,24 @@ class AdminMembersController extends Controller
 
     public function search(Request $request)
     {
-
-dd($request->search);
+        $members = User::where('name', $request->search)->get();
+        $tasks = Task::where('name', $request->search)->get();
+        $projects = Project::where('title', $request->search)->get();
+        $categories = Category::where('type', $request->search)->get();
+        // dd(count($tasks));
+        if(count($members) > 0){
+        return view('member.index', compact('members'));
+        }elseif(count($tasks) > 0){
+            return view('task.index', compact('tasks'));
+        }
+        elseif(count($projects) > 0){
+            return view('project.index', compact('projects'));
+        }
+        elseif(count($categories) > 0){
+            return view('category.index', compact('categories'));
+        }
+        else
+        return redirect()->back()->with('error',' Nothing found');
 
     }
 }

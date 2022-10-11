@@ -51,54 +51,14 @@ let progress3 = setInterval(() => {
 
 
 
-
-
-
-
-
-// function myFunction() {
-//     var input, filter, ul, li, a, i, txtValue;
-//     input = document.getElementById("myInput");
-//     filter = input.value.toUpperCase();
-//     ul = document.getElementById("myUL");
-//     li = ul.getElementsByTagName("li");
-//     for (i = 0; i < li.length; i++) {
-//         a = li[i].getElementsByTagName("a")[0];
-//         txtValue = a.textContent || a.innerText;
-//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//             li[i].style.display = "";
-//         } else {
-//             li[i].style.display = "none";
+// var header = document.getElementById("my");
+// var btns = header.getElementsByClassName("btn");
+// for (var i = 0; i < btns.length; i++) {
+//     btns[i].addEventListener("click", function() {
+//         var current = document.getElementsByClassName("active");
+//         if (current.length > 0) {
+//             current[0].className = current[0].className.replace(" active", "");
 //         }
-//     }
+//         this.className += " active";
+//     });
 // }
-
-
-
-// const searchFocus = document.getElementById('fa fa-search');
-// const keys = [
-//     { keyCode: 'AltLeft', isTriggered: false },
-//     { keyCode: 'ControlLeft', isTriggered: false },
-// ];
-
-// window.addEventListener('keydown', (e) => {
-//     keys.forEach((obj) => {
-//         if (obj.keyCode === e.code) {
-//             obj.isTriggered = true;
-//         }
-//     });
-
-//     const shortcutTriggered = keys.filter((obj) => obj.isTriggered).length === keys.length;
-
-//     if (shortcutTriggered) {
-//         searchFocus.focus();
-//     }
-// });
-
-// window.addEventListener('keyup', (e) => {
-//     keys.forEach((obj) => {
-//         if (obj.keyCode === e.code) {
-//             obj.isTriggered = false;
-//         }
-//     });
-// });

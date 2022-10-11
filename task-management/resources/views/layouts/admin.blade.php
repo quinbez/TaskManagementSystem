@@ -23,7 +23,7 @@
                 </div>
                 <div class="navbar-header">
                     <ul class="nav navbar-nav navbar-right">
-                    <form  action = "{{url('member/search')}}"  method = "GET">
+                    <form  action = "{{ url('member/search')}}"  method = "GET">
 @csrf
 
 
@@ -63,13 +63,12 @@
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default mt-2">
                         <div class="panel-heading">
-                            <a class="nav-link" href="#collapse1" data-bs-toggle="collapse"><span class="fas fa-diagram-project px-2"></span>Projects</a>
+                            <a class="nav-link" href="#collapse1" data-bs-toggle="collapse"><span class="fas fa-diagram-project px-2" ></span>Projects</a>
                         </div>
                         <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion" >
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="{{route('indexproj')}}">All projects</a></li>
                                 <li class="list-group-item "><a href="{{route('createproj')}}">Create project</a></li>
-                                {{-- <li class="list-group-item"><a href="#">Edit project</a></li> --}}
                             </ul>
                         </div>
                         <div class="panel-heading mt-2 ">
