@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Project;
 class UsersProjectsController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class UsersProjectsController extends Controller
      */
     public function index()
     {
-        return view('user.projects');
+        $projects = Project::get();
+        return view('user.projects', compact('projects'));
     }
 
     /**
