@@ -11,16 +11,12 @@
         {!!Form::label('title','Title: ')!!}
         {!!Form::text('title',null,['class'=>'form-control'])!!}
     </div>
-    {{-- <div class="form-group col-sm-6">
-        {!!Form::label('category_id','Category: ')!!}
-        {!!Form::select('category_id', [''=>'Choose Options', $category ],null,['class'=>'form-control'])!!}
-    </div> --}}
     <div class="form-group col-sm-6">
-        <label class="category_id">Category</label>
-        <select name="category_id" id="category_id" class="form-control">
+        <label class="category_id">Category </label>
+        <select name="category_id" id="category" class="form-control">
             <option value="">Choose Option</option>
-            @foreach ($category as $categ)
-                <option value="{{$categ->id}}">{{$categ->name}}</option>
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->type}}</option>
             @endforeach
         </select>
     </div>

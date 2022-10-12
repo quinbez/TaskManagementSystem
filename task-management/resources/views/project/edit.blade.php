@@ -17,8 +17,8 @@
         <label class="category_id">Category</label>
         <select name="category_id" id="category_id" class="form-control" >
             <option value="">{{$projects->category_id}}</option>
-            @foreach ($category as $categ)
-                <option value="{{$categ->id}}">{{$categ->name}}</option>
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->type}}</option>
             @endforeach
         </select>
     </div>

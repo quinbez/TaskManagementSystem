@@ -30,9 +30,9 @@ class AdminProjectsController extends Controller
      */
     public function create()
     {
-        $category = Category::select('type','id');
+        $categories = Category::select('type','id');
         $teams = User::select('name','id')->get();
-        return view('project.create', compact('category','teams'));
+        return view('project.create', compact('categories','teams'));
     }
 
     /**
@@ -82,8 +82,8 @@ class AdminProjectsController extends Controller
     public function update(EditProjectRequest $request)
     {
         $id = $request->projectId;
-        $category = Category::select('type', 'id');
-        $project = Project::findOrFail($id);
+        $categories = Category::select('type', 'id');
+        $projects = Project::findOrFail($id);
         $teams = User::select('name', 'id');
         $projectUpdate =[
             'title'=>$request->title,
@@ -95,8 +95,8 @@ class AdminProjectsController extends Controller
             'status_id'=>$request->status_id
         ];
         $input = $request->all();
-        $project->update($projectUpdate);
-        return view('project.index', compact('category', 'teams'));
+        $projects->update($projectUpdate);
+        return view('project.index', compact('categories', 'teams'));
     }
 
     /**
