@@ -51,7 +51,7 @@ class AdminMembersController extends Controller
             'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
-        return redirect('member/index');
+        return redirect('member/index', compact('input'));
     }
 
     /**
@@ -101,7 +101,9 @@ class AdminMembersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+
+        return redirect('/member/index');
     }
 
     public function search(Request $request)

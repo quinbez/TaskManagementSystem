@@ -3,7 +3,8 @@
 @section('content')
 
 <h3>Edit Member</h3>
-{{-- <form action="{{ route('store') }}" method="post"> --}}
+{{-- <form action="{{ route('edit') }}" method="patch"> --}}
+
 {!!Form::model($member,['method'=>'patch', 'action'=>['App\Http\Controllers\AdminMembersController@update', $member->id]])!!}
 {{ csrf_field() }}
 <div class="row">
@@ -35,12 +36,18 @@
 </div>
 <div class="row" style="justify-content: right">
     <div class="form-group col-sm-3 p-4">
-        {!!Form::submit('+ Add', ['class'=>'btn btn-primary'])!!}
+        {!!Form::submit('Edit', ['class'=>'btn btn-primary'])!!}
         {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
     </div>
 </div>
-</form>
-{{-- {!!Form::close()!!} --}}
+{{-- </form> --}}
+{!!Form::close()!!}
+{!!Form::open(['method'=>'delete', 'action'=>['App\Http\Controllers\AdminMembersController@destroy', $member->id]])!!}
+    <div class="form-group col-sm-3 p-4">
+    {!!Form::submit('Delete', ['class'=>'btn btn-danger'])!!}
+
+{!!Form::close()!!}
+
 
 @if(count($errors) > 0)
     <div class="alert alert-danger">

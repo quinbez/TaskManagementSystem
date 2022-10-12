@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3>Create Task</h3>
+<h3>Assign Task</h3>
 <form action="{{ route('storetask') }}" method="post">
 {{ csrf_field() }}
 <div class="row">
@@ -36,10 +36,11 @@
     </div>
 </div>
 <div class="d-grid gap-2">
-    <div class="form-group d-grid col-3" style="padding:15px; justify-content:left;" >
-        {!!Form::submit('Assign', ['class' => 'btn btn-primary'])!!}
-        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
-
+    <div class="row" style="justify-content: right">
+        <div class="form-group col-sm-3 p-4">
+            {!!Form::submit('Assign', ['class'=>'btn btn-primary'])!!}
+            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+        </div>
     </div>
 </div>
 @if(count($errors)>0)

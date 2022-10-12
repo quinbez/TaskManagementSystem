@@ -26,7 +26,8 @@ Route::get('/member/search', 'App\Http\Controllers\AdminMembersController@search
 Route::get('/member/create', 'App\Http\Controllers\AdminMembersController@create')->name('create');
 Route::post('/member', 'App\Http\Controllers\AdminMembersController@store')->name('store');
 Route::get('/member/index', 'App\Http\Controllers\AdminMembersController@index')->name('index');
-Route::get('/member/edit', 'App\Http\Controllers\AdminMembersController@update')->name('member.edit');
+Route::get('/member/edit', 'App\Http\Controllers\AdminMembersController@update')->name('update');
+Route::get('/member/delete', 'App\Http\Controllers\AdminMembersController@destroy')->name('delete');
 
 
 Route::get('/project/create', 'App\Http\Controllers\AdminProjectsController@create')->name('createproj');
@@ -48,5 +49,12 @@ Route::get('/user', 'App\Http\Controllers\UsersController@index')->name('users')
 Route::get('/user/dashboard', 'App\Http\Controllers\UsersDashboardController@index')->name('userdashboard');
 Route::get('/user/project', 'App\Http\Controllers\UsersProjectsController@index')->name('userproject');
 Route::get('/user/team', 'App\Http\Controllers\TeamMembersController@index')->name('team');
+Route::get('/user/pending/task', 'App\Http\Controllers\PendingController@index')->name('pending');
+Route::get('/user/onprogress/task', 'App\Http\Controllers\OnProgressController@index')->name('onprogress');
+Route::get('/user/completed/task', 'App\Http\Controllers\TeamMembersController@index')->name('completed');
+Route::get('/user/alltask', 'App\Http\Controllers\UserTasksController@index')->name('alltask');
+
+
+
 
 });

@@ -33,7 +33,6 @@
                     <td>{{$project->status_id == 1 ? "On progress" : "Completed"}}</td>
                     <td>{{$project->created_at->diffForHumans()}}</td>
                     <td>{{$project->updated_at->diffForHumans()}}</td>
-                    {{-- <td><a href="{{route('update'), $project->id}}">Edit</a></td> --}}
                 </tr>
             @endforeach
         @endif

@@ -10,10 +10,11 @@
         {!!Form::label('type','Type: ')!!}
         {!!Form::text('type',null,['class'=>'form-control'])!!}
     </div>
-    <div class="form-group d-grid col-3" style="justify-content: left">
-        {!!Form::submit('+ Add', ['class' => 'btn btn-primary'])!!}
-        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
-
+    <div class="row" style="justify-content: left">
+        <div class="form-group col-sm-3 p-4">
+            {!!Form::submit('+ Add', ['class'=>'btn btn-primary'])!!}
+            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+        </div>
     </div>
 </div>
 
