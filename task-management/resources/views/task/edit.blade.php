@@ -1,0 +1,44 @@
+@extends('layouts.admin')
+
+@section('content')
+
+<h3>Edit Task </h3>
+<form action="{{ url('/task/update') }}" method="patch">
+    {{ csrf_field() }}
+<div class="row">
+    <div class="form-group col-sm-6">
+        {!!Form::label('name','Task Name: ')!!}
+        {!!Form::text('name',null,['class'=>'form-control'])!!}
+    </div>
+</div>
+
+<div class="row">
+    <div class="form-group col-sm-6" >
+        {!!Form::label('end_date','Deadline: ')!!}
+        {!!Form::date('end_date',null,['class'=>'form-control'])!!}
+    </div>
+</div>
+<div class="d-grid gap-2">
+    <div class="form-group col-sm-6" >
+        {!!Form::label('description','Description: ')!!}
+        {!!Form::textarea('description',null,['class'=>'form-control'])!!}
+    </div>
+</div>
+<div class="d-grid gap-2">
+    <div class="row" style="justify-content: left">
+        <div class="form-group col-sm-3 p-4">
+            {!!Form::submit('Assign', ['class'=>'btn btn-primary'])!!}
+            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+        </div>
+    </div>
+</div>
+@if(count($errors)>0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+@endsection

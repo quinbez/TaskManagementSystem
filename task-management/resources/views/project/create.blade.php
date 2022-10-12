@@ -11,9 +11,18 @@
         {!!Form::label('title','Title: ')!!}
         {!!Form::text('title',null,['class'=>'form-control'])!!}
     </div>
-    <div class="form-group col-sm-6">
+    {{-- <div class="form-group col-sm-6">
         {!!Form::label('category_id','Category: ')!!}
         {!!Form::select('category_id', [''=>'Choose Options', $category ],null,['class'=>'form-control'])!!}
+    </div> --}}
+    <div class="form-group col-sm-6">
+        <label class="category_id">Category</label>
+        <select name="category_id" id="category_id" class="form-control">
+            <option value="">Choose Option</option>
+            @foreach ($category as $categ)
+                <option value="{{$categ->id}}">{{$categ->name}}</option>
+            @endforeach
+        </select>
     </div>
  </div>
  <div class="row">
@@ -21,9 +30,14 @@
         {!!Form::label('status','Status')!!}
         {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],'null', ['class'=>'form-control'])!!}
         </div>
-    <div class="form-group col-sm-6">
-        {!!Form::label('team_member','Team member: ')!!}
-        {!!Form::number('team_member',null,['class'=>'form-control'])!!}
+     <div class="form-group col-sm-6">
+        <label class="team_member">Team members</label>
+        <select name="team_member" id="team_member" class="form-control">
+            <option value="">Choose Option</option>
+            @foreach ($teams as $team)
+                <option value="{{$team->id}}">{{$team->name}}</option>
+            @endforeach
+        </select>
     </div>
  </div>
 <div class="row">

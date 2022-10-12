@@ -80,7 +80,6 @@
                                 <li class="list-group-item"><a href="{{route('onprogress')}}">On progress tasks</a></li>
                                 <li class="list-group-item"><a href="{{route('completed')}}">Completed tasks</a></li>
                                 <li class="list-group-item"><a href="#">Comments</a></li>
-                                <li class="list-group-item"><a href="#">Edit task</a></li>
                             </ul>
                         </div>
 

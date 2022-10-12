@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProjectsRequest;
 use App\Models\Project;
 use App\Models\Category;
+use App\Models\User;
+
 class AdminProjectsController extends Controller
 {
     /**
@@ -27,9 +29,9 @@ class AdminProjectsController extends Controller
      */
     public function create()
     {
-        $category = Category::pluck('type','id');
-
-        return view('project.create', compact('category'));
+        $category = Category::select('type','id');
+        $teams = User::select('name','id')->get();
+        return view('project.create', compact('category','teams'));
     }
 
     /**

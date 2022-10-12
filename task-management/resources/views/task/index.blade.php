@@ -25,16 +25,16 @@
                 <tr>
                     <td>{{$task->id}}</td>
                     <td>{{$task->name}}</td>
-                    {{-- <td></td> --}}
                     <td>{{$task->project?->title}}</td>
-                    <td>{{$task->member?->name}}</td>
-                    {{-- <td></td> --}}
+                    <td>{{$task->members?->name}}</td>
                     <td>{{$task->description}}</td>
                     <td>{{$task->start_date}}</td>
                     <td>{{$task->end_date}}</td>
                     <td>{{$task->created_at->diffForHumans()}}</td>
                     <td>{{$task->updated_at->diffForHumans()}}</td>
                     <td>{{$task->status}}</td>
+                    <td><a href="{{url("/task/edit/$task->id")}}">Edit</a></td>
+                    <td><a href="{{url("/task/delete/$task->id")}}">Delete</a></td>
 
 
                 </tr>

@@ -26,8 +26,9 @@ Route::get('/member/search', 'App\Http\Controllers\AdminMembersController@search
 Route::get('/member/create', 'App\Http\Controllers\AdminMembersController@create')->name('create');
 Route::post('/member', 'App\Http\Controllers\AdminMembersController@store')->name('store');
 Route::get('/member/index', 'App\Http\Controllers\AdminMembersController@index')->name('index');
-Route::get('/member/edit', 'App\Http\Controllers\AdminMembersController@update')->name('update');
-Route::get('/member/delete', 'App\Http\Controllers\AdminMembersController@destroy')->name('delete');
+Route::get('/member/edit/{id}', 'App\Http\Controllers\AdminMembersController@edit')->name('edit');
+Route::get('/member/update', 'App\Http\Controllers\AdminMembersController@update')->name('update');
+Route::get('/member/delete/{id}', 'App\Http\Controllers\AdminMembersController@destroy')->name('delete');
 
 
 Route::get('/project/create', 'App\Http\Controllers\AdminProjectsController@create')->name('createproj');
@@ -38,6 +39,9 @@ Route::get('/project/index', 'App\Http\Controllers\AdminProjectsController@index
 Route::get('/task/create', 'App\Http\Controllers\AdminTasksController@create')->name('tasks');
 Route::post('/task', 'App\Http\Controllers\AdminTasksController@store')->name('storetask');
 Route::get('/task/index', 'App\Http\Controllers\AdminTasksController@index')->name('indextask');
+Route::get('/task/edit/{id}', 'App\Http\Controllers\AdminTasksController@edit')->name('edittask');
+Route::get('/task/update', 'App\Http\Controllers\AdminTasksController@update')->name('updatetask');
+Route::get('/task/delete/{id}', 'App\Http\Controllers\AdminTasksController@destroy')->name('deletetask');
 
 Route::get('/category/create', 'App\Http\Controllers\AdminCategoriesController@create')->name('categories');
 Route::post('/category', 'App\Http\Controllers\AdminCategoriesController@store')->name('storecategory');

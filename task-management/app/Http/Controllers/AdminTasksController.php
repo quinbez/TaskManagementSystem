@@ -28,9 +28,9 @@ class AdminTasksController extends Controller
      */
     public function create()
     {
-        $member= User::pluck('id');
-        $project = Project::pluck('id');
-        return view('task.create', compact('project','member'));
+        $members= User::select('id','name')->get();
+        $project = Project::select('id','title')->get();
+        return view('task.create', compact('project','members'));
     }
 
     /**
@@ -41,7 +41,7 @@ class AdminTasksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->project_id);
         Task::create($request->all());
         return redirect('task/index');
 
@@ -66,7 +66,8 @@ class AdminTasksController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tasks = Task::findOrFail($id);
+        return view('task.edit', compact('tasks'));
     }
 
     /**
@@ -76,9 +77,21 @@ class AdminTasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TasksRequest $request, $id)
     {
-        //
+        $id = $request->taskId;
+        $tasks = Task::findOrFail($id);
+        $taskUpdate =[
+            'name' => $request->name,
+            'member_id'=>$request->member_id,
+            'project_id'=>$request->project_id,
+            'description'=>$request->description,
+            'start_date'=>$request->start_date,
+            'end_date'=>$request->end_date->end_date,
+            
+        ];
+        $tasks->update($taskUpdate);
+        return redirect('task/index');
     }
 
     /**
@@ -89,6 +102,8 @@ class AdminTasksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Task::findOrFail($id)->delete();
+
+        return redirect('/task/index');
     }
 }
