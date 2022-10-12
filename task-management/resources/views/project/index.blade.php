@@ -30,10 +30,12 @@
                     <td></td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>
-                    <td>{{$project->status_id == 1 ? "On progress" : "Completed"}}</td>
+                    <td>{{$project->status == 1 ? "On progress" : "Completed"}}</td>
                     <td>{{$project->created_at->diffForHumans()}}</td>
                     <td>{{$project->updated_at->diffForHumans()}}</td>
-                    <td><a href="{{url("project/edit/$project->id")}}">Edit</a></td>
+                    <td><a href="{{url("/project/edit/$project->id")}}">Edit</a></td>
+                    <td><a href="{{url("/project/delete/$project->id")}}">Delete</a></td>
+
                 </tr>
             @endforeach
         @endif

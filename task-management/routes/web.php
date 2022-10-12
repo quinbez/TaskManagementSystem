@@ -36,7 +36,7 @@ Route::post('/project', 'App\Http\Controllers\AdminProjectsController@store')->n
 Route::get('/project/index', 'App\Http\Controllers\AdminProjectsController@index')->name('indexproj');
 Route::get('/project/edit/{id}', 'App\Http\Controllers\AdminProjectsController@edit')->name('projedit');
 Route::get('/project/update', 'App\Http\Controllers\AdminProjectsController@update')->name('projupdate');
-
+Route::get('project/delete/{id}', 'App\Http\Controllers\AdminProjectsController@destroy')->name('projdelete');
 
 Route::get('/task/create', 'App\Http\Controllers\AdminTasksController@create')->name('tasks');
 Route::post('/task', 'App\Http\Controllers\AdminTasksController@store')->name('storetask');
@@ -48,6 +48,9 @@ Route::get('/task/delete/{id}', 'App\Http\Controllers\AdminTasksController@destr
 Route::get('/category/create', 'App\Http\Controllers\AdminCategoriesController@create')->name('categories');
 Route::post('/category', 'App\Http\Controllers\AdminCategoriesController@store')->name('storecategory');
 Route::get('/category/index', 'App\Http\Controllers\AdminCategoriesController@index')->name('indexcategory');
+Route::get('/category/edit/{id}', 'App\Http\Controllers\AdminCategoriesController@edit')->name('editcateg');
+Route::get('/category/update', 'App\Http\Controllers\AdminCategoriesController@update')->name('updatecateg');
+Route::get('/category/delete/{id}', 'App\Http\Controllers\AdminCategoriesController@destroy')->name('deletecateg');
 
 Route::get('/dashboard', 'App\Http\Controllers\AdminDashboardsController@index')->name('dashboards');
 

@@ -25,12 +25,12 @@ class EditProjectRequest extends FormRequest
     {
         return [
             'title'=>'required',
-            // 'category_id'=>'required',
+            'category_id'=>'required',
             'description'=>'required',
-            // 'team_member'=>'required',
+            'team_member'=>'required',
             'start_date'=>'required',
             'deadline'=>'required',
-            'status_id'=>'required'
+            'status'=>'required'
         ];
     }
 }

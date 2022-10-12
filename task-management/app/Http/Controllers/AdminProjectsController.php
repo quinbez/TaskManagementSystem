@@ -30,7 +30,7 @@ class AdminProjectsController extends Controller
      */
     public function create()
     {
-        $categories = Category::select('type','id');
+        $categories = Category::select('type','id')->get();
         $teams = User::select('name','id')->get();
         return view('project.create', compact('categories','teams'));
     }
@@ -68,8 +68,10 @@ class AdminProjectsController extends Controller
      */
     public function edit($id)
     {
+        $teams = User::select('name', 'id')->get();
+        $categories = Category::select('type', 'id')->get();
         $projects = Project::findOrFail($id);
-        return view('project.edit',compact('projects'));
+        return view('project.edit',compact('projects', 'categories','teams'));
     }
 
     /**
@@ -82,9 +84,7 @@ class AdminProjectsController extends Controller
     public function update(EditProjectRequest $request)
     {
         $id = $request->projectId;
-        $categories = Category::select('type', 'id');
         $projects = Project::findOrFail($id);
-        $teams = User::select('name', 'id');
         $projectUpdate =[
             'title'=>$request->title,
             'category_id'=>$request->category_id,
@@ -94,9 +94,8 @@ class AdminProjectsController extends Controller
             'deadline'=>$request->deadline,
             'status_id'=>$request->status_id
         ];
-        $input = $request->all();
         $projects->update($projectUpdate);
-        return view('project.index', compact('categories', 'teams'));
+        return redirect('project/index');
     }
 
     /**
@@ -107,6 +106,8 @@ class AdminProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Project::findOrFail($id)->delete();
+
+        return redirect('/project/index');
     }
 }

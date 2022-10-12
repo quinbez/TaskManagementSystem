@@ -12,7 +12,7 @@
     </div>
 
     <div class="form-group col-sm-6">
-        <label class="project_id">Project</label>
+        <label class="project_id">Project </label>
         <select name="project_id" id="project" class="form-control">
             <option value="">Choose Option</option>
             @foreach ($project as $pro)
@@ -34,7 +34,7 @@
 </div>
 <div class="d-grid gap-2">
     <div class="form-group col-sm-6">
-        <label class="user_id">Assigned to</label>
+        <label class="user_id">Assigned to </label>
         <select name="user_id" id="user" class="form-control">
             <option value="">Choose Option</option>
             @foreach ($members as $member)
@@ -44,7 +44,7 @@
     </div>
     <div class="form-group col-sm-6" >
         {!!Form::label('description','Description: ')!!}
-        {!!Form::textarea('description',null,['class'=>'form-control'])!!}
+        {!!Form::textarea('description',null,['class'=>'form-control', 'rows'=>'3'])!!}
     </div>
 </div>
 <div class="d-grid gap-2">

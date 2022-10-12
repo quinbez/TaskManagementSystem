@@ -69,7 +69,9 @@ class AdminTasksController extends Controller
     public function edit($id)
     {
         $tasks = Task::findOrFail($id);
-        return view('task.edit', compact('tasks'));
+        $project = Project::select('title', 'id')->get();
+        $members = User::select('name','id')->get();
+        return view('task.edit', compact('tasks', 'members','project'));
     }
 
     /**

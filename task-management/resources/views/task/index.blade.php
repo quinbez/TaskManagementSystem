@@ -26,7 +26,7 @@
                     <td>{{$task->id}}</td>
                     <td>{{$task->name}}</td>
                     <td>{{$task->project?->title}}</td>
-                    <td>{{$task->members?->name}}</td>
+                    <td>{{$task->user?->name}}</td>
                     <td>{{$task->description}}</td>
                     <td>{{$task->start_date}}</td>
                     <td>{{$task->end_date}}</td>
