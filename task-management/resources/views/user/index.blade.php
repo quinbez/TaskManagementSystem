@@ -23,12 +23,17 @@
                 </div>
                 <div class="navbar-header">
                     <ul class="nav navbar-nav navbar-right">
-                                <div class="input-group custom-search-form" style="width: 500px;">
-                                    <input type="text" class="form-control" placeholder="Search...">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default" type="button">
-                                                <span class="fa fa-search" id="searchhover"></span>
-                                            </button>
+
+                        <form  action = "{{ url('member/search')}}"  method = "GET">
+                            @csrf
+                                                            <div class="input-group custom-search-form" style="width: 500px;">
+                                                                <input type="text" class="form-control" placeholder="Search..." name = "search">
+                                                                    <span class="input-group-btn">
+                                                                        <button class="btn btn-default" type="submit">
+                                                                            <span class="fa fa-search" id="searchhover"></span>
+                                                                        </button>
+                                                                        </form>
+
                                             <a href="#" class="px-2 "><span class="fas fa-bell bellcolor" style="color:  #9b34ae"></span></a>
                                         </span>
                                 </div>
