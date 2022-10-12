@@ -9,6 +9,7 @@
             <th>Id</th>
             <th>Title</th>
             <th>Category</th>
+            <th>User</th>
             <th>Description</th>
             <th>Team-Members<th>
             <th>Start-Date</th>
@@ -25,6 +26,7 @@
                     <td>{{$project->id}}</td>
                     <td>{{$project->title}}</td>
                     <td>{{$project->category_id }}</td>
+                    <td>{{$project->user_id}}</td>
                     <td>{{$project->description}}</td>
                     <td><a href="#">{{$project->team_member}}</a></td>
                     <td></td>

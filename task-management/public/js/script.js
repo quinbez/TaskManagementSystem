@@ -35,7 +35,7 @@ let circularProgress3 = document.querySelector('.circular-progress3'),
     progressValue3 = document.querySelector('.progress-value3');
 
 let progressStartValue3 = 0,
-    progressEndValue3 = 26,
+    progressEndValue3 = 26;
     speed3 = 0;
 
 let progress3 = setInterval(() => {

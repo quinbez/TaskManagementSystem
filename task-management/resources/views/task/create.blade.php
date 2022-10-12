@@ -47,6 +47,12 @@
         {!!Form::textarea('description',null,['class'=>'form-control', 'rows'=>'3'])!!}
     </div>
 </div>
+<div class="row">
+    <div class="form-group col-sm-6">
+        {!!Form::label('status','Status')!!}
+        {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
+        </div>
+</div>
 <div class="d-grid gap-2">
     <div class="row" style="justify-content: right">
         <div class="form-group col-sm-3 p-4">

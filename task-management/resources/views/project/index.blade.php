@@ -10,8 +10,8 @@
             <th>Title</th>
             <th>Category</th>
             <th>Description</th>
-            <th>Members<th>
-            <th>Start</th>
+            <th>Team<th>
+            <th>Starts</th>
             <th>Deadline</th>
             <th>Status</th>
             <th>Created</th>
@@ -26,7 +26,7 @@
                     <td>{{$project->title}}</td>
                     <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    <td><a href="#">{{$project->team_member}}</a></td>
+                    <td>{{$project->team_member}}</td>
                     <td></td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>

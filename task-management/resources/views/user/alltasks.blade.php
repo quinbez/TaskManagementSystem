@@ -25,10 +25,8 @@
                 <tr>
                     <td>{{$task->id}}</td>
                     <td>{{$task->name}}</td>
-                    {{-- <td></td> --}}
                     <td>{{$task->project?->title}}</td>
                     <td>{{$task->member?->name}}</td>
-                    {{-- <td></td> --}}
                     <td>{{$task->description}}</td>
                     <td>{{$task->start_date}}</td>
                     <td>{{$task->end_date}}</td>
