@@ -1,8 +1,8 @@
-@extends('layouts.admin')
+@extends('user.index')
 
 @section('content')
 
-<h3>All Projects</h3>
+<h3>Assigned Projects</h3>
 <table class='table'>
     <thead>
         <tr>
@@ -10,8 +10,8 @@
             <th>Title</th>
             <th>Category</th>
             <th>Description</th>
-            <th>Team<th>
-            <th>Start</th>
+            <th>Team-Members<th>
+            <th>Start-Date</th>
             <th>Deadline</th>
             <th>Status</th>
             <th>Created</th>

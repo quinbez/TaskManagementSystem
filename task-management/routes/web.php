@@ -47,4 +47,6 @@ Route::get('/dashboard', 'App\Http\Controllers\AdminDashboardsController@index')
 Route::get('/user', 'App\Http\Controllers\UsersController@index')->name('users');
 Route::get('/user/dashboard', 'App\Http\Controllers\UsersDashboardController@index')->name('userdashboard');
 Route::get('/user/project', 'App\Http\Controllers\UsersProjectsController@index')->name('userproject');
+Route::get('/user/team', 'App\Http\Controllers\TeamMembersController@index')->name('team');
+
 });

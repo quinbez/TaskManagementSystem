@@ -13,8 +13,8 @@ class UsersProjectsController extends Controller
      */
     public function index()
     {
-        // $projects = Project::get();
-        return view('user.projects');
+        $projects = Project::all();
+        return view('user.projects', compact('projects'));
     }
 
     /**

@@ -63,10 +63,10 @@
                 </li>
                     <div class="panel panel-default mt-2">
                         <div class="panel-heading">
-                            <a class="nav-link" href="#" ><span class="fas fa-diagram-project px-2"></span>All Projects</a>
+                            <a class="nav-link" href="{{route('userproject')}}" ><span class="fas fa-diagram-project px-2"></span>Assigned Projects</a>
                         </div>
                         <div class="panel-heading">
-                            <a class="nav-link" href="#" ><span class="fas fa-users px-2"></span>Team Members</a>
+                            <a class="nav-link" href="{{route('team')}}" ><span class="fas fa-users px-2"></span>Team Members</a>
                         </div>
 
                         <div class="panel-group" id="accordion">
