@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Member;
-use App\Http\Requests\MembersRequest;
+use App\Http\Requests\UsersRequest;
 use App\Models\User;
 use App\Models\Task;
 use App\Models\Project;
@@ -40,7 +40,7 @@ class AdminMembersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(MembersRequest $request)
+    public function store(UsersRequest $request)
     {
         // $request['password']='123456789';
         $input = $request->all();
@@ -84,14 +84,13 @@ class AdminMembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UsersRequest $request, $id,)
     {
         //
-
         $member = User::findOrFail($id);
         $input = $request->all();
         $member->update($input);
-        return redirect('member/index');
+        return redirect('member/index', compact('input'));
     }
 
     /**

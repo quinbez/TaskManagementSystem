@@ -61,16 +61,15 @@
                 <li class="nav-item">
                     <a href="{{ route('userdashboard') }}" class="nav-link"><span class="fas fa-dashboard px-2"></span>Dashboard</a>
                 </li>
-                <div class="panel-group" id="accordion">
                     <div class="panel panel-default mt-2">
                         <div class="panel-heading">
-                            <a class="nav-link" href="#collapse1" data-bs-toggle="collapse"><span class="fas fa-diagram-project px-2"></span>Projects</a>
+                            <a class="nav-link" href="#" ><span class="fas fa-diagram-project px-2"></span>All Projects</a>
                         </div>
-                        <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion" >
-                            <ul class="list-group">
-                                <li class="list-group-item"><a href="#">All projects</a></li>
-                            </ul>
+                        <div class="panel-heading">
+                            <a class="nav-link" href="#" ><span class="fas fa-users px-2"></span>Team Members</a>
                         </div>
+
+                        <div class="panel-group" id="accordion">
                         <div class="panel-heading mt-2">
                                 <a class="nav-link collapsed" href="#collapse3" data-bs-toggle="collapse"><span class="fas fa-tasks px-2"></span>Tasks</a>
                         </div>
@@ -83,12 +82,8 @@
                                 {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
-                        <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
-                            <ul class="list-group">
-                                <li class="list-group-item"><a href="#">Team members</a></li>
-                                {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
-                            </ul>
-                        </div>
+
+
                     </div>
                 </div>
             </ul>

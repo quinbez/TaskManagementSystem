@@ -26,7 +26,7 @@ Route::get('/member/search', 'App\Http\Controllers\AdminMembersController@search
 Route::get('/member/create', 'App\Http\Controllers\AdminMembersController@create')->name('create');
 Route::post('/member', 'App\Http\Controllers\AdminMembersController@store')->name('store');
 Route::get('/member/index', 'App\Http\Controllers\AdminMembersController@index')->name('index');
-Route::get('/member/edit', 'App\Http\Controllers\AdminMembersController@update')->name('update');
+Route::get('/member/edit', 'App\Http\Controllers\AdminMembersController@update')->name('member.edit');
 
 
 Route::get('/project/create', 'App\Http\Controllers\AdminProjectsController@create')->name('createproj');
