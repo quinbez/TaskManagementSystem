@@ -3,31 +3,37 @@
 @section('content')
 
 <h3>Edit Task </h3>
-<form action="{{ url('/task/update') }}" method="patch">
+<form action="{{ route('updatetask') }}" method="get">
     {{ csrf_field() }}
 <div class="row">
-    <div class="form-group col-sm-6">
+    <input type="hidden" name="taskId" value="{{$tasks->id}}">
+    <div class="form-group  col-sm-6">
         {!!Form::label('name','Task Name: ')!!}
-        {!!Form::text('name',null,['class'=>'form-control'])!!}
+        {!!Form::text('name',$tasks->name,['class'=>'form-control'])!!}
     </div>
 </div>
-
+<div class="row">
+    <div class="form-group col-sm-6" >
+    {!!Form::label('start_date','Start Date: ')!!}
+    {!!Form::date('start_date',$tasks->start_date,['class'=>'form-control'])!!}
+    </div>
+</div>
 <div class="row">
     <div class="form-group col-sm-6" >
         {!!Form::label('end_date','Deadline: ')!!}
-        {!!Form::date('end_date',null,['class'=>'form-control'])!!}
+        {!!Form::date('end_date',$tasks->end_date,['class'=>'form-control'])!!}
     </div>
 </div>
 <div class="d-grid gap-2">
     <div class="form-group col-sm-6" >
         {!!Form::label('description','Description: ')!!}
-        {!!Form::textarea('description',null,['class'=>'form-control'])!!}
+        {!!Form::textarea('description',$tasks->description,['class'=>'form-control'])!!}
     </div>
 </div>
 <div class="d-grid gap-2">
     <div class="row" style="justify-content: left">
         <div class="form-group col-sm-3 p-4">
-            {!!Form::submit('Assign', ['class'=>'btn btn-primary'])!!}
+            {!!Form::submit('Edit', ['class'=>'btn btn-primary'])!!}
             {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
         </div>
     </div>

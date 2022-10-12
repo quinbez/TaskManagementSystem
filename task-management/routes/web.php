@@ -34,6 +34,8 @@ Route::get('/member/delete/{id}', 'App\Http\Controllers\AdminMembersController@d
 Route::get('/project/create', 'App\Http\Controllers\AdminProjectsController@create')->name('createproj');
 Route::post('/project', 'App\Http\Controllers\AdminProjectsController@store')->name('storeproj');
 Route::get('/project/index', 'App\Http\Controllers\AdminProjectsController@index')->name('indexproj');
+Route::get('/project/edit/{id}', 'App\Http\Controllers\AdminProjectsController@edit')->name('projedit');
+Route::get('/project/update', 'App\Http\Controllers\AdminProjectsController@update')->name('projupdate');
 
 
 Route::get('/task/create', 'App\Http\Controllers\AdminTasksController@create')->name('tasks');

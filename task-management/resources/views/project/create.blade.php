@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3>Create Project</h3>
+<h3>Add Project</h3>
 <form action="{{ route('storeproj') }}" method="post">
         {{ csrf_field() }}
     {{-- {!!Form::open(['method'=>'post'])!!} --}}
@@ -27,8 +27,8 @@
  </div>
  <div class="row">
     <div class="form-group col-sm-6">
-        {!!Form::label('status','Status')!!}
-        {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],'null', ['class'=>'form-control'])!!}
+        {!!Form::label('status_id','Status')!!}
+        {!!Form::select('status_id',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],'null', ['class'=>'form-control'])!!}
         </div>
      <div class="form-group col-sm-6">
         <label class="team_member">Team members</label>
@@ -58,7 +58,7 @@
 </div>
 <div class="row" style="justify-content:right">
     <div class="form-group col-3 p-4">
-        {!!Form::submit('+ Add', ['class' => 'btn addcolor'])!!}
+        {!!Form::submit('Edit', ['class' => 'btn addcolor'])!!}
         {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
     </div>
 </div>

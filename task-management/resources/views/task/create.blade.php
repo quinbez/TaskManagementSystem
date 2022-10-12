@@ -10,10 +10,7 @@
         {!!Form::label('name','Task Name: ')!!}
         {!!Form::text('name',null,['class'=>'form-control'])!!}
     </div>
-    {{-- <div class="form-group col-sm-6" >
-        {!!Form::label('project_id','Project: ')!!}
-        {!!Form::select('project_id', [[''=>'Choose Options'], [$project=>'yes']],null,['class'=>'form-control'])!!}
-    </div> --}}
+
     <div class="form-group col-sm-6">
         <label class="project_id">Project</label>
         <select name="project_id" id="project" class="form-control">

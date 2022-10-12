@@ -9,6 +9,7 @@ use App\Models\Task;
 use App\Models\Project;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminMembersController extends Controller
@@ -21,7 +22,7 @@ class AdminMembersController extends Controller
      */
     public function index()
     {
-        $members = User::all();
+        $members = User::where('email', "!=", Auth::user()->email)->get();
         return view('member.index', compact('members'));
     }
 

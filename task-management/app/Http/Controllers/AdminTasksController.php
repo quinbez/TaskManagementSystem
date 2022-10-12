@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\EditTasksRequest;
 use App\Models\Task;
 use App\Models\Project;
 use App\Models\User;
@@ -77,18 +79,15 @@ class AdminTasksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(TasksRequest $request, $id)
+    public function update(EditTasksRequest $request)
     {
         $id = $request->taskId;
         $tasks = Task::findOrFail($id);
         $taskUpdate =[
             'name' => $request->name,
-            'member_id'=>$request->member_id,
-            'project_id'=>$request->project_id,
             'description'=>$request->description,
             'start_date'=>$request->start_date,
-            'end_date'=>$request->end_date->end_date,
-            
+            'end_date'=>$request->end_date,
         ];
         $tasks->update($taskUpdate);
         return redirect('task/index');
