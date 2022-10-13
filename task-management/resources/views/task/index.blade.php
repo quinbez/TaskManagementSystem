@@ -32,11 +32,9 @@
                     <td>{{$task->description}}</td>
                     <td>{{$task->start_date}}</td>
                     <td>{{$task->end_date}}</td>
-                    <td>{{$task->created_at->diffForHumans()}}</td>
-                    <td>{{$task->updated_at->diffForHumans()}}</td>
+                    <td>{{$task->created_at?->diffForHumans()}}</td>
+                    <td>{{$task->updated_at?->diffForHumans()}}</td>
                     <td>{{$task->status}}</td>
-
-
                 </tr>
             @endforeach
         @endif
