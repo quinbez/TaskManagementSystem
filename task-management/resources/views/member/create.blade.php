@@ -8,21 +8,21 @@
 <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('name','Name: ')!!}
-        {!!Form::text('name',null,['class'=>'form-control'])!!}
+        {!!Form::text('name',null,['class'=>'form-control', 'pattern'=>'[a-zA-Z][a-zA-Z]{2,}','required'])!!}
     </div>
     <div class="form-group col-sm-6" >
         {!!Form::label('email','Email: ')!!}
-        {!!Form::email('email',null,['class'=>'form-control'])!!}
+        {!!Form::email('email',null,['class'=>'form-control','required'])!!}
     </div>
 </div>
 <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('phone_number','Phone: ')!!}
-        {!!Form::text('phone_number',null,['class'=>'form-control'])!!}
+        {!!Form::text('phone_number',null,['class'=>'form-control','required'])!!}
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('role','Role: ')!!}
-        {!!Form::select('role',[''=>'Choose Options','admin'=>'Admin','member'=>'Member'],null,['class'=>'form-control'])!!}
+        {!!Form::select('role',[''=>'Choose Options','admin'=>'Admin','member'=>'Member'],null,['class'=>'form-control','required'])!!}
     </div>
 </div>
 
