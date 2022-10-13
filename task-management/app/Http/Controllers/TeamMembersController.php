@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class TeamMembersController extends Controller
 {
     public function index(){
+
         $members = User::all();
         $project = Project::select('title', 'id');
         return view('user.team', compact('members', 'project'));

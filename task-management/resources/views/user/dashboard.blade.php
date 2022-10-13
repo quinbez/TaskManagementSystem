@@ -28,15 +28,7 @@
                 <div class="col-3 bgcolor"><span class="fas fa-user icons px-3 py-3" id="icon1"></span></div>
                 <div class="col-9"> Total Projects</div>
                 <div class="p-3 px-2 font-weight-bold text-black">
-                    <?php
-                        $connection = mysqli_connect('localhost', 'root', '','tms');
-
-                        $query = "SELECT id FROM tasks WHERE project_id ='user_id' ";
-                        $query_run = mysqli_query($connection, $query);
-
-                        $row = mysqli_num_rows($query_run);
-                        echo "<h6>".$row." Projects"."</h6>"
-                    ?>
+                    <h6>{{$total_project}} added</h6>
                 </div>
             </div>
 
@@ -44,15 +36,7 @@
                 <div class="col-3 bgcolor"><span class="fas fa-users icons px-3 py-3" id="icon2"></span></div>
                 <div class="co1-9">Team Members</div>
                 <div class="p-3 px-2 font-weight-bold text-black">
-                    <?php
-                        $connection = mysqli_connect('localhost', 'root', '','tms');
-
-                        $query = "SELECT id FROM users ORDER BY id ";
-                        $query_run = mysqli_query($connection, $query);
-
-                        $row = mysqli_num_rows($query_run);
-                        echo "<h6>".$row." team members"."</h6>"
-                    ?>
+                   <h6>{{$team_member}} team</h6>
                 </div>
             </div>
             <div class="col-4 containerstyle bg-light rounded">
@@ -69,45 +53,27 @@
                 <div class="col-3 bgcolor"><span class="fas fa-battery-half icons px-3 py-3" id="icon7"></span></div>
                 <div class="col-9">Pending Tasks</div>
                 <div class="p-3 px-2 font-weight-bold text-black" id="pending_task">
-                    <?php
-                        $connection = mysqli_connect('localhost', 'root', '','tms');
-
-                        $query = "SELECT id FROM tasks WHERE  status = 'Pending' ";
-                        $query_run = mysqli_query($connection, $query);
-
-                        $row = mysqli_num_rows($query_run);
-                        echo "<h6>".$row." added"."</h6>"
-                    ?>
+                    <h6>{{$pending_task}} tasks</h6>
                 </div>
             </div>
             <div class="col-4 containerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-battery-empty icons px-3 py-3" id="icon6"></span></div>
                 <div class="col-9">Task on progress</div>
                 <div class="p-3 px-2 font-weight-bold text-black" id="task_on_progress">
-                    <?php
-                        $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                        $query = "SELECT id FROM tasks WHERE  status = 'On progress' ";
-                        $query_run = mysqli_query($connection, $query);
+                    <h6>{{$on_progress}} tasks</h6>
 
-                        $row = mysqli_num_rows($query_run);
-                        echo "<h6>".$row." added"."</h6>"
-                    ?>
+
                 </div>
             </div>
             <div class="col-4 containerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-battery-full icons px-3 py-3" id="icon8"></span></div>
                 <div class="col-9">Completed Tasks</div>
                 <div class="p-3 px-2 font-weight-bold text-black" id="completed_task">
-                    <?php
-                        $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                        $query = "SELECT id FROM tasks WHERE  status = 'Completed' ";
-                        $query_run = mysqli_query($connection, $query);
+                    <h6>{{$completed}} tasks</h6>
 
-                        $row = mysqli_num_rows($query_run);
-                        echo "<h6>".$row." added"."</h6>"
-                    ?>
+
                 </div>
             </div>
         </div>
@@ -121,15 +87,9 @@
                         <span class="progress-value1"></span>
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="completed">
-                        <?php
-                            $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                            $query = "SELECT id FROM tasks WHERE  status = 'Completed' ";
-                            $query_run = mysqli_query($connection, $query);
+                        <h6></h6>
 
-                            $row = mysqli_num_rows($query_run);
-                            echo "<h6>".$row." added"."</h6>"
-                        ?>
                     </div>
                 </div>
             </div>
@@ -140,15 +100,9 @@
                         <span class="progress-value2"></span>
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="on_progress">
-                        <?php
-                            $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                            $query = "SELECT id FROM tasks WHERE  status = 'On Progress' ";
-                            $query_run = mysqli_query($connection, $query);
+                        <h6></h6>
 
-                            $row = mysqli_num_rows($query_run);
-                            echo "<h6>".$row." added"."</h6>"
-                        ?>
                     </div>
                 </div>
             </div>
@@ -159,15 +113,9 @@
                         <span class="progress-value3"></span>
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="pending">
-                        <?php
-                            $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                            $query = "SELECT id FROM tasks WHERE  status = 'Pending' ";
-                            $query_run = mysqli_query($connection, $query);
+                        <h6></h6>
 
-                            $row = mysqli_num_rows($query_run);
-                            echo "<h6>".$row." added"."</h6>"
-                        ?>
                     </div>
                 </div>
             </div>

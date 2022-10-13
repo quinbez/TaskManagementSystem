@@ -63,6 +63,7 @@ Route::get('/user/onprogress/task', 'App\Http\Controllers\OnProgressController@i
 Route::get('/user/completed/task', 'App\Http\Controllers\CompletedController@index')->name('completed');
 Route::get('/user/alltask', 'App\Http\Controllers\UserTasksController@index')->name('alltask');
 
+Route::get('/totalteam/dashboard', "App\Http\Controllers\TotalTeamController@index")->name('totalteam');
 Route::get('/status/edit/{id}', 'App\Http\Controllers\UserPendingStatusController@edit')->name('edittaskstatus');
 Route::get('/status/update', 'App\Http\Controllers\UserPendingStatusController@update')->name('updatetaskstatus');
 
