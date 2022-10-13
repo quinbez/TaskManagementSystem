@@ -14,7 +14,7 @@
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}
         {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
-        </div>
+    </div>
 </div>
 <div class="row">
     <div class="form-group col-sm-6" >
@@ -55,7 +55,7 @@
 <div class="d-grid gap-2">
     <div class="row" style="justify-content: left">
         <div class="form-group col-sm-3 p-4">
-            {!!Form::submit('Edit', ['class'=>'btn btn-primary'])!!}
+            {!!Form::submit('Edit', ['class'=>'btn addcolor'])!!}
             {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
         </div>
     </div>

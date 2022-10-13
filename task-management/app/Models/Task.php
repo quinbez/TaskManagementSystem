@@ -14,7 +14,8 @@ class Task extends Model
         'name',
         'description',
         'start_date',
-        'end_date'
+        'end_date',
+        'status'
     ];
     public function member(){
         return $this->belongsTo('App\Models\User', 'user_id','id');

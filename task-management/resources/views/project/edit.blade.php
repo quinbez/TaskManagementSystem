@@ -29,8 +29,8 @@
         {!!Form::select('status',[$projects->status=>$projects->status,'pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
         </div>
         <div class="form-group col-sm-6">
-            <label class="team_member">Team members</label>
-            <select name="team_member" id="team_member" class="form-control">
+            <label class="user_id">Team members</label>
+            <select name="user_id" id="team_member" class="form-control">
                 <option value="">Choose Option</option>
                 @foreach ($teams as $team)
                     <option value="{{$team->id}}">{{$team->name}}</option>
@@ -63,13 +63,14 @@
 
 </form>
 @if(count($errors)>0)
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" style="width: 500px;">
         <ul>
-    </div>
+
                 @foreach($errors->all() as $error)
                 <li>{{$error}}</li>
             @endforeach
         </ul>
+     </div>
     </div>
 @endif
 

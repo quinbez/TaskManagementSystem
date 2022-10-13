@@ -60,10 +60,16 @@ Route::get('/user/project', 'App\Http\Controllers\UsersProjectsController@index'
 Route::get('/user/team', 'App\Http\Controllers\TeamMembersController@index')->name('team');
 Route::get('/user/pending/task', 'App\Http\Controllers\PendingController@index')->name('pending');
 Route::get('/user/onprogress/task', 'App\Http\Controllers\OnProgressController@index')->name('onprogress');
-Route::get('/user/completed/task', 'App\Http\Controllers\TeamMembersController@index')->name('completed');
+Route::get('/user/completed/task', 'App\Http\Controllers\CompletedController@index')->name('completed');
 Route::get('/user/alltask', 'App\Http\Controllers\UserTasksController@index')->name('alltask');
 
+Route::get('/status/edit/{id}', 'App\Http\Controllers\UserPendingStatusController@edit')->name('edittaskstatus');
+Route::get('/status/update', 'App\Http\Controllers\UserPendingStatusController@update')->name('updatetaskstatus');
 
+Route::get('onprogress/edit/{id}', 'App\Http\Controllers\UserOnProgressStatusController@edit')->name('onprogressedit');
+Route::get('onprogress/update', 'App\Http\Controllers\UserOnProgressStatusController@update')->name('onprogressupdate');
 
+Route::get('completed/edit/{id}', 'App\Http\Controllers\UserOnProgressStatusController@edit')->name('editcompletedstatus');
+Route::get('completed/update', 'App\Http\Controllers\UserCompletedStatusController@update')->name('updatecompletedstatus');
 
 });

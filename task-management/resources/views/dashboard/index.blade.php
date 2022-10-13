@@ -26,6 +26,17 @@
             <div class="col-3 containerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-user icons px-3 py-3" id="icon1"></span></div>
                 <div class="col-9"> Total Admins</div>
+                <div class="p-2 px-2 font-weight-bold text-black">
+                    <?php
+                        $connection = mysqli_connect('localhost', 'root', '','tms');
+
+                        $query = "SELECT id FROM users WHERE  role = 'admin' ";
+                        $query_run = mysqli_query($connection, $query);
+
+                        $row = mysqli_num_rows($query_run);
+                        echo "<h6>".$row." added"."</h6>"
+                    ?>
+                </div>
             </div>
             <div class="col-3 containerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-users icons px-3 py-3" id="icon2"></span></div>
@@ -111,7 +122,7 @@
                     <?php
                         $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                        $query = "SELECT id FROM tasks WHERE  status = 'On Progress' ";
+                        $query = "SELECT id FROM tasks WHERE  status = 'on_progress' ";
                         $query_run = mysqli_query($connection, $query);
 
                         $row = mysqli_num_rows($query_run);
@@ -144,7 +155,7 @@
                     <div class="circular-progress1">
                         <span class="progress-value1"></span>
                     </div>
-                    <div class="p-5 px-2 font-weight-bold text-black">
+                    <div class="p-2 px-2 font-weight-bold text-black">
                         <?php
                             $connection = mysqli_connect('localhost', 'root', '','tms');
 
@@ -163,11 +174,11 @@
                     <div class="circular-progress2">
                         <span class="progress-value2"></span>
                     </div>
-                    <div class="p-5 px-2 font-weight-bold text-black">
+                    <div class="p-2 px-2 font-weight-bold text-black">
                         <?php
                             $connection = mysqli_connect('localhost', 'root', '','tms');
 
-                            $query = "SELECT id FROM tasks WHERE  status = 'On Progress' ";
+                            $query = "SELECT id FROM tasks WHERE  status = 'on_progress' ";
                             $query_run = mysqli_query($connection, $query);
 
                             $row = mysqli_num_rows($query_run);

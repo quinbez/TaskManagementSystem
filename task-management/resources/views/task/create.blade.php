@@ -32,7 +32,11 @@
         {!!Form::date('end_date',null,['class'=>'form-control'])!!}
     </div>
 </div>
-<div class="d-grid gap-2">
+<div class="row">
+    <div class="form-group col-sm-6">
+        {!!Form::label('status','Status')!!}
+        {!!Form::select('status',[''=>'Choose Options','Pending'=>'pending','On Progress'=>'on_progress','Completed'=>'completed' ],null, ['class'=>'form-control'])!!}
+    </div>
     <div class="form-group col-sm-6">
         <label class="user_id">Assigned to </label>
         <select name="user_id" id="user" class="form-control">
@@ -42,32 +46,34 @@
             @endforeach
         </select>
     </div>
+</div>
+<div class="d-grid gap-2">
     <div class="form-group col-sm-6" >
         {!!Form::label('description','Description: ')!!}
         {!!Form::textarea('description',null,['class'=>'form-control', 'rows'=>'3'])!!}
     </div>
 </div>
-<div class="row">
-    <div class="form-group col-sm-6">
-        {!!Form::label('status','Status')!!}
-        {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
-        </div>
-</div>
+
+
+
 <div class="d-grid gap-2">
     <div class="row" style="justify-content: right">
         <div class="form-group col-sm-3 p-4">
-            {!!Form::submit('Assign', ['class'=>'btn btn-primary'])!!}
+            {!!Form::submit('Assign', ['class'=>'btn addcolor'])!!}
             {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
         </div>
     </div>
 </div>
+</form>
 @if(count($errors)>0)
     <div class="alert alert-danger">
         <ul>
-            @foreach($errors->all() as $error)
+
+                @foreach($errors->all() as $error)
                 <li>{{$error}}</li>
             @endforeach
         </ul>
     </div>
+</div>
 @endif
 @endsection

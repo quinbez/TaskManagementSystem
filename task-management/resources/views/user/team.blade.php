@@ -30,7 +30,6 @@
                     <td>{{$member->project?->title}}</td>
                     <td>{{$member->created_at?->diffForHumans()}}</td>
                     <td>{{$member->updated_at?->diffForHumans()}}</td>
-                    {{-- <td><a href="{{route('member.edit'), $member->id}}">Edit</a></td> --}}
                 </tr>
             @endforeach
         @endif

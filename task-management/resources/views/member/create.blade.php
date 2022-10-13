@@ -102,7 +102,7 @@
 
 <div class="row" style="justify-content: left">
     <div class="form-group col-sm-3 p-4">
-        {!!Form::submit('+ Add', ['class'=>'btn btn-primary'])!!}
+        {!!Form::submit('+ Add', ['class'=>'btn addcolor'])!!}
         {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
     </div>
 </div>

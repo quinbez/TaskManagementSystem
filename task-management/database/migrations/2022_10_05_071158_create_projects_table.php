@@ -21,7 +21,7 @@ return new class extends Migration
             $table->integer('team_member');
             $table->date('start_date');
             $table->date('deadline');
-            $table->enum('status',['pending','on_progress','completed'])->default('pending');
+            $table->string('status');
             $table->timestamps();
         });
     }

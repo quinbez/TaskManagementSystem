@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -14,7 +15,8 @@ class UsersController extends Controller
     }
     public function index()
     {
-        return view('user.dashboard');
+        $data["total_tasks"] = Task::where('user_id', Auth::user()->id)->count();
+        return view('user.dashboard', $data);
     }
 
     public function search(Request $request)
