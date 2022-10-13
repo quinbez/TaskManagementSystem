@@ -86,6 +86,14 @@ a:hover {
     height: 150px;
     text-align: left;
 }
+.usercontainerstyle{
+    width: 275px;
+    height: 150px;
+    text-align: left;
+}
+.usercolstyle{
+justify-content: space-evenly;
+}
 
 .colpadding {
     padding-top: 25px;
@@ -344,6 +352,12 @@ ul a {
 @media ((max-width: 1399.98px))and (min-width: 1199.98px) {
     .containerstyle {
         width: 200px;
+        height: 150px;
+        text-align: left;
+        font-size: large;
+    }
+    .usercontainerstyle{
+        width: 300px;
         height: 150px;
         text-align: left;
         font-size: large;
