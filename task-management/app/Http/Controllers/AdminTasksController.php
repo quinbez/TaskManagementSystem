@@ -7,8 +7,10 @@ use App\Models\Task;
 use App\Models\Project;
 use App\Models\User;
 use App\Http\Requests\TasksRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class AdminTasksController extends Controller
 {
@@ -30,7 +32,7 @@ class AdminTasksController extends Controller
      */
     public function create()
     {
-        $members= User::select('id','name')->get();
+        $members= User::where('role', 'member')->get();
         $project = Project::select('id','title')->get();
         return view('task.create', compact('project','members'));
     }
@@ -43,9 +45,38 @@ class AdminTasksController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->project_id);
-        Task::create($request->all());
-        return redirect('task/index');
+
+
+        // dd($request->all());
+        $project = Project::find($request->project_id);
+        $user = User::find($request->user_id);
+
+        $check = DB::table('project_user')->where('project_id', $project->id)->where('user_id', $user->id)->count();
+
+        if($check){
+            Session::flash('error', 'Duplicate');
+            return redirect('dashboard');
+
+        }else{
+            $user->projects()->save($project);
+
+            $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
+            $deadline = Carbon::parse($request->deadline)->format('Y-m-d');
+
+            $addedTasks=[
+                'user_id' => $request->user_id,
+                'project_id' => $request->project_id,
+                'name' => $request->name,
+                'start_date' => $startDate,
+                'end_date' => $deadline,
+                'description' => $request->description,
+            ];
+            Task::create($addedTasks);
+            return redirect('task/index');
+        }
+        // dd($check);
+
+
 
     }
 

@@ -24,7 +24,7 @@
  <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}
-        {!!Form::select('status',['pending'=>'Pending',],null, ['class'=>'form-control'])!!}
+        {!!Form::select('status',['pending'=>'Pending'],null, ['class'=>'form-control'])!!}
         </div>
      <div class="form-group col-sm-6">
         <label class="team_member">Team members</label>

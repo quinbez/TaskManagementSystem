@@ -20,6 +20,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        // $this->call(ProjectSeeder::class);
+
+        \App\Models\Category::factory(3)->create()->each(function($category){
+            $category->projects()->save(\App\Models\Project::factory()->make());
+        });
+
         $this->call(TaskSeeder::class);
+
+
+
     }
 }

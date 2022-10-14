@@ -45,22 +45,16 @@ class AdminMembersController extends Controller
      */
     public function store(MembersRequest $request)
     {
-        try{
-
-            // $request['password']='123456789';
-            $input = $request->all();
-            User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'phone_number' => $request->phone_number,
-                'role' => $request->role,
-                'password' => Hash::make($request->password),
-            ]);
-            return redirect('member/index');
-        }catch(Exception $ex){
-dd($ex);
-        }
-
+        // $request['password']='123456789';
+        $input = $request->all();
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'role' => $request->role,
+            'password' => Hash::make($request->password),
+        ]);
+        return redirect('member/index');
     }
 
     /**
@@ -124,10 +118,10 @@ dd($ex);
 
     public function search(Request $request)
     {
-        $members = User::where('name', $request->search)->get();
-        $tasks = Task::where('name', $request->search)->get();
-        $projects = Project::where('title', $request->search)->get();
-        $categories = Category::where('type', $request->search)->get();
+        $members = User::where('name', 'like', "%$request->search%")->get();
+        $tasks = Task::where('name','like', "%$request->search%")->get();
+        $projects = Project::where('title', 'like',"%$request->search%")->get();
+        $categories = Category::where('type','like', "%$request->search%")->get();
         // dd(count($tasks));
         if(count($members) > 0){
         return view('member.index', compact('members'));

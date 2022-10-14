@@ -73,4 +73,9 @@ Route::get('onprogress/update', 'App\Http\Controllers\UserOnProgressStatusContro
 Route::get('completed/edit/{id}', 'App\Http\Controllers\UserOnProgressStatusController@edit')->name('editcompletedstatus');
 Route::get('completed/update', 'App\Http\Controllers\UserCompletedStatusController@update')->name('updatecompletedstatus');
 
+Route::get('/notification', 'App\Http\Controllers\AdminNotificationController@index')->name('notify');
+
+
+
+
 });

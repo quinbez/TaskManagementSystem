@@ -47,7 +47,7 @@ class AdminProjectsController extends Controller
     {
         $teamMembers = implode(',',$request->team_member);
         $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
-        $deadline = Carbon::parse($request->deadlinedeadline)->format('Y-m-d');
+        $deadline = Carbon::parse($request->deadline)->format('Y-m-d');
         // dd($teamMembers);
         $addedProject=[
             'title' => $request->title,

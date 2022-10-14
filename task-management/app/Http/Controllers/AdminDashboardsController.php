@@ -22,7 +22,7 @@ class AdminDashboardsController extends Controller
         $data["total_category"] = Category::count();
         $data["total_project"] = Project::count();
         $data['pending_task'] = Task::where('status', 'pending')->count();
-        $data['on_progress'] = Task::where('status', 'on progress')->count();
+        $data['on_progress'] = Task::where('status', 'on_progress')->count();
         $data['completed'] = Task::where('status', 'completed')->count();
 
 

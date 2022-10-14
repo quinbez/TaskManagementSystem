@@ -48,8 +48,6 @@
 
                                                 <a href="@if($count < 1) # @else {{route('pending')}} @endif">{{$count}} Notifications</a>
 
-
-
                                             </div>
 
                                           </div>

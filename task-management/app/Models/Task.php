@@ -36,4 +36,11 @@ class Task extends Model
     public function scopeSeen($query, $value){
         return $query->where('seen', $value);
     }
+
+    public function scopeOnProgress($query, $value){
+        return $query->where('on_progress', $value);
+    }
+    public function scopeCompleted($query, $value){
+        return $query->where('completed', $value);
+    }
 }

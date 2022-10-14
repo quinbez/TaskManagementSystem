@@ -1,8 +1,8 @@
-@extends('user.index')
+@extends('layouts.admin')
 
 @section('content')
 
-<h3>Pending Tasks</h3>
+<h3>All Tasks</h3>
 <table class='table'>
     <thead>
         <tr>
@@ -16,6 +16,9 @@
             <th>Created</th>
             <th>Updated</th>
             <th>Status</th>
+            <th>Update</th>
+            <th>Remove</th>
+
         </tr>
     </thead>
     @if($tasks)
@@ -30,7 +33,10 @@
                     <td>{{$task->end_date}}</td>
                     <td>{{$task->created_at?->diffForHumans()}}</td>
                     <td>{{$task->updated_at?->diffForHumans()}}</td>
-                    <td><a href="{{url("status/edit/$task->id")}}">{{$task->status}}</a></td>
+                    <td>{{$task->status}}</td>
+                    <td><a href="{{url("/task/edit/$task->id")}}" style="color:#efef27;">Edit</a></td>
+                    <td><a href="{{url("/task/delete/$task->id")}}" style="color:red;">Delete</a></td>
+
 
                 </tr>
             @endforeach

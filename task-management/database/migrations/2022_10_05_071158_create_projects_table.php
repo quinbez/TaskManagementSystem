@@ -23,6 +23,7 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('deadline');
             $table->string('status');
+            $table->boolean('seen')->default(0);
             $table->timestamps();
         });
     }

@@ -108,15 +108,7 @@
                         <input type="hidden" id="totalTasks" value="{{$total_task}}">
                     </div>
                     <div class="p-2 px-2 font-weight-bold text-black">
-                        <?php
-                            $connection = mysqli_connect('localhost', 'root', '','tms');
-
-                            $query = "SELECT id FROM tasks WHERE  status = 'on_progress' ";
-                            $query_run = mysqli_query($connection, $query);
-
-                            $row = mysqli_num_rows($query_run);
-                            echo "<h6>".$row." added"."</h6>"
-                        ?>
+                       <h6>{{$on_progress}} tasks</h6>
                     </div>
                 </div>
             </div>
@@ -129,15 +121,7 @@
                         <input type="hidden" id="totalTasks" value="{{$total_task}}">
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="pending">
-                        <?php
-                            $connection = mysqli_connect('localhost', 'root', '','tms');
-
-                            $query = "SELECT id FROM tasks WHERE  status = 'Pending' ";
-                            $query_run = mysqli_query($connection, $query);
-
-                            $row = mysqli_num_rows($query_run);
-                            echo "<h6>".$row." added"."</h6>"
-                        ?>
+                        <h6>{{$pending_task}} tasks</h6>
                     </div>
                 </div>
             </div>

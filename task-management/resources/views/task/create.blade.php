@@ -76,5 +76,94 @@
     </div>
 </div>
 @endif
- 
+ {{-- <script>
+    $(function(){
+        $('#createTaskForm').bootstrapValidator({
+            message: 'This value is not valid',
+            fields: {
+                name: {
+                    message: 'Name is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'Name is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            min: 2,
+                            max: 25,
+                            message: 'Name must be more than 2 and less than 25 characters long'
+                        },
+                        regexp: {
+                            regexp: /^[a-zA-Z\. ]+$/,
+                            message: 'Name can only consist of alphabets'
+                        }
+                    }
+                }
+                phone: {
+                    message: 'Phone number is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'Phone number is required and can\'t be empty'
+                        },
+                        stringLength: {
+                            min: 10,
+                            max: 13,
+                            message: 'Phone number be more than 10 and less than 13 characters long'
+                        },
+                        regexp: {
+                            regexp: /^(+][2][5][1[0-9]{8}$)|[+][2][5][1][9][0-9]{8}$/,
+                            message: 'Phone needs to be in +251.... format'
+                        }
+                    }
+                },
+                email: {
+                    message: 'Email is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'Email is required and can\'t be empty'
+                        },
+                        emailAddress: {
+                            message: 'Please insert correct email format'
+                        }
+                    }
+                },
+                // school: {
+                //     message: 'Institution is not valid',
+                //     validators: {
+                //         notEmpty: {
+                //             message: 'Institution is required and can\'t be empty'
+                //         }
+                //     }
+                // },
+                department: {
+                    message: 'Department is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'Department is required and can\'t be empty'
+                        }
+                    }
+                },
+                chosenBank: {
+                    message: 'Bank is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'Bank is required and can\'t be empty'
+                        }
+                    }
+                },
+                exam: {
+                    message: 'Exam is not valid',
+                    validators: {
+                        notEmpty: {
+                            message: 'Exam is required and can\'t be empty'
+                        }
+                    }
+                }
+
+
+
+            }
+        });
+    });
+
+ </script> --}}
 @endsection
