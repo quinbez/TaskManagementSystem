@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Task extends Model
 {
@@ -17,10 +18,22 @@ class Task extends Model
         'end_date',
         'status'
     ];
+
+    protected static function boot(){
+        parent::boot();
+        static::addGlobalScope('order', function(Builder $builder){
+            $builder->orderBy('created_at', 'desc');
+        });
+    }
+
     public function member(){
         return $this->belongsTo('App\Models\User', 'user_id','id');
     }
     public function project(){
         return $this->belongsTo('App\Models\Project', 'project_id','id');
+    }
+
+    public function scopeSeen($query, $value){
+        return $query->where('seen', $value);
     }
 }

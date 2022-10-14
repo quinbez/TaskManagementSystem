@@ -1,3 +1,6 @@
+<?php
+    $count =App\Models\Task::where('user_id',Auth::user()->id)->seen(0)->count();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,9 +36,24 @@
                                                                             <span class="fa fa-search" id="searchhover"></span>
                                                                         </button>
                                                                         </form>
-
-                                            <a href="#" class="px-2 "><span class="fas fa-bell bellcolor" style="color:  #9b34ae"></span></a>
                                         </span>
+                                        <a href="#" class="px-2 "></a>
+                                        <div class="dropdown bg-light">
+                                            @if($count > 0)
+                                            <button class="dropbtn"><span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;font-size:10px;">
+                                                {{$count}}
+                                                @endif
+                                            </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
+                                            <div class="dropdown-content">
+
+                                                <a href="@if($count < 1) # @else {{route('pending')}} @endif">{{$count}} Notifications</a>
+
+
+
+                                            </div>
+
+                                          </div>
+
                                 </div>
                     </ul>
                     <ul>

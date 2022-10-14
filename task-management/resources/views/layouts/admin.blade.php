@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task Management</title>
+    <link rel="shortcut icon" type="image/jpg" href="{{ asset('fav.jpg') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -35,6 +36,7 @@
                                         <span class="fa fa-search" id="searchhover"></span>
                                     </button>
                         </form>
+
                         <a href="#" class="px-2 "></a>
                         <div class="dropdown bg-light">
                             <button class="dropbtn"><span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;font-size:10px;">
@@ -43,15 +45,27 @@
                                 $tasks =App\Models\Task::where('user_id',Auth::user()->id)->get();
                                 echo $count;
                             ?>
-                            </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
+                            </span>
+
+                            <span class="fas fa-bell" style="color: #9b34ae"></span></button>
                             <div class="dropdown-content">
                                 @foreach ($tasks as $task)
-                                <a href="#">{{$task?->name}}</a>
+                                <a href="#">{{$task?->name}} <h5>12 Notifications</h5>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="#" class="dropdown-item">
+                                        <i class="fas fa-diagram-project mr-2"></i> 4 new Projects
+                                        <span class="float-right text-muted text-sm">3 mins</span>
+                                    </a>
+
+        <div class="dropdown-divider"></div>
+        <a href="#" class="dropdown-item">
+            <i class="fas fa-tasks mr-2"></i> 8 new Tasks
+            <span class="float-right text-muted text-sm">6 hours</span>
+        </a></a>
                                 @endforeach
 
                             </div>
                           </div>
-
                         <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
                         </span>
                 </div>
