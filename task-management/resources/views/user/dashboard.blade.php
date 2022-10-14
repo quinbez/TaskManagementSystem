@@ -23,6 +23,7 @@
     </div>
     @endif
 
+
         <div class="container row gy-5 colstyle colpadding">
             <div class="col-3 containerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-user icons px-3 py-3" id="icon1"></span></div>

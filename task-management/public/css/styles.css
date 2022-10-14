@@ -321,7 +321,7 @@ ul a {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 170px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
@@ -339,6 +339,14 @@ ul a {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.logbord:hover {
+    background-color: #ddd;
+}
+
+.badge {
+    background-color: red;
 }
 
 @media ((max-width: 1399.98px))and (min-width: 1199.98px) {

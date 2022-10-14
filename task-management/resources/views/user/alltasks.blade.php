@@ -17,7 +17,6 @@
             <th>Updated</th>
             <th>Status</th>
 
-
         </tr>
     </thead>
     @if($tasks)
