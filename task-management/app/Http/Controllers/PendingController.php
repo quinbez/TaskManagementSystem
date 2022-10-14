@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\DB;
 class PendingController extends Controller
 {
     public function index(){
-        $tasks = Task::all();
         DB::table('tasks')->update(['seen' => 1]);
         $tasks = Task::where('user_id', Auth::user()->id)->where('status', 'pending')->get();
         return view('user.pending', compact('tasks'));

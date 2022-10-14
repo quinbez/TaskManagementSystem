@@ -34,15 +34,10 @@
                     <td>{{$task->created_at?->diffForHumans()}}</td>
                     <td>{{$task->updated_at?->diffForHumans()}}</td>
                     <td>{{$task->status}}</td>
-<<<<<<< HEAD
-                    <td><a href="{{url("/task/edit/$task->id")}}">Edit</a></td>
-                    <td><a href="{{url("/task/delete/$task->id")}}">Delete</a></td>
-=======
                     <td><a href="{{url("/task/edit/$task->id")}}" style="color:#efef27;">Edit</a></td>
                     <td><a href="{{url("/task/delete/$task->id")}}" style="color:red;">Delete</a></td>
 
 
->>>>>>> 26526757f61433064e27e813f32b80c69169feed
                 </tr>
             @endforeach
         @endif

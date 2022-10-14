@@ -67,7 +67,7 @@
 
                                     {{-- <x-jet-dropdown-link href="{{ route('logout') }}" --}}
                                              {{-- @click.prevent="$root.submit();"> --}}
-                                      <button type="submit">{{ __('Log Out') }}</button>
+                                      <button class="logbord" type="submit">{{ __('Log Out') }}</button>
                                     {{-- </x-jet-dropdown-link> --}}
                                 </form></li>
                             </ul>

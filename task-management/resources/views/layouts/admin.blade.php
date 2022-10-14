@@ -11,11 +11,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-     <!-- Theme style -->
-     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-     <link rel="stylesheet" href="dist/css/adminlte.min.css">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    @yield('styles')
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@yield('styles')
 
 </head>
 
@@ -154,14 +152,19 @@
             </ul>
             </ul>
 
-        </div>
-        <div class="d-flex flex-grow-1 flex-column p-3">
-            @yield('content')
-        </div>
     </div>
-    <script src="{{ asset('jquery/jquery.js') }}"></script>
-    <script src="{{ asset('jquery/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
+    <div class="d-flex flex-grow-1 flex-column p-3">
+
+        @yield('content')
+
+    </div>
+    </div>
+
+
+    <script src="{{asset('jquery/jquery.js')}}"></script>
+    <script src="{{asset('jquery/jquery-ui.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{asset('js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
         <!-- AdminLTE App -->

@@ -11,7 +11,7 @@ class TaskSeeder extends Seeder
     /**
      * Run the database seeds.
      *
-     * 
+     *
      * @return void
      */
     public function run()
@@ -28,7 +28,7 @@ class TaskSeeder extends Seeder
             $task['end_date'] = fake()->date();
             $task['created_at'] = now();
             $task['updated_at'] = now();
-
+            $task['status'] = 'Pending';
             array_push($tasks, $task);
         }
 
