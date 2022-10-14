@@ -33,9 +33,9 @@
         {!!Form::password('password', ['class'=>'form-control'])!!}
     </div> --}}
     <label for="pass1">Password</label>
-    <input type="password" name= "" id="pass1" class="form-control" placeholder="password" onkeyup="return validate()">
+    <input type="password" name= "password" id="pass1" class="form-control" placeholder="password" onkeyup="return validate()">
     <label for="pass2">Confirm</label>
-    <input type="password" name ="" id="pass2" class="form-control" placeholder="confirm" oninput =" return confirm()">
+    <input type="password" name ="password" id="pass2" class="form-control" placeholder="confirm" oninput =" return confirm()">
     <div class="errors">
         <ul style="font-size: 15px" >
             <li id="upper">atleast one uppercase</li>
@@ -102,7 +102,7 @@
 
 <div class="row" style="justify-content: left">
     <div class="form-group col-sm-3 p-4">
-        {!!Form::submit('+ Add', ['class'=>'btn btn-primary'])!!}
+        {!!Form::submit('+ Add', ['class'=>'btn addcolor'])!!}
         {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
     </div>
 </div>

@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('title');
             $table->integer('category_id');
             $table->string('description');
             $table->integer('team_member');
             $table->date('start_date');
             $table->date('deadline');
-            $table->enum('status',['pending','on_progress','completed'])->default('pending');
+            $table->string('status');
             $table->timestamps();
         });
     }

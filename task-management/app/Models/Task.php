@@ -15,7 +15,8 @@ class Task extends Model
         'name',
         'description',
         'start_date',
-        'end_date'
+        'end_date',
+        'status'
     ];
 
     protected static function boot(){

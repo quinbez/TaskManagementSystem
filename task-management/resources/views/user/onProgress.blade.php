@@ -33,6 +33,7 @@
                     <td>{{$task->end_date}}</td>
                     <td>{{$task->created_at->diffForHumans()}}</td>
                     <td>{{$task->updated_at->diffForHumans()}}</td>
+                    <td><a href="{{url("onprogress/edit/$task->id")}}">{{$task->status}}</a></td>
 
 
                 </tr>

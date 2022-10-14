@@ -27,8 +27,8 @@
                     <td>{{$member->phone_number}}</td>
                     <td>{{$member->created_at?->diffForHumans()}}</td>
                     <td>{{$member->updated_at?->diffForHumans()}}</td>
-                    <td><a href="{{url("/member/edit/$member->id") }}">Edit</a></td>
-                    <td><a href="{{url("/member/delete/$member->id")}}">Delete</a></td>
+                    <td><a href="{{url("/member/edit/$member->id") }}" style="color:#efef27;">Edit</a></td>
+                    <td><a href="{{url("/member/delete/$member->id")}}" style="color:red;">Delete</a></td>
                 </tr>
             @endforeach
         @endif

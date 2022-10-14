@@ -10,6 +10,9 @@
             <th>Type</th>
             <th>Created at</th>
             <th>Updated at</th>
+            <th>Update</th>
+            <th>Remove</th>
+
         </tr>
     </thead>
     @if($categories)
@@ -19,8 +22,8 @@
                     <td>{{$category->type}}</td>
                     <td>{{$category->created_at->diffForHumans()}}</td>
                     <td>{{$category->updated_at->diffForHumans()}}</td>
-                    <td><a href="{{url("/category/edit/$category->id")}}">Edit</a></td>
-                    <td><a href="{{url("/category/delete/$category->id")}}">Delete</a></td>
+                    <td><a href="{{url("/category/edit/$category->id")}}" style= "color:#efef27;">Edit</a></td>
+                    <td><a href="{{url("/category/delete/$category->id")}}" style="color:red;">Delete</a></td>
                 </tr>
             @endforeach
         @endif

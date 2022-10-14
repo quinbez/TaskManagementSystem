@@ -16,7 +16,8 @@
             <th>Created</th>
             <th>Updated</th>
             <th>Status</th>
-
+            <th>Update</th>
+            <th>Remove</th>
 
         </tr>
     </thead>
@@ -26,15 +27,22 @@
                     <td>{{$task->id}}</td>
                     <td>{{$task->name}}</td>
                     <td>{{$task->project?->title}}</td>
-                    <td>{{$task->user?->name}}</td>
+                    <td>{{$task->member?->name}}</td>
                     <td>{{$task->description}}</td>
                     <td>{{$task->start_date}}</td>
                     <td>{{$task->end_date}}</td>
                     <td>{{$task->created_at?->diffForHumans()}}</td>
                     <td>{{$task->updated_at?->diffForHumans()}}</td>
                     <td>{{$task->status}}</td>
+<<<<<<< HEAD
                     <td><a href="{{url("/task/edit/$task->id")}}">Edit</a></td>
                     <td><a href="{{url("/task/delete/$task->id")}}">Delete</a></td>
+=======
+                    <td><a href="{{url("/task/edit/$task->id")}}" style="color:#efef27;">Edit</a></td>
+                    <td><a href="{{url("/task/delete/$task->id")}}" style="color:red;">Delete</a></td>
+
+
+>>>>>>> 26526757f61433064e27e813f32b80c69169feed
                 </tr>
             @endforeach
         @endif

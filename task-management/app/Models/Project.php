@@ -11,7 +11,7 @@ class Project extends Model
     protected $fillable =[
         'title',
         'category_id',
-        'user_id',
+        'team_member',
         'description',
         'team_member',
         'start_date',

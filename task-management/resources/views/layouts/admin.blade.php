@@ -123,8 +123,8 @@
                         </div>
                         <div id="collapse2" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{ route('index') }}">All members</a></li>
-                                <li class="list-group-item"><a href="{{ route('create') }}">Create member</a></li>
+                                <li class="list-group-item"><a href="{{route('index')}}">All members</a></li>
+                                <li class="list-group-item"><a href="{{route('create')}}">Add member</a></li>
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">
@@ -133,8 +133,8 @@
                         </div>
                         <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{ route('indextask') }}">All tasks</a></li>
-                                <li class="list-group-item"><a href="{{ route('tasks') }}">Create task</a></li>
+                                <li class="list-group-item"><a href="{{route('indextask')}}">All tasks</a></li>
+                                <li class="list-group-item"><a href="{{route('tasks')}}">Assign task</a></li>
                                 {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
@@ -144,10 +144,8 @@
                         </div>
                         <div id="collapse4" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{ route('indexcategory') }}">All categories</a>
-                                </li>
-                                <li class="list-group-item"><a href="{{ route('categories') }}">Create category</a>
-                                </li>
+                                <li class="list-group-item"><a href="{{route('indexcategory')}}">All categories</a></li>
+                                <li class="list-group-item"><a href="{{route('categories')}}">Add category</a></li>
                                 {{-- <li class="list-group-item"><a href="#">Edit category</a></li> --}}
                             </ul>
                         </div>

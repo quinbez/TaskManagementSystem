@@ -5,6 +5,7 @@ use App\Models\User;
 use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -14,7 +15,14 @@ class UsersController extends Controller
     }
     public function index()
     {
-        return view('user.dashboard');
+        $data["total_tasks"] = Task::where('user_id', Auth::user()->id)->count();
+        $data['pending_task'] = Task::where('user_id', Auth::user()->id)->where('status', 'pending')->count();
+        $data["team_member"] = User::where('role', 'member')->count();
+        $data["total_project"] = Project::where('user_id', Auth::user()->id)->count();
+        $data['on_progress'] = Task::where('user_id', Auth::user()->id)->where('status', 'on_progress')->count();
+        $data['completed'] = Task::where('user_id', Auth::user()->id)->where('status', 'completed')->count();
+
+        return view('user.dashboard', $data);
     }
 
     public function search(Request $request)

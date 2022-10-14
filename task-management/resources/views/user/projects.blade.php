@@ -9,7 +9,6 @@
             <th>Id</th>
             <th>Title</th>
             <th>Category</th>
-            <th>User</th>
             <th>Description</th>
             <th>Team-Members<th>
             <th>Start-Date</th>
@@ -25,10 +24,9 @@
                 <tr>
                     <td>{{$project->id}}</td>
                     <td>{{$project->title}}</td>
-                    <td>{{$project->category_id }}</td>
-                    <td>{{$project->user_id}}</td>
+                    <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    <td><a href="#">{{$project->team_member}}</a></td>
+                    <td>{{$project->user?->name}}</td>
                     <td></td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>

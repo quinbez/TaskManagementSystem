@@ -100,9 +100,8 @@
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="{{route('alltask')}}">All tasks</a></li>
                                 <li class="list-group-item"><a href="{{route('pending')}}">Pending tasks</a></li>
-                                <li class="list-group-item"><a href="{{route('onprogress')}}">On progress tasks</a></li>
+                                <li class="list-group-item"><a href="{{route('onprogress')}}">Tasks on progress </a></li>
                                 <li class="list-group-item"><a href="{{route('completed')}}">Completed tasks</a></li>
-                                <li class="list-group-item"><a href="#">Comments</a></li>
                             </ul>
                         </div>
 
