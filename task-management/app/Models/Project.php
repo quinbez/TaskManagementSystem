@@ -11,16 +11,20 @@ class Project extends Model
     protected $fillable =[
         'title',
         'category_id',
+        'user_id',
         'description',
         'team_member',
         'start_date',
         'deadline',
-        'status_id'
+        'status'
     ];
     public function tasks(){
         return $this->hasMany('App\Models\Task', 'project_id','id');
     }
         public function category(){
         return $this->belongsTo('App\Models\Category','category_id','id');
+    }
+    public function user(){
+        return $this->belongsTo('App\Models\User');
     }
 }

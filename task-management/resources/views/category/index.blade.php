@@ -19,7 +19,8 @@
                     <td>{{$category->type}}</td>
                     <td>{{$category->created_at->diffForHumans()}}</td>
                     <td>{{$category->updated_at->diffForHumans()}}</td>
-
+                    <td><a href="{{url("/category/edit/$category->id")}}">Edit</a></td>
+                    <td><a href="{{url("/category/delete/$category->id")}}">Delete</a></td>
                 </tr>
             @endforeach
         @endif

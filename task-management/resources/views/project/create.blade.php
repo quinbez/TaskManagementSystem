@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h3>Create Project</h3>
+<h3>Add Project</h3>
 <form action="{{ route('storeproj') }}" method="post">
         {{ csrf_field() }}
     {{-- {!!Form::open(['method'=>'post'])!!} --}}
@@ -12,18 +12,28 @@
         {!!Form::text('title',null,['class'=>'form-control'])!!}
     </div>
     <div class="form-group col-sm-6">
-        {!!Form::label('category_id','Category: ')!!}
-        {!!Form::select('category_id', [''=>'Choose Options', $category ],null,['class'=>'form-control'])!!}
+        <label class="category_id">Category </label>
+        <select name="category_id" id="category" class="form-control">
+            <option value="">Choose Option</option>
+            @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->type}}</option>
+            @endforeach
+        </select>
     </div>
  </div>
  <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}
-        {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],'null', ['class'=>'form-control'])!!}
+        {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
         </div>
-    <div class="form-group col-sm-6">
-        {!!Form::label('team_member','Team member: ')!!}
-        {!!Form::number('team_member',null,['class'=>'form-control'])!!}
+     <div class="form-group col-sm-6">
+        <label class="team_member">Team members</label>
+        <select name="team_member" id="team_member" class="form-control">
+            <option value="">Choose Option</option>
+            @foreach ($teams as $team)
+                <option value="{{$team->id}}">{{$team->name}}</option>
+            @endforeach
+        </select>
     </div>
  </div>
 <div class="row">

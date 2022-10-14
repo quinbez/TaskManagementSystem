@@ -80,11 +80,11 @@
                         </div>
                         <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="#">Pending tasks</a></li>
-                                <li class="list-group-item"><a href="#">On progress tasks</a></li>
-                                <li class="list-group-item"><a href="#">Completed tasks</a></li>
+                                <li class="list-group-item"><a href="{{route('alltask')}}">All tasks</a></li>
+                                <li class="list-group-item"><a href="{{route('pending')}}">Pending tasks</a></li>
+                                <li class="list-group-item"><a href="{{route('onprogress')}}">On progress tasks</a></li>
+                                <li class="list-group-item"><a href="{{route('completed')}}">Completed tasks</a></li>
                                 <li class="list-group-item"><a href="#">Comments</a></li>
-                                {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
 

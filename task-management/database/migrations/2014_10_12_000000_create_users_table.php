@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->integer('project_id');
             $table->enum('role', ['admin','member'])->default('member');
             $table->integer('phone_number')->unique();
             $table->rememberToken();
@@ -31,6 +32,7 @@ return new class extends Migration
                  'name'=>'Member',
                  'email'=>'member@gmail.com',
                  'password'=>bcrypt('12345678'),
+                 'project_id'=>'1',
                  'role'=>'member',
                  'phone_number'=>'0911223345',
            ],
@@ -38,6 +40,7 @@ return new class extends Migration
             'name'=>'Admin',
             'email'=>'admin@gmail.com',
             'password'=>bcrypt('12345678'),
+            'project_id'=>'1',
             'role'=>'admin',
             'phone_number'=>'0911223344',
            ]));

@@ -10,8 +10,8 @@
             <th>Title</th>
             <th>Category</th>
             <th>Description</th>
-            <th>Members<th>
-            <th>Start</th>
+            <th>Team<th>
+            <th>Starts</th>
             <th>Deadline</th>
             <th>Status</th>
             <th>Created</th>
@@ -26,14 +26,16 @@
                     <td>{{$project->title}}</td>
                     <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    <td><a href="#">{{$project->team_member}}</a></td>
+                    <td>{{$project->team_member}}</td>
                     <td></td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>
-                    <td>{{$project->status_id == 1 ? "On progress" : "Completed"}}</td>
+                    <td>{{$project->status == 1 ? "On progress" : "Completed"}}</td>
                     <td>{{$project->created_at->diffForHumans()}}</td>
                     <td>{{$project->updated_at->diffForHumans()}}</td>
-                    {{-- <td><a href="{{route('update'), $project->id}}">Edit</a></td> --}}
+                    <td><a href="{{url("/project/edit/$project->id")}}">Edit</a></td>
+                    <td><a href="{{url("/project/delete/$project->id")}}">Delete</a></td>
+
                 </tr>
             @endforeach
         @endif

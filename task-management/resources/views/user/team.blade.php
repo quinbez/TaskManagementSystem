@@ -11,8 +11,10 @@
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
+            <th>Project</th>
             <th>Created</th>
             <th>Updated</th>
+
 
         </tr>
     </thead>
@@ -25,6 +27,7 @@
                     <td>{{$member->name}}</td>
                     <td>{{$member->email}}</td>
                     <td>{{$member->phone_number}}</td>
+                    <td>{{$member->project?->title}}</td>
                     <td>{{$member->created_at?->diffForHumans()}}</td>
                     <td>{{$member->updated_at?->diffForHumans()}}</td>
                     {{-- <td><a href="{{route('member.edit'), $member->id}}">Edit</a></td> --}}

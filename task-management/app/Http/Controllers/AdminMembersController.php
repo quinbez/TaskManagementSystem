@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Member;
-use App\Http\Requests\UsersRequest;
+
+use App\Http\Requests\MembersRequest;
+use App\Http\Requests\EditUserRequest;
 use App\Models\User;
 use App\Models\Task;
 use App\Models\Project;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminMembersController extends Controller
@@ -20,7 +22,7 @@ class AdminMembersController extends Controller
      */
     public function index()
     {
-        $members = User::all();
+        $members = User::where('email', "!=", Auth::user()->email)->get();
         return view('member.index', compact('members'));
     }
 
@@ -40,7 +42,7 @@ class AdminMembersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UsersRequest $request)
+    public function store(MembersRequest $request)
     {
         // $request['password']='123456789';
         $input = $request->all();
@@ -51,7 +53,7 @@ class AdminMembersController extends Controller
             'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
-        return redirect('member/index');
+        return redirect('member/index', compact('input'));
     }
 
     /**
@@ -84,13 +86,20 @@ class AdminMembersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UsersRequest $request, $id,)
+    public function update(EditUserRequest $request)
     {
-        //
+        $id = $request->memberId;
         $member = User::findOrFail($id);
-        $input = $request->all();
-        $member->update($input);
-        return redirect('member/index', compact('input'));
+        $memberUpdate =[
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'role' => $request->role,
+        ];
+        // $input = $request->all();
+        // dd($input);
+        $member->update($memberUpdate);
+        return redirect('member/index');
     }
 
     /**
@@ -101,7 +110,9 @@ class AdminMembersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+
+        return redirect('/member/index');
     }
 
     public function search(Request $request)

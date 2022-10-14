@@ -28,6 +28,7 @@ class User extends Authenticatable
         'email',
         'password',
         'phone_number',
+        'project_id',
         'role'
     ];
 
@@ -63,5 +64,8 @@ class User extends Authenticatable
 
     public function tasks(){
         return $this->hasMany('App\Models\Task', 'user_id','id');
+    }
+    public function projects(){
+        return $this->hasMany('App\Models\Project');
     }
 }

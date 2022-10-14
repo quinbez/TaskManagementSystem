@@ -1,8 +1,8 @@
-@extends('layouts.admin')
+@extends('user.index')
 
 @section('content')
 
-<h3>All Tasks</h3>
+<h3>Completed Tasks</h3>
 <table class='table'>
     <thead>
         <tr>
@@ -15,7 +15,6 @@
             <th>End</th>
             <th>Created</th>
             <th>Updated</th>
-            <th>Status</th>
 
 
         </tr>
@@ -25,16 +24,18 @@
                 <tr>
                     <td>{{$task->id}}</td>
                     <td>{{$task->name}}</td>
+                    {{-- <td></td> --}}
                     <td>{{$task->project?->title}}</td>
-                    <td>{{$task->user?->name}}</td>
+                    <td>{{$task->member?->name}}</td>
+                    {{-- <td></td> --}}
                     <td>{{$task->description}}</td>
                     <td>{{$task->start_date}}</td>
                     <td>{{$task->end_date}}</td>
-                    <td>{{$task->created_at?->diffForHumans()}}</td>
-                    <td>{{$task->updated_at?->diffForHumans()}}</td>
-                    <td>{{$task->status}}</td>
-                    <td><a href="{{url("/task/edit/$task->id")}}">Edit</a></td>
-                    <td><a href="{{url("/task/delete/$task->id")}}">Delete</a></td>
+                    <td>{{$task->created_at->diffForHumans()}}</td>
+                    <td>{{$task->updated_at->diffForHumans()}}</td>
+
+
+
                 </tr>
             @endforeach
         @endif

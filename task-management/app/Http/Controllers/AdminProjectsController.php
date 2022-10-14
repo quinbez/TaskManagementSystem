@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EditProjectRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProjectsRequest;
 use App\Models\Project;
 use App\Models\Category;
+use App\Models\User;
+
 class AdminProjectsController extends Controller
 {
     /**
@@ -27,9 +30,9 @@ class AdminProjectsController extends Controller
      */
     public function create()
     {
-        $category = Category::pluck('type','id');
-
-        return view('project.create', compact('category'));
+        $categories = Category::select('type','id')->get();
+        $teams = User::select('name','id')->get();
+        return view('project.create', compact('categories','teams'));
     }
 
     /**
@@ -65,7 +68,10 @@ class AdminProjectsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $teams = User::select('name', 'id')->get();
+        $categories = Category::select('type', 'id')->get();
+        $projects = Project::findOrFail($id);
+        return view('project.edit',compact('projects', 'categories','teams'));
     }
 
     /**
@@ -75,9 +81,21 @@ class AdminProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditProjectRequest $request)
     {
-        //
+        $id = $request->projectId;
+        $projects = Project::findOrFail($id);
+        $projectUpdate =[
+            'title'=>$request->title,
+            'category_id'=>$request->category_id,
+            'description'=>$request->description,
+            'team_member'=>$request->team_member,
+            'start_date'=>$request->start_date,
+            'deadline'=>$request->deadline,
+            'status_id'=>$request->status_id
+        ];
+        $projects->update($projectUpdate);
+        return redirect('project/index');
     }
 
     /**
@@ -88,6 +106,8 @@ class AdminProjectsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Project::findOrFail($id)->delete();
+
+        return redirect('/project/index');
     }
 }

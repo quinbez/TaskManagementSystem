@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use Illuminate\Support\Facades\Auth;
+
 class UsersProjectsController extends Controller
 {
     /**
@@ -14,6 +16,7 @@ class UsersProjectsController extends Controller
     public function index()
     {
         $projects = Project::all();
+        ;
         return view('user.projects', compact('projects'));
     }
 

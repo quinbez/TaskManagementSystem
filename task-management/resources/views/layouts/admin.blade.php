@@ -10,10 +10,16 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<<<<<<< HEAD
      <!-- Theme style -->
      <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     @yield('styles')
+=======
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+@yield('styles')
+>>>>>>> 28dd1751fc2decb1f55093c4a62fc0c50cd14c09
 
 </head>
 
@@ -108,8 +114,13 @@
                         </div>
                         <div id="collapse2" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
+<<<<<<< HEAD
                                 <li class="list-group-item"><a href="{{ route('index') }}">All members</a></li>
                                 <li class="list-group-item"><a href="{{ route('create') }}">Create member</a></li>
+=======
+                                <li class="list-group-item"><a href="{{route('index')}}">All members</a></li>
+                                <li class="list-group-item"><a href="{{route('create')}}">Add member</a></li>
+>>>>>>> 28dd1751fc2decb1f55093c4a62fc0c50cd14c09
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">
@@ -118,8 +129,13 @@
                         </div>
                         <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
+<<<<<<< HEAD
                                 <li class="list-group-item"><a href="{{ route('indextask') }}">All tasks</a></li>
                                 <li class="list-group-item"><a href="{{ route('tasks') }}">Create task</a></li>
+=======
+                                <li class="list-group-item"><a href="{{route('indextask')}}">All tasks</a></li>
+                                <li class="list-group-item"><a href="{{route('tasks')}}">Assign task</a></li>
+>>>>>>> 28dd1751fc2decb1f55093c4a62fc0c50cd14c09
                                 {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
@@ -129,10 +145,15 @@
                         </div>
                         <div id="collapse4" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
+<<<<<<< HEAD
                                 <li class="list-group-item"><a href="{{ route('indexcategory') }}">All categories</a>
                                 </li>
                                 <li class="list-group-item"><a href="{{ route('categories') }}">Create category</a>
                                 </li>
+=======
+                                <li class="list-group-item"><a href="{{route('indexcategory')}}">All categories</a></li>
+                                <li class="list-group-item"><a href="{{route('categories')}}">Add category</a></li>
+>>>>>>> 28dd1751fc2decb1f55093c4a62fc0c50cd14c09
                                 {{-- <li class="list-group-item"><a href="#">Edit category</a></li> --}}
                             </ul>
                         </div>
@@ -146,9 +167,24 @@
             @yield('content')
         </div>
     </div>
+<<<<<<< HEAD
     <script src="{{ asset('jquery/jquery.js') }}"></script>
     <script src="{{ asset('jquery/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+=======
+    <div class="d-flex flex-grow-1 flex-column p-3">
+
+        @yield('content')
+
+    </div>
+    </div>
+
+
+    <script src="{{asset('jquery/jquery.js')}}"></script>
+    <script src="{{asset('jquery/jquery-ui.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="{{asset('js/script.js')}}"></script>
+>>>>>>> 28dd1751fc2decb1f55093c4a62fc0c50cd14c09
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
         <!-- AdminLTE App -->
