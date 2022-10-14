@@ -11,9 +11,12 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-@yield('styles')
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet"
+        href="{{ url('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> --}}
+    <link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}">
+    @yield('styles')
 
 </head>
 
@@ -39,33 +42,35 @@
 
                         <a href="#" class="px-2 "></a>
                         <div class="dropdown bg-light">
-                            <button class="dropbtn"><span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;font-size:10px;">
-                            <?php
-                                $count =App\Models\Task::where('user_id',Auth::user()->id)->count();
-                                $tasks =App\Models\Task::where('user_id',Auth::user()->id)->get();
-                                echo $count;
-                            ?>
-                            </span>
+                            <button class="dropbtn"><span class="badge badge-pill badge-primary"
+                                    style="float:right;margin-bottom:-10px;font-size:10px;">
+                                    <?php
+                                    $count = App\Models\Task::where('user_id', Auth::user()->id)->count();
+                                    $tasks = App\Models\Task::where('user_id', Auth::user()->id)->get();
+                                    echo $count;
+                                    ?>
+                                </span>
 
-                            <span class="fas fa-bell" style="color: #9b34ae"></span></button>
+                                <span class="fas fa-bell" style="color: #9b34ae"></span></button>
                             <div class="dropdown-content">
                                 @foreach ($tasks as $task)
-                                <a href="#">{{$task?->name}} <h5>12 Notifications</h5>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="#" class="dropdown-item">
-                                        <i class="fas fa-diagram-project mr-2"></i> 4 new Projects
-                                        <span class="float-right text-muted text-sm">3 mins</span>
-                                    </a>
+                                    <a href="#">{{ $task?->name }} <h5>12 Notifications</h5>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="fas fa-diagram-project mr-2"></i> 4 new Projects
+                                            <span class="float-right text-muted text-sm">3 mins</span>
+                                        </a>
 
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
-            <i class="fas fa-tasks mr-2"></i> 8 new Tasks
-            <span class="float-right text-muted text-sm">6 hours</span>
-        </a></a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="#" class="dropdown-item">
+                                            <i class="fas fa-tasks mr-2"></i> 8 new Tasks
+                                            <span class="float-right text-muted text-sm">6 hours</span>
+                                        </a>
+                                    </a>
                                 @endforeach
 
                             </div>
-                          </div>
+                        </div>
                         <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
                         </span>
                 </div>
@@ -92,7 +97,7 @@
                         </div>
                     </div>
                 </ul>
-    </nav>
+        </nav>
     </div>
     <div class="d-flex flex-nowrap">
         <div class="d-flex flex-column p-3 bg-light border border-grey border-top-0 sidelinecontainerwidth">
@@ -112,7 +117,8 @@
                         <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="{{ route('indexproj') }}">All projects</a></li>
-                                <li class="list-group-item "><a href="{{ route('createproj') }}">Create project</a></li>
+                                <li class="list-group-item "><a href="{{ route('createproj') }}">Create project</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="panel-heading mt-2 ">
@@ -121,8 +127,8 @@
                         </div>
                         <div id="collapse2" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{route('index')}}">All members</a></li>
-                                <li class="list-group-item"><a href="{{route('create')}}">Add member</a></li>
+                                <li class="list-group-item"><a href="{{ route('index') }}">All members</a></li>
+                                <li class="list-group-item"><a href="{{ route('create') }}">Add member</a></li>
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">
@@ -131,8 +137,8 @@
                         </div>
                         <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{route('indextask')}}">All tasks</a></li>
-                                <li class="list-group-item"><a href="{{route('tasks')}}">Assign task</a></li>
+                                <li class="list-group-item"><a href="{{ route('indextask') }}">All tasks</a></li>
+                                <li class="list-group-item"><a href="{{ route('tasks') }}">Assign task</a></li>
                                 {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
@@ -142,8 +148,9 @@
                         </div>
                         <div id="collapse4" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
                             <ul class="list-group">
-                                <li class="list-group-item"><a href="{{route('indexcategory')}}">All categories</a></li>
-                                <li class="list-group-item"><a href="{{route('categories')}}">Add category</a></li>
+                                <li class="list-group-item"><a href="{{ route('indexcategory') }}">All categories</a>
+                                </li>
+                                <li class="list-group-item"><a href="{{ route('categories') }}">Add category</a></li>
                                 {{-- <li class="list-group-item"><a href="#">Edit category</a></li> --}}
                             </ul>
                         </div>
@@ -152,23 +159,45 @@
             </ul>
             </ul>
 
+        </div>
+        <div class="d-flex flex-grow-1 flex-column p-3">
+
+            @yield('content')
+
+        </div>
     </div>
-    <div class="d-flex flex-grow-1 flex-column p-3">
-
-        @yield('content')
-
-    </div>
-    </div>
 
 
-    <script src="{{asset('jquery/jquery.js')}}"></script>
-    <script src="{{asset('jquery/jquery-ui.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="{{asset('js/script.js')}}"></script>
+    <script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
+    {{-- <script src="{{ asset('js/script.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
-        <!-- AdminLTE App -->
-        <script src="dist/js/adminlte.js"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ url('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+    <script src="{{ url('js/bootstrapValidator.min.js') }}"></script>
+    <script>
+        $('#fromDatePicker').datepicker({
+            autoclose: true,
+            // endDate: 'today',
+        }).on('changeDate', function(selected) {
+            var startDate = new Date(selected.date.valueOf());
+            $('#toDatePicker').datepicker('setStartDate', startDate);
+        }).on('clearDate', function(selected) {
+            $('#toDatePicker').datepicker('setStartDate', null);
+        });
+        $('#toDatePicker').datepicker({
+            autoclose: true,
+            // endDate: 'today',
+        }).on('changeDate', function(selected) {
+            var endDate = new Date(selected.date.valueOf());
+            $('#fromDatePicker').datepicker('setEndDate', endDate);
+        }).on('clearDate', function(selected) {
+            $('#fromDatePicker').datepicker('setEndDate', null);
+        });
+    </script>
     @yield('scripts')
 
 </body>

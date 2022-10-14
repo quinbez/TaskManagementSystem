@@ -91,17 +91,11 @@
                 <div class="container progressbar1">
                     <div class="circular-progress1">
                         <span class="progress-value1"></span>
+                        <input type="hidden" id="comletedTasks" value="{{$completed}}">
+                        <input type="hidden" id="totalTasks" value="{{$total_task}}">
                     </div>
                     <div class="p-2 px-2 font-weight-bold text-black">
-                        <?php
-                            $connection = mysqli_connect('localhost', 'root', '','tms');
-
-                            $query = "SELECT id FROM tasks WHERE  status = 'Completed' ";
-                            $query_run = mysqli_query($connection, $query);
-
-                            $row = mysqli_num_rows($query_run);
-                            echo "<h6>".$row." added"."</h6>"
-                        ?>
+                       <h6>{{$completed}} tasks</h6>
                     </div>
                 </div>
             </div>
@@ -110,6 +104,8 @@
                 <div class="container progressbar2">
                     <div class="circular-progress2">
                         <span class="progress-value2"></span>
+                        <input type="hidden" id="onProgress" value="{{$on_progress}}">
+                        <input type="hidden" id="totalTasks" value="{{$total_task}}">
                     </div>
                     <div class="p-2 px-2 font-weight-bold text-black">
                         <?php
@@ -129,6 +125,8 @@
                 <div class="container progressbar3">
                     <div class="circular-progress3">
                         <span class="progress-value3"></span>
+                        <input type="hidden" id="pendingTasks" value="{{$pending_task}}">
+                        <input type="hidden" id="totalTasks" value="{{$total_task}}">
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="pending">
                         <?php
@@ -147,5 +145,5 @@
         </div>
     </div>
 </div>
-
+<script src="{{ asset('js/script.js') }}"></script>
 @endsection

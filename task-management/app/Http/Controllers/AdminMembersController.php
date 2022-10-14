@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Task;
 use App\Models\Project;
 use App\Models\Category;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -44,16 +45,22 @@ class AdminMembersController extends Controller
      */
     public function store(MembersRequest $request)
     {
-        // $request['password']='123456789';
-        $input = $request->all();
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
-            'role' => $request->role,
-            'password' => Hash::make($request->password),
-        ]);
-        return redirect('member/index', compact('input'));
+        try{
+
+            // $request['password']='123456789';
+            $input = $request->all();
+            User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone_number' => $request->phone_number,
+                'role' => $request->role,
+                'password' => Hash::make($request->password),
+            ]);
+            return redirect('member/index');
+        }catch(Exception $ex){
+dd($ex);
+        }
+
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+<link rel="stylesheet" href="{{url('bower_components/select2/dist/css/select2.min.css')}}">
 <h3>Add Project</h3>
 <form action="{{ route('storeproj') }}" method="post">
         {{ csrf_field() }}
@@ -24,11 +24,12 @@
  <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}
-        {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
+        {!!Form::select('status',['pending'=>'Pending',],null, ['class'=>'form-control'])!!}
         </div>
      <div class="form-group col-sm-6">
         <label class="team_member">Team members</label>
-        <select name="team_member" id="team_member" class="form-control">
+        <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" style="width:100%;" data-placeholder="Select Team Members" required="true">
+        {{-- <select name="team_member" id="team_member" class="form-control select2"> --}}
             <option value="">Choose Option</option>
             @foreach ($teams as $team)
                 <option value="{{$team->id}}">{{$team->name}}</option>
@@ -39,11 +40,11 @@
 <div class="row">
     <div class="form-group col-sm-6">
     {!!Form::label('start_date','Start Date')!!}
-    {!!Form::date('start_date', null, ['class'=>'form-control'])!!}
+    {!!Form::text('start_date', null, ['id'=> 'fromDatePicker','autocomplete'=>'off','class'=>'form-control'])!!}
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('deadline','Deadline')!!}
-        {!!Form::date('deadline', null, ['class'=>'form-control'])!!}
+        {!!Form::text('deadline', null, ['id'=> 'toDatePicker','autocomplete'=>'off', 'class'=>'form-control'])!!}
     </div>
 </div>
 <div class="row">
@@ -71,5 +72,12 @@
     </div>
 </div>
 @endif
-
+<script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script>
+    $('.select2').select2({
+                width: 'element'
+            });
+</script>
 @endsection

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('category_id');
             $table->string('description');
-            $table->integer('team_member');
+            $table->string('team_member');
             $table->date('start_date');
             $table->date('deadline');
             $table->string('status');

@@ -3,7 +3,7 @@
 @section('content')
 
 <h3>Assign Task </h3>
-<form action="{{ route('storetask') }}" method="post">
+<form action="{{ route('storetask') }}" id="createTaskForm" method="post">
 {{ csrf_field() }}
 <div class="row">
     <div class="form-group col-sm-6">
@@ -25,17 +25,17 @@
 <div class="row">
     <div class="form-group col-sm-6" >
         {!!Form::label('start_date','Start Date: ')!!}
-        {!!Form::date('start_date',null,['class'=>'form-control'])!!}
+        {!!Form::text('start_date',null,['id'=> 'fromDatePicker','class'=>'form-control'])!!}
     </div>
     <div class="form-group col-sm-6" >
         {!!Form::label('end_date','End Date: ')!!}
-        {!!Form::date('end_date',null,['class'=>'form-control'])!!}
+        {!!Form::text('end_date',null,['id'=> 'toDatePicker','class'=>'form-control'])!!}
     </div>
 </div>
 <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}
-        {!!Form::select('status',[''=>'Choose Options','Pending'=>'pending','On Progress'=>'on_progress','Completed'=>'completed' ],null, ['class'=>'form-control'])!!}
+        {!!Form::select('status',['Pending'=>'pending'],null, ['class'=>'form-control'])!!}
     </div>
     <div class="form-group col-sm-6">
         <label class="user_id">Assigned to </label>
@@ -76,4 +76,5 @@
     </div>
 </div>
 @endif
+ 
 @endsection
