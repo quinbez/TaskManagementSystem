@@ -1,3 +1,7 @@
+<?php
+    $count =App\Models\Task::onProgress(0)->orWhere('completed', 0)->count();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,36 +41,20 @@
                                     </button>
                         </form>
 
-                        <a href="#" class="px-2 "></a>
                         <div class="dropdown bg-light">
+                            @if($count > 0)
                             <button class="dropbtn"><span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;font-size:10px;">
-                            <?php
-                                $count =App\Models\Task::where('user_id',Auth::user()->id)->count();
-                                $tasks =App\Models\Task::where('user_id',Auth::user()->id)->get();
-                                echo $count;
-                            ?>
-                            </span>
-
-                            <span class="fas fa-bell" style="color: #9b34ae"></span></button>
+                                {{$count}}
+                                @endif
+                            </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
                             <div class="dropdown-content">
-                                @foreach ($tasks as $task)
-                                <a href="#">{{$task?->name}} <h5>12 Notifications</h5>
-                                    <div class="dropdown-divider"></div>
-                                    <a href="#" class="dropdown-item">
-                                        <i class="fas fa-diagram-project mr-2"></i> 4 new Projects
-                                        <span class="float-right text-muted text-sm">3 mins</span>
-                                    </a>
 
-        <div class="dropdown-divider"></div>
-        <a href="#" class="dropdown-item">
-            <i class="fas fa-tasks mr-2"></i> 8 new Tasks
-            <span class="float-right text-muted text-sm">6 hours</span>
-        </a></a>
-                                @endforeach
+                                <a href="@if($count < 1) # @else {{route('notify')}} @endif">{{$count}} Notifications</a>
 
                             </div>
+
                           </div>
-                        <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
+          <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
                         </span>
                 </div>
                 </ul>
@@ -147,6 +135,11 @@
                                 {{-- <li class="list-group-item"><a href="#">Edit category</a></li> --}}
                             </ul>
                         </div>
+                        <div class="panel-heading mt-2">
+                            <a class="nav-link collapsed" href="{{route('notify')}}"  >
+
+                                <span class="fas fa-bell" ></span>Notifications</a>
+                        </div>
                     </div>
                 </div>
             </ul>
@@ -159,6 +152,7 @@
 
     </div>
     </div>
+
 
 
     <script src="{{asset('jquery/jquery.js')}}"></script>

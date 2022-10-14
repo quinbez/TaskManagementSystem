@@ -8,7 +8,8 @@ use App\Models\Project;
 use App\Models\User;
 use App\Http\Requests\TasksRequest;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class AdminTasksController extends Controller
 {
@@ -43,9 +44,24 @@ class AdminTasksController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->project_id);
-        Task::create($request->all());
-        return redirect('task/index');
+
+
+        // dd($request->all());
+        $project = Project::find($request->project_id);
+        $user = User::find($request->user_id);
+
+        $check = DB::table('project_user')->where('project_id', $project->id)->where('user_id', $user->id)->count();
+
+        if($check){
+            Session::flash('error', 'Duplicate');
+            return redirect('dashboard');
+
+        }else{
+            $user->projects()->save($project);
+            Task::create($request->all());
+            return redirect('task/index');
+        }
+        // dd($check);
 
     }
 

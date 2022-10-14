@@ -28,7 +28,7 @@
                     <td>{{$project->title}}</td>
                     <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    <td>{{$project->team_member}}</td>
+                    <td>{{$project->users()->count()}}</td>
                     <td></td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>

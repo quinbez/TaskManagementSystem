@@ -14,4 +14,9 @@ class Category extends Model
     public function projects(){
         return $this->hasMany('App\Models\Project','category_id','id');
     }
+
+    public function scopeSeen($query, $value){
+        return $query->where('seen', $value);
+    }
+
 }

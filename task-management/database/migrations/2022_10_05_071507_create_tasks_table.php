@@ -23,6 +23,8 @@ return new class extends Migration
             $table->date('end_date');
             $table->string('status');
             $table->boolean('seen')->default(0);
+            $table->boolean('on_progress')->default(0);
+            $table->boolean('completed')->default(0);
             $table->timestamps();
         });
     }

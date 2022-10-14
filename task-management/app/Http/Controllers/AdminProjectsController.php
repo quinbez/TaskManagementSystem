@@ -44,6 +44,8 @@ class AdminProjectsController extends Controller
     public function store(ProjectsRequest $request)
     {
         //
+
+        // dd($request->all());
          Project::create($request->all());
          return redirect('project/index');
 
