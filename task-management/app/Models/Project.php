@@ -13,7 +13,7 @@ class Project extends Model
         'category_id',
         'team_member',
         'description',
-        'user_id',
+        'team_member',
         'start_date',
         'deadline',
         'status'
