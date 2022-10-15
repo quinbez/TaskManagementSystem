@@ -30,7 +30,6 @@ class ProjectsRequest extends FormRequest
            'team_member'=>'required',
            'start_date'=>'required',
            'deadline'=>'required',
-           'status'=>'required'
         ];
     }
 }

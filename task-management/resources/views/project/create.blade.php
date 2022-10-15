@@ -13,7 +13,7 @@
         {{-- <input type="text" required placeholder="add title" pattern="^[a-zA-Z ]*$" /> --}}
 
         {!!Form::label('title','Title: ')!!}
-        {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
+        {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"20" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
     </div>
     <div class="form-group col-sm-6">
         <label class="category_id">Category </label>
@@ -21,21 +21,6 @@
             <option disabled selected hidden value="">Choose Option</option>
             @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->type}}</option>
-            @endforeach
-        </select>
-    </div>
- </div>
- <div class="row">
-    <div class="form-group col-sm-6">
-        {!!Form::label('status','Status')!!}
-        {!!Form::select('status',['pending'=>'Pending'],null, ['class'=>'form-control'])!!}
-        </div>
-     <div class="form-group col-sm-6">
-        <label class="team_member">Team members</label>
-        <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" required style="width:100%;" data-placeholder="select team members">
-            <option disabled selected hidden value="">Choose Option</option>
-            @foreach ($teams as $team)
-                <option value="{{$team->id}}">{{$team->name}}</option>
             @endforeach
         </select>
     </div>
@@ -51,9 +36,18 @@
     </div>
 </div>
 <div class="row">
-    <div class="form-group col-sm-5">
+    <div class="form-group col-sm-6">
         {!!Form::label('description','Description: ')!!}
         {!!Form::textarea('description',null,['class'=>'form-control', "rows"=>"3",'required','pattern'=>"^[a-zA-Z ]*$", "maxlength"=>"150"])!!}
+    </div>
+    <div class="form-group col-sm-6">
+        <label class="team_member">Team members</label>
+        <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" required="true" style="width:100%;" data-placeholder="select team members">
+            {{-- <option disabled selected hidden value="">Choose Option</option> --}}
+            @foreach ($teams as $team)
+                <option value="{{$team->id}}">{{$team->name}}</option>
+            @endforeach
+        </select>
     </div>
 </div>
 <div class="row" style="justify-content:right">

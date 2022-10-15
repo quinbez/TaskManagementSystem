@@ -52,7 +52,6 @@ class AdminProjectsController extends Controller
         $addedProject=[
             'title' => $request->title,
             'category_id' => $request->category_id,
-            'status' => $request->status,
             'team_member' => $teamMembers,
             'start_date' => $startDate,
             'deadline' => $deadline,
