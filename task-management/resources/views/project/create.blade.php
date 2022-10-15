@@ -2,8 +2,10 @@
 
 @section('content')
 <link rel="stylesheet" href="{{url('bower_components/select2/dist/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}">
+
 <h3>Add Project</h3>
-<form action="{{ route('storeproj') }}" method="post">
+<form action="{{ route('storeproj') }}" method="post" id="createProjectTable">
         {{ csrf_field() }}
     {{-- {!!Form::open(['method'=>'post'])!!} --}}
 <div class="row">
@@ -75,9 +77,38 @@
 <script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
     <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{ url('js/bootstrapValidator.min.js') }}"></script>
+
 <script>
     $('.select2').select2({
                 width: 'element'
             });
+</script>
+<script>
+    $(function(){
+        $('#createProjectTable').bootstrapValidator({
+            message: "This value is not valid",
+            fields:{
+                title:{
+                        message:"Title is not valid",
+                        validators:{
+                            notEmpty:{
+                                message:"Title is required and can't be empty"
+                            },
+                        stringLength:{
+                            min:2,
+                            max:25,
+                            message:"Title must be morethan two and lessthan 30 characters long"
+                        },
+                        regexp:{
+                            regexp:/^[a-zA-Z" "\.]+$/,
+                            message:"Title can only consist of alphabets"
+                        }
+                    }
+                },
+            
+            }
+        });
+    });
 </script>
 @endsection
