@@ -15,7 +15,7 @@ class UsersProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::where('team_member', Auth::user()->id)->get();
         return view('user.projects', compact('projects'));
     }
 
