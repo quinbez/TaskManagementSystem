@@ -25,11 +25,11 @@
 <div class="row">
     <div class="form-group col-sm-6" >
         {!!Form::label('start_date','Start Date: ')!!}
-        {!!Form::text('start_date',null,['id'=> 'fromDatePicker','class'=>'form-control'])!!}
+        {!!Form::text('start_date',null,['id'=> 'fromDatePicker','class'=>'form-control','autocomplete'=>'off'])!!}
     </div>
     <div class="form-group col-sm-6" >
         {!!Form::label('end_date','End Date: ')!!}
-        {!!Form::text('end_date',null,['id'=> 'toDatePicker','class'=>'form-control'])!!}
+        {!!Form::text('end_date',null,['id'=> 'toDatePicker','class'=>'form-control','autocomplete'=>'off'])!!}
     </div>
 </div>
 <div class="row">
@@ -76,94 +76,36 @@
     </div>
 </div>
 @endif
- {{-- <script>
-    $(function(){
-        $('#createTaskForm').bootstrapValidator({
-            message: 'This value is not valid',
-            fields: {
-                name: {
-                    message: 'Name is not valid',
-                    validators: {
-                        notEmpty: {
-                            message: 'Name is required and can\'t be empty'
+<script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
+<script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ url('js/bootstrapValidator.min.js') }}"></script>
+
+<script>
+</script>
+<script>
+$(function(){
+    $('#createTaskForm').bootstrapValidator({
+        message: "This value is not valid",
+        fields:{
+            name:{
+                    message:"Task name is not valid",
+                    validators:{
+                        notEmpty:{
+                            message:"Task name is required and can't be empty"
                         },
-                        stringLength: {
-                            min: 2,
-                            max: 25,
-                            message: 'Name must be more than 2 and less than 25 characters long'
-                        },
-                        regexp: {
-                            regexp: /^[a-zA-Z\. ]+$/,
-                            message: 'Name can only consist of alphabets'
-                        }
+                    stringLength:{
+                        min:2,
+                        max:25,
+                        message:"Task name must be morethan two and lessthan 30 characters long"
+                    },
+                    regexp:{
+                        regexp:/^[a-zA-Z" "\.]+$/,
+                        message:"Task name can only consist of alphabets"
                     }
                 }
-                phone: {
-                    message: 'Phone number is not valid',
-                    validators: {
-                        notEmpty: {
-                            message: 'Phone number is required and can\'t be empty'
-                        },
-                        stringLength: {
-                            min: 10,
-                            max: 13,
-                            message: 'Phone number be more than 10 and less than 13 characters long'
-                        },
-                        regexp: {
-                            regexp: /^(+][2][5][1[0-9]{8}$)|[+][2][5][1][9][0-9]{8}$/,
-                            message: 'Phone needs to be in +251.... format'
-                        }
-                    }
-                },
-                email: {
-                    message: 'Email is not valid',
-                    validators: {
-                        notEmpty: {
-                            message: 'Email is required and can\'t be empty'
-                        },
-                        emailAddress: {
-                            message: 'Please insert correct email format'
-                        }
-                    }
-                },
-                // school: {
-                //     message: 'Institution is not valid',
-                //     validators: {
-                //         notEmpty: {
-                //             message: 'Institution is required and can\'t be empty'
-                //         }
-                //     }
-                // },
-                department: {
-                    message: 'Department is not valid',
-                    validators: {
-                        notEmpty: {
-                            message: 'Department is required and can\'t be empty'
-                        }
-                    }
-                },
-                chosenBank: {
-                    message: 'Bank is not valid',
-                    validators: {
-                        notEmpty: {
-                            message: 'Bank is required and can\'t be empty'
-                        }
-                    }
-                },
-                exam: {
-                    message: 'Exam is not valid',
-                    validators: {
-                        notEmpty: {
-                            message: 'Exam is required and can\'t be empty'
-                        }
-                    }
-                }
-
-
-
-            }
-        });
+            },
+        }
     });
-
- </script> --}}
+});
+</script>
 @endsection

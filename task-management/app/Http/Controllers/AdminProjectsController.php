@@ -83,7 +83,7 @@ class AdminProjectsController extends Controller
      */
     public function edit($id)
     {
-        $teams = User::select('name', 'id')->get();
+        $teams = User::where('role', 'member')->get();
         $categories = Category::select('type', 'id')->get();
         $projects = Project::findOrFail($id);
         return view('project.edit',compact('projects', 'categories','teams'));
@@ -98,15 +98,18 @@ class AdminProjectsController extends Controller
      */
     public function update(EditProjectRequest $request)
     {
+        $teamMembers = implode(',',$request->team_member);
+        $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
+        $deadline = Carbon::parse($request->deadline)->format('Y-m-d');
         $id = $request->projectId;
         $projects = Project::findOrFail($id);
         $projectUpdate =[
             'title'=>$request->title,
             'category_id'=>$request->category_id,
             'description'=>$request->description,
-            'team_member'=>$request->team_member,
-            'start_date'=>$request->start_date,
-            'deadline'=>$request->deadline,
+            'team_member'=>$teamMembers,
+            'start_date'=>$startDate,
+            'deadline'=>$deadline,
             'status_id'=>$request->status_id
         ];
         $projects->update($projectUpdate);

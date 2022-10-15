@@ -88,7 +88,7 @@
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="completed">
 
-                        <h6></h6>
+                        <h6>{{$completed}} tasks</h6>
 
                     </div>
                 </div>
@@ -101,7 +101,8 @@
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="on_progress">
 
-                        <h6></h6>
+
+                    <h6>{{$on_progress}} tasks</h6>
 
                     </div>
                 </div>
@@ -114,7 +115,7 @@
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="pending">
 
-                        <h6></h6>
+                        <h6>{{$pending_task}} tasks</h6>
 
                     </div>
                 </div>

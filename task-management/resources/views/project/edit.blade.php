@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
+<link rel="stylesheet" href="{{url('bower_components/select2/dist/css/select2.min.css')}}">
+<link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}">
 
 <h3>Edit Project</h3>
 <form action="{{ url('/project/update') }}" method="get">
@@ -30,8 +32,8 @@
         </div>
         <div class="form-group col-sm-6">
             <label class="team_member">Team members</label>
-            <select name="team_member" id="team_member" class="form-control">
-                <option value="">Choose Option</option>
+            <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" style="width:100%;" data-placeholder="select team members" required="true">
+                <option value="{{$projects->team_member}}">{{$projects->team_member}}</option>
                 @foreach ($teams as $team)
                     <option value="{{$team->id}}">{{$team->name}}</option>
                 @endforeach
@@ -41,11 +43,11 @@
 <div class="row">
     <div class="form-group col-sm-6">
     {!!Form::label('start_date','Start Date')!!}
-    {!!Form::date('start_date', $projects->start_date, ['class'=>'form-control'])!!}
+    {!!Form::text('start_date', $projects->start_date, ['id'=> 'fromDatePicker','class'=>'form-control','autocomplete'=>'off'])!!}
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('deadline','Deadline')!!}
-        {!!Form::date('deadline', $projects->deadline, ['class'=>'form-control'])!!}
+        {!!Form::text('deadline', $projects->deadline, ['id'=> 'toDatePicker','class'=>'form-control','autocomplete'=>'off'])!!}
     </div>
 </div>
 <div class="row">
@@ -73,5 +75,14 @@
      </div>
     </div>
 @endif
+<script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
+<script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+<script src="{{ url('js/bootstrapValidator.min.js') }}"></script>
 
+<script>
+    $('.select2').select2({
+                width: 'element'
+            });
+</script>
 @endsection
