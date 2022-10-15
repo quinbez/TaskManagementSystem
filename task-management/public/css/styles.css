@@ -283,6 +283,11 @@ tr {
     box-shadow: 1px 1px 1px 1px #efef27;
     z-index: 1;
 }
+.usercontainerstyle:hover{
+    transform: scale(1.2);
+    box-shadow: 1px 1px 1px 1px #efef27;
+    z-index: 1;
+}
 
 .progresscontainer:hover {
     transform: scale(1.1);

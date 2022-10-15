@@ -33,7 +33,7 @@
         <div class="form-group col-sm-6">
             <label class="team_member">Team members</label>
             <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" style="width:100%;" data-placeholder="select team members" required="true">
-                <option value="{{$projects->team_member}}">{{$projects->team_member}}</option>
+                {{-- <option value=""></option> --}}
                 @foreach ($teams as $team)
                     <option value="{{$team->id}}">{{$team->name}}</option>
                 @endforeach

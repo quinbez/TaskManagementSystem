@@ -74,7 +74,7 @@
                             message:"Full name must be morethan two and lessthan 30 characters long"
                         },
                         regexp:{
-                            regexp:/^[a-zA-Z" "\.]+$/,
+                            regexp:/^[a-zA-Z" "-\.]+$/,
                             message:"Full name can only consist of alphabets"
                         }
                     }

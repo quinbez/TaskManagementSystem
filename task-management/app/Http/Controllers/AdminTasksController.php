@@ -116,11 +116,14 @@ class AdminTasksController extends Controller
     {
         $id = $request->taskId;
         $tasks = Task::findOrFail($id);
+        $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
+        $endDate = Carbon::parse($request->end_date)->format('Y-m-d');
+
         $taskUpdate =[
             'name' => $request->name,
             'description'=>$request->description,
-            'start_date'=>$request->start_date,
-            'end_date'=>$request->end_date,
+            'start_date'=>$startDate,
+            'end_date'=>$endDate,
         ];
         $tasks->update($taskUpdate);
         return redirect('task/index');

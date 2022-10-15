@@ -98,11 +98,11 @@ class AdminProjectsController extends Controller
      */
     public function update(EditProjectRequest $request)
     {
+        $id = $request->projectId;
+        $projects = Project::findOrFail($id);
         $teamMembers = implode(',',$request->team_member);
         $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
         $deadline = Carbon::parse($request->deadline)->format('Y-m-d');
-        $id = $request->projectId;
-        $projects = Project::findOrFail($id);
         $projectUpdate =[
             'title'=>$request->title,
             'category_id'=>$request->category_id,

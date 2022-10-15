@@ -100,7 +100,7 @@
                             message:"Title must be morethan two and lessthan 30 characters long"
                         },
                         regexp:{
-                            regexp:/^[a-zA-Z" "\.]+$/,
+                            regexp:/^[a-zA-Z" "-\.]+$/,
                             message:"Title can only consist of alphabets"
                         }
                     }

@@ -120,7 +120,7 @@
 
     <script src="{{asset('jquery/jquery.js')}}"></script>
     <script src="{{asset('jquery/jquery-ui.min.js')}}"></script>
-    <script src="{{asset('js/script.js')}}"></script>
+    {{-- <script src="{{asset('js/script.js')}}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 

@@ -50,7 +50,7 @@
                             message:"Type must be morethan two and lessthan 30 characters long"
                         },
                         regexp:{
-                            regexp:/^[a-zA-Z" "\.]+$/,
+                            regexp:/^[a-zA-Z" "-\.]+$/,
                             message:"Type can only consist of alphabets"
                         }
                     }

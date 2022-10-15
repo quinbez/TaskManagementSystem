@@ -13,24 +13,33 @@
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}
-        {!!Form::select('status',[''=>'Choose Options','pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
+        {!!Form::select('status',[$tasks->status=>$tasks->status,'pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control'])!!}
     </div>
 </div>
 <div class="row">
     <div class="form-group col-sm-6" >
     {!!Form::label('start_date','Start Date: ')!!}
-    {!!Form::date('start_date',$tasks->start_date,['class'=>'form-control'])!!}
+    {!!Form::text('start_date',$tasks->start_date,['id'=> 'fromDatePicker','class'=>'form-control','autocomplete'=>'off'])!!}
+    </div>
+    <div class="form-group col-sm-6" >
+        {!!Form::label('end_date','Deadline: ')!!}
+        {!!Form::text('end_date',$tasks->end_date,['id'=> 'toDatePicker','class'=>'form-control','autocomplete'=>'off'])!!}
     </div>
 </div>
 <div class="row">
-    <div class="form-group col-sm-6" >
-        {!!Form::label('end_date','Deadline: ')!!}
-        {!!Form::date('end_date',$tasks->end_date,['class'=>'form-control'])!!}
+    <div class="form-group col-sm-6">
+        <label class="project_id">Project</label>
+        <select name="project_id" id="project" class="form-control">
+            <option value="{{$tasks->project->title}}">{{$tasks->project->title}}</option>
+            @foreach ($project as $pro)
+                <option value="{{$pro->id}}">{{$pro->title}}</option>
+            @endforeach
+        </select>
     </div>
     <div class="form-group col-sm-6">
         <label class="user_id">Assigned to</label>
         <select name="user_id" id="user" class="form-control">
-            <option value="">Choose Option</option>
+            <option value="{{$tasks->member->name}}">{{$tasks->member->name}}</option>
             @foreach ($members as $member)
                 <option value="{{$member->id}}">{{$member->name}}</option>
             @endforeach
@@ -41,15 +50,6 @@
     <div class="form-group col-sm-6" >
         {!!Form::label('description','Description: ')!!}
         {!!Form::textarea('description',$tasks->description,['class'=>'form-control', 'rows'=>'3'])!!}
-    </div>
-    <div class="form-group col-sm-6">
-        <label class="project_id">Project</label>
-        <select name="project_id" id="project" class="form-control">
-            <option value="">Choose Option</option>
-            @foreach ($project as $pro)
-                <option value="{{$pro->id}}">{{$pro->title}}</option>
-            @endforeach
-        </select>
     </div>
 </div>
 <div class="d-grid gap-2">

@@ -85,6 +85,8 @@
                 <div class="container progressbar1">
                     <div class="circular-progress1">
                         <span class="progress-value1"></span>
+                        <input type="hidden" id="comletedTasks" value="{{$completed}}">
+                        <input type="hidden" id="totalTasks" value="{{$total_tasks}}">
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="completed">
 
@@ -98,6 +100,8 @@
                 <div class="container progressbar2">
                     <div class="circular-progress2">
                         <span class="progress-value2"></span>
+                        <input type="hidden" id="onProgress" value="{{$on_progress}}">
+                        <input type="hidden" id="totalTasks" value="{{$total_tasks}}">
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="on_progress">
 
@@ -112,6 +116,8 @@
                 <div class="container progressbar3">
                     <div class="circular-progress3">
                         <span class="progress-value3"></span>
+                        <input type="hidden" id="pendingTasks" value="{{$pending_task}}">
+                        <input type="hidden" id="totalTasks" value="{{$total_tasks}}">
                     </div>
                     <div class="p-3 px-2 font-weight-bold text-black" id="pending">
 
@@ -125,4 +131,5 @@
     </div>
 </div>
 
+<script src="{{ asset('js/userScript.js') }}"></script>
 @endsection

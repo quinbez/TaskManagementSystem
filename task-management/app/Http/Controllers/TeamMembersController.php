@@ -11,7 +11,7 @@ class TeamMembersController extends Controller
 {
     public function index(){
 
-        $members = User::all();
+        $members = User::where('role', 'member')->get();
         $project = Project::select('title', 'id');
         return view('user.team', compact('members', 'project'));
     }
