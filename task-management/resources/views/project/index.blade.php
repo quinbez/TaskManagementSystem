@@ -32,7 +32,7 @@
                     <?php $teamMembersArray = explode(',', $project->team_member);?>
                     @foreach ($teamMembersArray as $team)
                     <?php $memberName = App\Models\User::select('name')->where('id',$team)->first() ?>
-                   {{$memberName->name}},
+                   {{$memberName?->name}},
                     @endforeach
                 </td>
                     <td></td>
