@@ -31,33 +31,5 @@
 <script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
     <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
-
-{{-- <script src="{{ url('js/bootstrapValidator.min.js') }}"></script> --}}
-{{-- <script> --}}
-    $(function(){
-        $('#createCategoryForm').bootstrapValidator({
-            message: "This value is not valid",
-            fields:{
-                type:{
-                        message:"Type is not valid",
-                        validators:{
-                            notEmpty:{
-                                message:"Type is required and can't be empty"
-                            },
-                        stringLength:{
-                            min:2,
-                            max:25,
-                            message:"Type must be morethan two and lessthan 30 characters long"
-                        },
-                        regexp:{
-                            regexp:/^[a-zA-Z" "-\.]+$/,
-                            message:"Type can only consist of alphabets"
-                        }
-                    }
-                },
-            }
-        });
-    });
-    </script>
 @endsection
 

@@ -56,6 +56,7 @@ class AdminProjectsController extends Controller
             'start_date' => $startDate,
             'deadline' => $deadline,
             'description' => $request->description,
+            'status'=>'Pending'
         ];
 
          Project::create($addedProject);

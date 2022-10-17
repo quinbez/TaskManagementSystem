@@ -57,6 +57,9 @@ Route::get('/dashboard', 'App\Http\Controllers\AdminDashboardsController@index')
 Route::get('/user', 'App\Http\Controllers\UsersController@index')->name('users');
 Route::get('/user/dashboard', 'App\Http\Controllers\UsersDashboardController@index')->name('userdashboard');
 Route::get('/user/project', 'App\Http\Controllers\UsersProjectsController@index')->name('userproject');
+Route::get('/user/project/{project}', 'App\Http\Controllers\UsersProjectsController@show')->name('showdetail');
+Route::get('/user/project/{project}/{user}', 'App\Http\Controllers\UsersProjectsController@teamMemberDetail')->name('teamdetail');
+
 Route::get('/user/team', 'App\Http\Controllers\TeamMembersController@index')->name('team');
 Route::get('/user/pending/task', 'App\Http\Controllers\PendingController@index')->name('pending');
 Route::get('/user/onprogress/task', 'App\Http\Controllers\OnProgressController@index')->name('onprogress');

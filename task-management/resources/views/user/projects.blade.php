@@ -10,7 +10,7 @@
             <th>Title</th>
             <th>Category</th>
             <th>Description</th>
-            <th>Team-Members<th>
+            <th>Team-Members</th>
             <th>Start-Date</th>
             <th>Deadline</th>
             <th>Status</th>
@@ -23,14 +23,20 @@
             @foreach($projects as $project)
                 <tr>
                     <td>{{$project->id}}</td>
-                    <td>{{$project->title}}</td>
+                    <td><a href="{{route('showdetail', $project->id)}}">{{$project->title}}</a></td>
                     <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    <td>{{$project->user?->name}}</td>
-                    <td></td>
+                    {{-- <td>{{implode(' , ',$project->users()->pluck('name')->toArray())}}</td> --}}
+                    <td>
+                        <?php $teamMembersArray = explode(',', $project->team_member);?>
+                        @foreach ($teamMembersArray as $team)
+                        <?php $memberName = App\Models\User::select('name','id')->where('id',$team)->first() ?>
+                       <a href="{{route('teamdetail',[ $project->id, $memberName->id])}}">{{$memberName->name}}</a>,
+                        @endforeach
+                    </td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>
-                    <td>{{$project->status_id == 1 ? "On progress" : "Completed"}}</td>
+                    <td>{{$project->status}}</td>
                     <td>{{$project->created_at->diffForHumans()}}</td>
                     <td>{{$project->updated_at->diffForHumans()}}</td>
                 </tr>

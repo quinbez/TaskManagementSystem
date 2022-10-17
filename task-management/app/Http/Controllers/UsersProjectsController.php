@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Project;
+use App\Models\Task;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class UsersProjectsController extends Controller
@@ -37,7 +39,7 @@ class UsersProjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -46,9 +48,10 @@ class UsersProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        //
+        $project->load('tasks.member');
+        return view('user.team', compact('project'));
     }
 
     /**
@@ -83,5 +86,9 @@ class UsersProjectsController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function teamMemberDetail(Project $project, User $user){
+        $tasks = Task::where('project_id', $project->id)->where('user_id', $user->id)->get();
+        return view('user.teamMemberDetails', compact('tasks', 'user'));
     }
 }

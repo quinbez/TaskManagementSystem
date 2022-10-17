@@ -122,6 +122,7 @@ class AdminTasksController extends Controller
         $taskUpdate =[
             'name' => $request->name,
             'description'=>$request->description,
+            'status'=>$request->status,
             'start_date'=>$startDate,
             'end_date'=>$endDate,
         ];
