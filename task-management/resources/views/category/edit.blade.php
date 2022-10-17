@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}">
+{{-- <link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}"> --}}
 
 <h3>Edit Category</h3>
 <form action="{{route('updatecateg')}}" method="get" id="#editCategoryForm">
@@ -10,7 +10,7 @@
     <input type="hidden" name="categoryId" value="{{$categories->id}}">
     <div class="form-group col-6">
         {!!Form::label('type','Type: ')!!}
-        {!!Form::text('type',$categories->type,['class'=>'form-control'])!!}
+        {!!Form::text('type',$categories->type,['class'=>'form-control',"required","minlength"=>"3", "maxlength"=>"20",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
     </div>
     <div class="row" style="justify-content: left">
         <div class="form-group col-sm-3 p-4">
@@ -32,8 +32,8 @@
     <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-<script src="{{ url('js/bootstrapValidator.min.js') }}"></script>
-<script>
+{{-- <script src="{{ url('js/bootstrapValidator.min.js') }}"></script> --}}
+{{-- <script> --}}
     $(function(){
         $('#editCategoryForm').bootstrapValidator({
             message: "This value is not valid",

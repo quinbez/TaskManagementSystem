@@ -85,9 +85,9 @@
                         <div class="panel-heading">
                             <a class="nav-link" href="{{route('userproject')}}" ><span class="fas fa-diagram-project px-2"></span>Assigned Projects</a>
                         </div>
-                        <div class="panel-heading">
+                        {{-- <div class="panel-heading">
                             <a class="nav-link" href="{{route('team')}}" ><span class="fas fa-users px-2"></span>Team Members</a>
-                        </div>
+                        </div> --}}
 
                         <div class="panel-group" id="accordion">
                         <div class="panel-heading mt-2">

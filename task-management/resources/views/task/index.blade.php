@@ -11,8 +11,8 @@
             <th>Project</th>
             <th>Assigned To</th>
             <th>Description</th>
-            <th>Start</th>
-            <th>End</th>
+            <th>Start date</th>
+            <th>Deadline</th>
             <th>Created</th>
             <th>Updated</th>
             <th>Status</th>

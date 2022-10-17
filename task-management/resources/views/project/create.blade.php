@@ -10,30 +10,17 @@
     {{-- {!!Form::open(['method'=>'post'])!!} --}}
 <div class="row">
     <div class="form-group col-sm-6">
+        {{-- <input type="text" required placeholder="add title" pattern="^[a-zA-Z ]*$" /> --}}
+
         {!!Form::label('title','Title: ')!!}
-        {!!Form::text('title',null,['class'=>'form-control'])!!}
+        {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"20" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
     </div>
     <div class="form-group col-sm-6">
         <label class="category_id">Category </label>
-        <select name="category_id" id="category" class="form-control">
-            <option value="">Choose Option</option>
+        <select name="category_id" id="category" class="form-control" required>
+            <option disabled selected hidden value="">Choose Option</option>
             @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->type}}</option>
-            @endforeach
-        </select>
-    </div>
- </div>
- <div class="row">
-    <div class="form-group col-sm-6">
-        {!!Form::label('status','Status')!!}
-        {!!Form::select('status',['pending'=>'Pending'],null, ['class'=>'form-control'])!!}
-        </div>
-     <div class="form-group col-sm-6">
-        <label class="team_member">Team members</label>
-        <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" style="width:100%;" data-placeholder="select team members" required="true">
-            <option value="">Choose Option</option>
-            @foreach ($teams as $team)
-                <option value="{{$team->id}}">{{$team->name}}</option>
             @endforeach
         </select>
     </div>
@@ -41,17 +28,26 @@
 <div class="row">
     <div class="form-group col-sm-6">
     {!!Form::label('start_date','Start Date')!!}
-    {!!Form::text('start_date', null, ['id'=> 'fromDatePicker','autocomplete'=>'off','class'=>'form-control'])!!}
+    {!!Form::text('start_date', null, ['id'=> 'fromDatePicker','autocomplete'=>'off','class'=>'form-control', "required"])!!}
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('deadline','Deadline')!!}
-        {!!Form::text('deadline', null, ['id'=> 'toDatePicker','autocomplete'=>'off', 'class'=>'form-control'])!!}
+        {!!Form::text('deadline', null, ['id'=> 'toDatePicker','autocomplete'=>'off', 'class'=>'form-control', "required"])!!}
     </div>
 </div>
 <div class="row">
-    <div class="form-group col-sm-5">
+    <div class="form-group col-sm-6">
         {!!Form::label('description','Description: ')!!}
-        {!!Form::textarea('description',null,['class'=>'form-control', "rows"=>"3"])!!}
+        {!!Form::textarea('description',null,['class'=>'form-control', "rows"=>"3",'required','pattern'=>"^[a-zA-Z ]*$", "maxlength"=>"150"])!!}
+    </div>
+    <div class="form-group col-sm-6">
+        <label class="team_member">Team members</label>
+        <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" required="true" style="width:100%;" data-placeholder="select team members">
+            {{-- <option disabled selected hidden value="">Choose Option</option> --}}
+            @foreach ($teams as $team)
+                <option value="{{$team->id}}">{{$team->name}}</option>
+            @endforeach
+        </select>
     </div>
 </div>
 <div class="row" style="justify-content:right">
@@ -74,7 +70,7 @@
 </div>
 @endif
 <script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
-    <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 <script src="{{ url('js/bootstrapValidator.min.js') }}"></script>
 
@@ -83,7 +79,7 @@
                 width: 'element'
             });
 </script>
-<script>
+{{-- <script>
     $(function(){
         $('#createProjectTable').bootstrapValidator({
             message: "This value is not valid",
@@ -105,8 +101,25 @@
                         }
                     }
                 },
+                description:{
+                        message:"Phone number is not valid",
+                        validators:{
+                            notEmpty:{
+                                message:"Phone number is required and can't be empty"
+                            },
+                        stringLength:{
+                            min:10,
+                            max:13,
+                            message:"Title must be morethan two and lessthan 30 characters long"
+                        },
+                        // regexp:{
+                        //     regexp:/^[a-zA-Z" "-\.]+$/,
+                        //     message:"Title can only consist of alphabets"
+                        // }
+                    }
+                }
             }
         });
     });
-</script>
+</script> --}}
 @endsection

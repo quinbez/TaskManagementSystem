@@ -16,7 +16,7 @@
             <th>Status</th>
             <th>Created</th>
             <th>Updated</th>
-            <th>Update</th>
+            <th>Edit</th>
             <th>Remove</th>
         </tr>
     </thead>
