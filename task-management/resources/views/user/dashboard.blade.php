@@ -24,21 +24,15 @@
     @endif
 
         <div class="container row gy-5 usercolstyle colpadding">
-            <div class="col-6 usercontainerstyle bg-light rounded">
+            <div class="col-4 usercontainerstyle bg-light rounded">
                 <div class="col-4 bgcolor"><span class="fas fa-user icons px-3 py-3" id="icon1"></span></div>
                 <div class="col-9"> Total Projects</div>
                 <div class="p-3 px-2 font-weight-bold text-black">
                     <h6>{{$total_project}} added</h6>
                 </div>
             </div>
-            {{-- <div class="col-4 usercontainerstyle bg-light rounded">
-                <div class="col-4 bgcolor"><span class="fas fa-users icons px-3 py-3" id="icon2"></span></div>
-                <div class="co1-9">Team Members</div>
-                <div class="p-3 px-2 font-weight-bold text-black">
-                   <h6>{{$team_member}} team</h6>
-                </div>
-            </div> --}}
-            <div class="col-6 usercontainerstyle bg-light rounded">
+        {{-- flex-wrap --}}
+            <div class="col-4 usercontainerstyle bg-light rounded">
                 <div class="col-4 bgcolor"><span class="fas fa-tasks icons px-3 py-3" id="icon3"></span></div>
                 <div class="col-9">Total Tasks</div>
                 <div class="p-3 px-2 font-weight-bold text-black">
@@ -46,8 +40,8 @@
                 </div>
             </div>
 
-        </div>
-        <div class="container row gy-5 usercolstyle colpadding">
+        
+        {{-- <div class="container row gy-5 usercolstyle colpadding"> --}}
             <div class="col-4 usercontainerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-battery-half icons px-3 py-3" id="icon7"></span></div>
                 <div class="col-9">Pending Tasks</div>
@@ -55,7 +49,7 @@
                     <h6>{{$pending_task}} tasks</h6>
                 </div>
             </div>
-            <div class="col-4 usercontainerstyle bg-light rounded">
+            <div class="col-4 usercontainerstyle2 bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-battery-empty icons px-3 py-3" id="icon6"></span></div>
                 <div class="col-9">Task on progress</div>
                 <div class="p-3 px-2 font-weight-bold text-black" id="task_on_progress">
@@ -65,7 +59,7 @@
 
                 </div>
             </div>
-            <div class="col-4 usercontainerstyle bg-light rounded">
+            <div class="col-4 usercontainerstyle2 me-2 bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-battery-full icons px-3 py-3" id="icon8"></span></div>
                 <div class="col-9">Completed Tasks</div>
                 <div class="p-3 px-2 font-weight-bold text-black" id="completed_task">
@@ -75,7 +69,7 @@
 
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
     </div>
     <div class="container overflow-hidden px-4 py-3">
         <div class="container row gy-5 colespace colpadding">

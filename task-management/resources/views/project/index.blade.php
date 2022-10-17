@@ -1,8 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-
+<div class="container">
 <h3>All Projects</h3>
+
 <table class='table'>
     <thead>
         <tr>
@@ -50,4 +51,5 @@
 
     </tbody>
 </table>
+</div>
 @endsection

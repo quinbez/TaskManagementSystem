@@ -10,12 +10,12 @@
     <input type="hidden" name="categoryId" value="{{$categories->id}}">
     <div class="form-group col-6">
         {!!Form::label('type','Type: ')!!}
-        {!!Form::text('type',$categories->type,['class'=>'form-control',"required","minlength"=>"3", "maxlength"=>"20",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
+        {!!Form::text('type',$categories->type,['class'=>'form-control',"required","minlength"=>"3", "maxlength"=>"20",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z -]*$"])!!}
     </div>
-    <div class="row" style="justify-content: left">
-        <div class="form-group col-sm-3 p-4">
-            {!!Form::submit('Edit', ['class'=>'btn addcolor'])!!}
-            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+    <div class="row w-100" style="justify-content: between">
+        <div class="form-group d-flex col-sm-3 p-4">
+            {!!Form::submit('Edit', ['class'=>'btn addcolor me-4 col-5'])!!}
+            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor col-5'])!!}
         </div>
         <div class="form-group col-sm-6 p-4 backbtn2">
             <a class="" href="{{route('indexcategory')}}">Back</a>

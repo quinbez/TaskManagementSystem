@@ -88,7 +88,12 @@ a:hover {
 }
 
 .usercontainerstyle {
-    width: 275px;
+    width: 315px;
+    height: 150px;
+    text-align: left;
+}
+.usercontainerstyle2{
+    width: 350px;
     height: 150px;
     text-align: left;
 }
@@ -102,7 +107,7 @@ a:hover {
 }
 
 .progresscontainer {
-    width: 300px;
+    width: 275px;
     height: 300px;
     text-align: left;
 }
@@ -159,9 +164,6 @@ div .textcolor {
     color: green;
 }
 
-.sidelinecontainerwidth {
-    height: 710px;
-}
 
 .progressbar1 {
     height: 100vh;
@@ -291,6 +293,11 @@ tr {
     box-shadow: 1px 1px 1px 1px #efef27;
     z-index: 1;
 }
+.usercontainerstyle2:hover {
+    transform: scale(1.2);
+    box-shadow: 1px 1px 1px 1px #efef27;
+    z-index: 1;
+}
 
 .progresscontainer:hover {
     transform: scale(1.1);
@@ -386,13 +393,15 @@ ul a {
         font-size: large;
     }
     .usercontainerstyle {
-        width: 300px;
+        width: 275px;
         height: 150px;
         text-align: left;
         font-size: large;
     }
     .sidelinecontainerwidth {
         width: 300px;
+        min-height: 95vh;
+
     }
     .list-group-item {
         width: 200px;
@@ -409,6 +418,8 @@ ul a {
     }
     .sidelinecontainerwidth {
         width: 300px;
+        min-height: 95vh;
+
     }
     .list-group-item {
         width: 250px;
@@ -428,6 +439,8 @@ ul a {
     }
     .sidelinecontainerwidth {
         width: 300px;
+        min-height: 95vh;
+
     }
     .list-group-item {
         width: 200px;
@@ -444,12 +457,14 @@ ul a {
     }
     .containerwidth {
         width: 765px;
+
     }
     .custom-search-form {
         display: none;
     }
     .sidelinecontainerwidth {
         width: 300px;
+        min-height: 95vh;
     }
     .list-group-item {
         width: 150px;

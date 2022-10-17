@@ -13,7 +13,7 @@
         {{-- <input type="text" required placeholder="add title" pattern="^[a-zA-Z ]*$" /> --}}
 
         {!!Form::label('title','Title: ')!!}
-        {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"20" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
+        {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"20" ,'pattern'=>"^[a-zA-Z - 0-9]*$"])!!}
     </div>
     <div class="form-group col-sm-6">
         <label class="category_id">Category </label>
@@ -50,10 +50,10 @@
         </select>
     </div>
 </div>
-<div class="row" style="justify-content:right">
-    <div class="form-group col-3 p-4">
-        {!!Form::submit('+ Add', ['class' => 'btn addcolor'])!!}
-        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+<div class="row w-100" style="justify-content:right">
+    <div class="form-group d-flex col-3 p-4">
+        {!!Form::submit('+ Add', ['class' => 'btn addcolor me-4 col-5'])!!}
+        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor col-5'])!!}
     </div>
 </div>
 

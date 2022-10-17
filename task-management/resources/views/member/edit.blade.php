@@ -11,7 +11,7 @@
     <input type="hidden" name="memberId" value="{{$members->id}}">
     <div class="form-group col-sm-6">
         {!!Form::label('name','Name: ')!!}
-        {!!Form::text('name',$members->name,['class'=>'form-control',"required","minlength"=>"5", "maxlength"=>"20",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
+        {!!Form::text('name',$members->name,['class'=>'form-control',"required","minlength"=>"5", "maxlength"=>"20",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z -]*$"])!!}
     </div>
     <div class="form-group col-sm-6" >
         {!!Form::label('email','Email: ')!!}
@@ -21,17 +21,17 @@
 <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('phone_number','Phone: ')!!}
-        {!!Form::text('phone_number',$members->phone_number,['class'=>'form-control',"required", "minlength"=>"10", "maxlength"=>"13"])!!}
+        {!!Form::text('phone_number',$members->phone_number,['class'=>'form-control',"required", "minlength"=>"10", "maxlength"=>"13", "pattern"=>"^[0-9]"])!!}
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('role','Role: ')!!}
         {!!Form::select('role',[$members->role=>$members->role,'admin'=>'Admin','member'=>'Member'],null,['class'=>'form-control','required'])!!}
     </div>
 </div>
-<div class="row" style="justify-content: right">
-    <div class="form-group col-sm-3 p-4">
-        {!!Form::submit('Edit', ['class'=>'btn addcolor'])!!}
-        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+<div class="row w-100" style="justify-content: between">
+    <div class="form-group d-flex col-sm-3 p-4">
+        {!!Form::submit('Edit', ['class'=>'btn addcolor me-4 col-5'])!!}
+        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor col-5'])!!}
     </div>
     <div class="form-group col-sm-6 p-4 backbtn2">
         <a class="" href="{{route('index')}}">Back</a>

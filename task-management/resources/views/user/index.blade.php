@@ -29,13 +29,13 @@
 
                         <form  action = "{{ url('member/search')}}"  method = "GET">
                             @csrf
-                                                            <div class="input-group custom-search-form" style="width: 500px;">
-                                                                <input type="search"class="form-control" placeholder="Search..." name = "search">
-                                                                    <span class="input-group-btn">
-                                                                        <button class="btn btn-default" type="submit">
-                                                                            <span class="fa fa-search" id="searchhover"></span>
-                                                                        </button>
-                                                                        </form>
+                                <div class="input-group custom-search-form" style="width: 500px;">
+                                    <input type="search"class="form-control" placeholder="Search..." name = "search">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="submit">
+                                                <span class="fa fa-search" id="searchhover"></span>
+                                            </button>
+                                            </form>
                                         </span>
                                         <a href="#" class="px-2 "></a>
                                         <div class="dropdown bg-light">

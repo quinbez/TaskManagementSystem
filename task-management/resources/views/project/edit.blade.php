@@ -12,7 +12,7 @@
     <input type="hidden" name="projectId" value="{{$projects->id}}" >
     <div class="form-group col-sm-6">
         {!!Form::label('title','Title: ')!!}
-        {!!Form::text('title',$projects->title,['class'=>'form-control','required','title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
+        {!!Form::text('title',$projects->title,['class'=>'form-control','required','title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z -]*$"])!!}
     </div>
 
     <div class="form-group col-sm-6">
@@ -53,14 +53,14 @@
 <div class="row">
     <div class="form-group col-sm-5">
         {!!Form::label('description','Description: ')!!}
-        {!!Form::textarea('description',$projects->description,['class'=>'form-control', "rows"=>"3",'required','pattern'=>"^[a-zA-Z ]*$", "maxlength"=>"150"])!!}
+        {!!Form::textarea('description',$projects->description,['class'=>'form-control', "rows"=>"3",'required','pattern'=>"^[a-zA-Z - 0-9]*$", "maxlength"=>"150"])!!}
     </div>
 </div>
 <div class="d-grid gap-2">
-    <div class="row" style="justify-content:right">
-        <div class="form-group col-3 p-3">
-            {!!Form::submit('Edit', ['class' => 'btn addcolor'])!!}
-            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+    <div class="row w-100" style="justify-content:between ">
+        <div class="form-group d-flex col-3 p-4">
+            {!!Form::submit('Edit', ['class' => 'btn addcolor me-4 col-5'])!!}
+            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor col-5'])!!}
         </div>
         <div class="form-group col-sm-6 p-4 backbtn2">
             <a class="" href="{{route('indexproj')}}">Back</a>

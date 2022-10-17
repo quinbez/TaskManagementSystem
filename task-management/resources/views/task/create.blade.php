@@ -8,7 +8,7 @@
 <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('name','Task Name: ')!!}
-        {!!Form::text('name',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"20" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
+        {!!Form::text('name',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"20" ,'pattern'=>"^[a-zA-Z -]*$"])!!}
     </div>
 
     <div class="form-group col-sm-6">
@@ -46,17 +46,17 @@
 <div class="d-grid gap-2">
     <div class="form-group col-sm-6" >
         {!!Form::label('description','Description: ')!!}
-        {!!Form::textarea('description',null,['class'=>'form-control', 'rows'=>'3','required','pattern'=>"^[a-zA-Z]*$", "maxlength"=>"150"])!!}
+        {!!Form::textarea('description',null,['class'=>'form-control', 'rows'=>'3','required','pattern'=>"^[a-zA-Z - 0-9]*$", "maxlength"=>"150"])!!}
     </div>
 </div>
 
 
 
 <div class="d-grid gap-2">
-    <div class="row" style="justify-content: right">
-        <div class="form-group col-sm-3 p-4">
-            {!!Form::submit('Assign', ['class'=>'btn addcolor'])!!}
-            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+    <div class="row w-100" style="justify-content: right">
+        <div class="form-group d-flex col-sm-3 p-4">
+            {!!Form::submit('Assign', ['class'=>'btn addcolor me-4 col-5'])!!}
+            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor col-5'])!!}
         </div>
     </div>
 </div>
