@@ -77,8 +77,6 @@ Route::get('completed/edit/{id}', 'App\Http\Controllers\UserOnProgressStatusCont
 Route::get('completed/update', 'App\Http\Controllers\UserCompletedStatusController@update')->name('updatecompletedstatus');
 
 Route::get('/notification', 'App\Http\Controllers\AdminNotificationController@index')->name('notify');
-
-
-
+Route::get('/task/expiringTasks', 'App\Http\Controllers\AdminTasksController@expiringTasks')->name('expiringTasks');
 
 });

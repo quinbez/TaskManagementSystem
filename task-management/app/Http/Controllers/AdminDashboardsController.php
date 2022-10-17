@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Project;
 use App\Models\Task;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,8 +25,6 @@ class AdminDashboardsController extends Controller
         $data['pending_task'] = Task::where('status', 'pending')->count();
         $data['on_progress'] = Task::where('status', 'on_progress')->count();
         $data['completed'] = Task::where('status', 'completed')->count();
-
-
 
         if(Auth::user()->role == 'admin'){
             return view('dashboard.index', $data);

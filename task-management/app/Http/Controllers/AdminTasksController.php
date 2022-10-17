@@ -142,4 +142,15 @@ class AdminTasksController extends Controller
 
         return redirect('/task/index');
     }
+
+    public function expiringTasks()
+    {
+
+        $tasks = Task::where('status', '!=', 'completed')->where(function ($q) {
+            return $q->whereDate('end_date', '>=', Carbon::now())->whereDate('end_date', '<=', Carbon::now()->addDays(2));
+        })->get();
+
+        return view('task.expiringTasks', compact('tasks'));
+
+    }
 }

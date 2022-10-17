@@ -86,13 +86,15 @@ a:hover {
     height: 150px;
     text-align: left;
 }
-.usercontainerstyle{
+
+.usercontainerstyle {
     width: 275px;
     height: 150px;
     text-align: left;
 }
-.usercolstyle{
-justify-content: space-evenly;
+
+.usercolstyle {
+    justify-content: space-evenly;
 }
 
 .colpadding {
@@ -283,7 +285,8 @@ tr {
     box-shadow: 1px 1px 1px 1px #efef27;
     z-index: 1;
 }
-.usercontainerstyle:hover{
+
+.usercontainerstyle:hover {
     transform: scale(1.2);
     box-shadow: 1px 1px 1px 1px #efef27;
     z-index: 1;
@@ -370,7 +373,7 @@ ul a {
         text-align: left;
         font-size: large;
     }
-    .usercontainerstyle{
+    .usercontainerstyle {
         width: 300px;
         height: 150px;
         text-align: left;

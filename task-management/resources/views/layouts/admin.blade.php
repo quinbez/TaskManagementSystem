@@ -1,6 +1,15 @@
 <?php
-    $count =App\Models\Task::onProgress(0)->orWhere('completed', 0)->count();
+$count = App\Models\Task::where('status', '!=', 'pending')
+    ->where(function ($q) {
+        $q->where('on_progress', 0)->orWhere('completed', 0);
+    })
+    ->count();
+
+    $expiring = App\Models\Task::where('status', '!=', 'completed')->where(function ($q) {
+        return $q->whereDate('end_date', '>=', Carbon\Carbon::now())->whereDate('end_date', '<=', Carbon\Carbon::now()->addDays(2));
+    })->count();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +32,6 @@
     @yield('styles')
 
 </head>
-
 <body>
     {{-- <div id ="wrapper"> --}}
     <div class="d-flex flex-column flex-shrink-0 p-3 me-0 bg-light border border-grey containerwidth">
@@ -45,19 +53,22 @@
                         </form>
 
                         <div class="dropdown bg-light">
-                            @if($count > 0)
-                            <button class="dropbtn"><span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;font-size:10px;">
-                                {{$count}}
-                                @endif
+                            @if ($count > 0 || $expiring > 0)
+                                <button class="dropbtn"><span class="badge badge-pill badge-primary"
+                                        style="float:right;margin-bottom:-10px;font-size:10px;">
+                                        {{ $expiring > 0 ?  $count + $expiring : $count}}
+                            @endif
                             </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
                             <div class="dropdown-content">
-
-                                <a href="@if($count < 1) # @else {{route('notify')}} @endif">{{$count}} Notifications</a>
-
+                                <a href="@if ($count < 1) # @else {{ route('notify') }} @endif">{{ $count }}
+                                    Notifications</a>
+                                 @if($expiring > 0)<a href="{{route('expiringTasks') }}">
+                                 {{$expiring}} Tasks are expiring soon!</a>
+                                 @endif
                             </div>
+                        </div>
 
-                          </div>
-          <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
+                        <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
                         </span>
                 </div>
                 </ul>
@@ -141,9 +152,9 @@
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">
-                            <a class="nav-link collapsed" href="{{route('notify')}}"  >
+                            <a class="nav-link collapsed" href="{{ route('notify') }}">
 
-                                <span class="fas fa-bell px-2" ></span>Notifications</a>
+                                <span class="fas fa-bell px-2"></span>Notifications</a>
                         </div>
                     </div>
                 </div>
