@@ -16,6 +16,7 @@
         {!!Form::select('status',[$tasks->status=>$tasks->status,'on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control', "required"])!!}
     </div>
 </div>
+
 <div class="row">
     <div class="form-group col-sm-6" >
     {!!Form::label('start_date','Start Date: ')!!}
