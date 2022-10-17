@@ -365,6 +365,18 @@ ul a {
 .badge {
     background-color: red;
 }
+.backbtn{
+    text-align: right;
+    padding-top: 50px;
+    padding-right: 100px;
+}
+.backbtn2{
+    text-align: right;
+    padding-top: 50px;
+    padding-right: 100px;
+    margin-left: 200px;
+    margin-top: 13px;
+}
 
 @media ((max-width: 1399.98px))and (min-width: 1199.98px) {
     .containerstyle {

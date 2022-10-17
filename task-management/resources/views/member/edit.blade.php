@@ -30,8 +30,11 @@
 </div>
 <div class="row" style="justify-content: right">
     <div class="form-group col-sm-3 p-4">
-        {!!Form::submit('Edit', ['class'=>'btn btn-primary'])!!}
+        {!!Form::submit('Edit', ['class'=>'btn addcolor'])!!}
         {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+    </div>
+    <div class="form-group col-sm-6 p-4 backbtn2">
+        <a class="" href="{{route('index')}}">Back</a>
     </div>
 </div>
     </form>
