@@ -56,10 +56,15 @@
         {!!Form::textarea('description',$projects->description,['class'=>'form-control', "rows"=>"3",'required','pattern'=>"^[a-zA-Z ]*$", "maxlength"=>"150"])!!}
     </div>
 </div>
-<div class="row" style="justify-content:right">
-    <div class="form-group col-3 p-4">
-        {!!Form::submit('Edit', ['class' => 'btn addcolor'])!!}
-        {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+<div class="d-grid gap-2">
+    <div class="row" style="justify-content:right">
+        <div class="form-group col-3 p-3">
+            {!!Form::submit('Edit', ['class' => 'btn addcolor'])!!}
+            {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+        </div>
+        <div class="form-group col-sm-6 p-4 backbtn2">
+            <a class="" href="{{route('indexproj')}}">Back</a>
+        </div>
     </div>
 </div>
 

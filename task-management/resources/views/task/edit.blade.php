@@ -13,7 +13,7 @@
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}
-        {!!Form::select('status',[$tasks->status=>$tasks->status,'pending'=>'Pending','on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control', "required"])!!}
+        {!!Form::select('status',[$tasks->status=>$tasks->status,'on_progress'=>'On Progress','completed'=>'Completed' ],null, ['class'=>'form-control', "required"])!!}
     </div>
 </div>
 <div class="row">
@@ -57,7 +57,11 @@
         <div class="form-group col-sm-3 p-4">
             {!!Form::submit('Edit', ['class'=>'btn addcolor'])!!}
             {!!Form::reset('Clear', ['class'=>'btn btn-secondary clearcolor'])!!}
+         </div>
+        <div class="form-group col-sm-6 p-4 backbtn2">
+            <a class="" href="{{route('indextask')}}">Back</a>
         </div>
+       
     </div>
 </div>
 @if(count($errors)>0)
