@@ -14,7 +14,7 @@ class UserCompletedStatusController extends Controller
         $tasks = Task::findOrFail($id);
         $project = Project::select('title', 'id')->get();
         $members = User::select('name','id')->get();
-        return view('user.onprogressedit', compact('tasks', 'members','project'));
+        return view('user.completededit', compact('tasks', 'members','project'));
     }
 
     public function update(Request $request)

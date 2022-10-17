@@ -18,7 +18,7 @@
             <th>Status</th>
         </tr>
     </thead>
-    @if($tasks)
+    @if($tasks-> count() != 0)
             @foreach($tasks as $task)
                 <tr>
                     <td>{{$task->id}}</td>
@@ -36,6 +36,10 @@
 
                 </tr>
             @endforeach
+            @else
+            <tr>
+                <td colspan="6"><h5 style="color:grey;">No tasks completed </h5></td>
+            </tr>
         @endif
 
     </tbody>

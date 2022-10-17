@@ -18,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-        @if($project->tasks)
+        @if($project->tasks->count() != 0)
             @foreach($project->tasks as $task)
                 <tr>
                     <td>{{$task->id}}</td>
@@ -30,6 +30,10 @@
                     <td>{{$task->updated_at?->diffForHumans()}}</td>
                 </tr>
             @endforeach
+            @else
+            <tr>
+                <td colspan="6"><h5 style="color:grey;">No assigned projects yet</h5></td>
+            </tr>
         @endif
     </tbody>
 </table>
