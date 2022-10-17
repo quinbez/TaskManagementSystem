@@ -32,7 +32,6 @@ $count = App\Models\Task::where('status', '!=', 'pending')
     @yield('styles')
 
 </head>
-
 <body>
     {{-- <div id ="wrapper"> --}}
     <div class="d-flex flex-column flex-shrink-0 p-3 me-0 bg-light border border-grey containerwidth">
