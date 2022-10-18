@@ -28,4 +28,24 @@ class UserTasksController extends Controller
 
     }
 
+    public function toOnProgress($id){
+        $tasks = Task::findOrFail($id);
+        $taskUpdate =[
+            'status'=> 'on_progress'
+        ];
+        $tasks->update($taskUpdate);
+        return redirect('user/on_progress/task');
+
+
+    }
+    public function toCompleted($id){
+        $tasks = Task::findOrFail($id);
+        $taskUpdate =[
+            'status'=> 'completed'
+        ];
+        $tasks->update($taskUpdate);
+        return redirect('user/completed/task');
+
+    }
+
 }

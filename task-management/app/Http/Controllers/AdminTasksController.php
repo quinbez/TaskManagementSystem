@@ -51,13 +51,13 @@ class AdminTasksController extends Controller
         $project = Project::find($request->project_id);
         $user = User::find($request->user_id);
 
-        $check = DB::table('project_user')->where('project_id', $project->id)->where('user_id', $user->id)->count();
+        // $check = DB::table('project_user')->where('project_id', $project->id)->where('user_id', $user->id)->count();
 
-        if($check){
-            Session::flash('error', 'Duplicate');
-            return redirect('dashboard');
+        // if($check){
+        //     Session::flash('error', 'Duplicate');
+        //     return redirect('dashboard');
 
-        }else{
+        // }else{
             $user->projects()->save($project);
 
             $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
@@ -73,7 +73,7 @@ class AdminTasksController extends Controller
             ];
             Task::create($addedTasks);
             return redirect('task/index');
-        }
+        // }
         // dd($check);
 
 
@@ -124,9 +124,12 @@ class AdminTasksController extends Controller
             'description'=>$request->description,
             'status'=>$request->status,
             'start_date'=>$startDate,
-            'end_date'=>$endDate,
+            'end_date'=>$endDate
         ];
         $tasks->update($taskUpdate);
+
+        // $project = $tasks->project;
+        // $project->update(['completed', 0]);
         return redirect('task/index');
     }
 

@@ -68,13 +68,13 @@ Route::get('/user/alltask', 'App\Http\Controllers\UserTasksController@index')->n
 
 Route::get('/totalteam/dashboard', "App\Http\Controllers\TotalTeamController@index")->name('totalteam');
 Route::get('/status/edit/{id}', 'App\Http\Controllers\UserPendingStatusController@edit')->name('edittaskstatus');
-Route::get('/status/update', 'App\Http\Controllers\UserPendingStatusController@update')->name('updatetaskstatus');
+// Route::get('/status/update/{id}', 'App\Http\Controllers\UserTasksController@update')->name('updatetaskstatus');
 
 Route::get('onprogress/edit/{id}', 'App\Http\Controllers\UserOnProgressStatusController@edit')->name('onprogressedit');
-Route::get('onprogress/update', 'App\Http\Controllers\UserOnProgressStatusController@update')->name('onprogressupdate');
+Route::get('onprogress/update/{id}', 'App\Http\Controllers\UserTasksController@toOnProgress')->name('onprogressupdate');
 
 Route::get('completed/edit/{id}', 'App\Http\Controllers\UserCompletedStatusController@edit')->name('editcompletedstatus');
-Route::get('completed/update', 'App\Http\Controllers\UserCompletedStatusController@update')->name('updatecompletedstatus');
+Route::get('completed/update/{id}', 'App\Http\Controllers\UserTasksController@toCompleted')->name('updatecompletedstatus');
 
 Route::get('/notification', 'App\Http\Controllers\AdminNotificationController@index')->name('notify');
 Route::get('/task/expiringTasks', 'App\Http\Controllers\AdminTasksController@expiringTasks')->name('expiringTasks');

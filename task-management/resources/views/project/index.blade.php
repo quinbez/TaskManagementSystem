@@ -29,13 +29,9 @@
                     <td>{{$project->title}}</td>
                     <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    <td>
-                    <?php $teamMembersArray = explode(',', $project->team_member);?>
-                    @foreach ($teamMembersArray as $team)
-                    <?php $memberName = App\Models\User::select('name')->where('id',$team)->first() ?>
-                   {{$memberName?->name}},
-                    @endforeach
-                </td>
+                    <td>{{implode(' , ',$project->users()->pluck('name')->toArray())}}</td>
+
+                   
                     <td></td>
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>

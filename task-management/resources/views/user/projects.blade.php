@@ -26,14 +26,14 @@
                     <td><a href="{{route('showdetail', $project->id)}}">{{$project->title}}</a></td>
                     <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    {{-- <td>{{implode(' , ',$project->users()->pluck('name')->toArray())}}</td> --}}
-                    <td>
-                        <?php $teamMembersArray = explode(',', $project->team_member);?>
-                        @foreach ($teamMembersArray as $team)
-                        <?php $memberName = App\Models\User::select('name','id')->where('id',$team)->first() ?>
-                       <a href="{{route('teamdetail',[ $project->id, $memberName->id])}}">{{$memberName->name}}</a>,
-                        @endforeach
-                    </td>
+                    <td>{{implode(' , ',$project->users()->pluck('name')->toArray())}}</td>
+                    {{-- <td> --}}
+                        <?php //$teamMembersArray = explode(',', $project->team_member);?>
+                        {{-- @foreach ($teamMembersArray as $team) --}}
+                        <?php //$memberName = App\Models\User::select('name','id')->where('id',$team)->first() ?>
+                       {{-- <a href="{{route('teamdetail',[ $project->id, $memberName->id])}}">{{$memberName->name}}</a>, --}}
+                        {{-- @endforeach --}}
+                    {{-- </td> --}}
                     <td>{{$project->start_date}}</td>
                     <td>{{$project->deadline}}</td>
                     <td>{{$project->status}}</td>

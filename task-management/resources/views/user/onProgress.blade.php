@@ -33,7 +33,15 @@
                     <td>{{$task->end_date}}</td>
                     <td>{{$task->created_at->diffForHumans()}}</td>
                     <td>{{$task->updated_at->diffForHumans()}}</td>
-                    <td><a href="{{url("onprogress/edit/$task->id")}}">{{$task->status}}</a></td>
+                    <td>
+                        @if($task->status == 'pending')
+                        <a href="{{url("onprogress/update/$task->id")}}">Change to on progress</a>
+                        @elseif($task->status == 'on_progress')
+                        <a href="{{url("completed/update/$task->id")}}">Change to completed</a>
+                        @else
+                            no action
+                        @endif
+                    </td>
 
 
                 </tr>

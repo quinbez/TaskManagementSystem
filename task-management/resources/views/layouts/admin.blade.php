@@ -50,15 +50,20 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                                     <button class="btn btn-default" type="submit">
                                         <span class="fa fa-search" id="searchhover"></span>
                                     </button>
+                                </span>
+
                         </form>
 
                         <div class="dropdown bg-light">
                             @if ($count > 0 || $expiring > 0)
-                                <button class="dropbtn"><span class="badge badge-pill badge-primary"
+                                <a href="javascript:void(0)" class="dropbtn"><span class="badge badge-pill badge-primary me-1"
                                         style="float:right;margin-bottom:-10px;font-size:10px;">
                                         {{ $expiring > 0 ?  $count + $expiring : $count}}
+                                    </span>
+
+                            <span class="fas fa-bell " style="color: #9b34ae"></span></a>
+
                             @endif
-                            </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
                             <div class="dropdown-content">
                                 <a href="@if ($count < 1) # @else {{ route('notify') }} @endif">{{ $count }}
                                     Notification</a>
@@ -68,7 +73,6 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                             </div>
                         </div>
                         <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
-                        </span>
                 </div>
                 </ul>
                 <ul>
@@ -139,7 +143,7 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                                 </li>
                             </ul>
                         </div>
-                       
+
                         <div class="panel-heading mt-2">
                             <a class="nav-link collapsed" href="#collapse3" data-bs-toggle="collapse"><span
                                     class="fas fa-tasks px-2"></span>Tasks</a>
@@ -151,7 +155,7 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                                 {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
-                        
+
                         <div class="panel-heading mt-2">
                             <a class="nav-link collapsed" href="{{ route('notify') }}">
 
