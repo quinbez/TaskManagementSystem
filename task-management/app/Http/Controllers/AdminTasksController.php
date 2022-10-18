@@ -61,7 +61,7 @@ class AdminTasksController extends Controller
             $user->projects()->save($project);
 
             $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
-            $deadline = Carbon::parse($request->deadline)->format('Y-m-d');
+            $deadline = Carbon::parse($request->end_date)->format('Y-m-d');
 
             $addedTasks=[
                 'user_id' => $request->user_id,

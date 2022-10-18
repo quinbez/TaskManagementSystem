@@ -61,13 +61,12 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                             </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
                             <div class="dropdown-content">
                                 <a href="@if ($count < 1) # @else {{ route('notify') }} @endif">{{ $count }}
-                                    Notifications</a>
+                                    Notification</a>
                                  @if($expiring > 0)<a href="{{route('expiringTasks') }}">
                                  {{$expiring}} Tasks are expiring soon!</a>
                                  @endif
                             </div>
                         </div>
-
                         <a href="{{ route('createproj') }}" class="btn addcolor" style="color: white">+ New Project</a>
                         </span>
                 </div>
