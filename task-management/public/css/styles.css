@@ -435,7 +435,7 @@ ul a {
         font-size: large;
     }
     .containerwidth {
-        width: 960px;
+        width: 990px;
     }
     .sidelinecontainerwidth {
         width: 300px;
@@ -456,15 +456,15 @@ ul a {
         font-size: large;
     }
     .containerwidth {
-        width: 765px;
+        width: 960px;
 
     }
     .custom-search-form {
-        display: none;
+        width: 150px;
     }
     .sidelinecontainerwidth {
         width: 300px;
-        min-height: 95vh;
+        height: 1000px;
     }
     .list-group-item {
         width: 150px;
@@ -480,9 +480,13 @@ ul a {
         font-size: large;
     }
     .containerwidth {
-        width: 530px;
+        width: 960px;
     }
     .custom-search-form {
-        display: none;
+        width: 100px;
+    }    
+    .sidelinecontainerwidth {
+        width: 300px;
+        height: 1500px;
     }
 }
