@@ -26,7 +26,7 @@ class UsersRequest extends FormRequest
         return [
             'name'=>'required|max:255',
             'email'=>'required|unique:email',
-            'phone_number'=>'required',
+            'phone_number'=>'required|unique:phone_number|digits_between:10,13|numeric',
             'password'=>'required',
             'role'=>'required',
             'user_id'=>'required'

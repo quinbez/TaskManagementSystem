@@ -19,7 +19,7 @@
 <div class="row">
     <div class="form-group col-sm-6">
         {!!Form::label('phone_number','Phone: ')!!}
-        {!!Form::tel('phone_number',null,['class'=>'form-control',"required", "minlength"=>"10", "maxlength"=>"13"])!!}
+        {!!Form::text('phone_number',null,['class'=>'form-control',"required",'pattern'=>"^[0-9]*$", "minlength"=>"10", "maxlength"=>"13"])!!}
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('role','Role: ')!!}
