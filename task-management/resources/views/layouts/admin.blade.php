@@ -106,17 +106,6 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                 </li>
                 <div class="panel-group" id="accordion">
                     <div class="panel panel-default mt-2">
-                        <div class="panel-heading">
-                            <a class="nav-link" href="#collapse1" data-bs-toggle="collapse"><span
-                                    class="fas fa-diagram-project px-2"></span>Projects</a>
-                        </div>
-                        <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
-                            <ul class="list-group">
-                                <li class="list-group-item"><a href="{{ route('indexproj') }}">All projects</a></li>
-                                <li class="list-group-item "><a href="{{ route('createproj') }}">Create project</a>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="panel-heading mt-2 ">
                             <a class="nav-link collapsed" href="#collapse2" data-bs-toggle="collapse"> <span
                                     class="fas fa-users px-2"></span>Members</a>
@@ -125,17 +114,6 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                             <ul class="list-group">
                                 <li class="list-group-item"><a href="{{ route('index') }}">All members</a></li>
                                 <li class="list-group-item"><a href="{{ route('create') }}">Add member</a></li>
-                            </ul>
-                        </div>
-                        <div class="panel-heading mt-2">
-                            <a class="nav-link collapsed" href="#collapse3" data-bs-toggle="collapse"><span
-                                    class="fas fa-tasks px-2"></span>Tasks</a>
-                        </div>
-                        <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
-                            <ul class="list-group">
-                                <li class="list-group-item"><a href="{{ route('indextask') }}">All tasks</a></li>
-                                <li class="list-group-item"><a href="{{ route('tasks') }}">Assign task</a></li>
-                                {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
                             </ul>
                         </div>
                         <div class="panel-heading mt-2">
@@ -150,6 +128,30 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                                 {{-- <li class="list-group-item"><a href="#">Edit category</a></li> --}}
                             </ul>
                         </div>
+                        <div class="panel-heading">
+                            <a class="nav-link" href="#collapse1" data-bs-toggle="collapse"><span
+                                    class="fas fa-diagram-project px-2"></span>Projects</a>
+                        </div>
+                        <div id="collapse1" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{{ route('indexproj') }}">All projects</a></li>
+                                <li class="list-group-item "><a href="{{ route('createproj') }}">Create project</a>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                        <div class="panel-heading mt-2">
+                            <a class="nav-link collapsed" href="#collapse3" data-bs-toggle="collapse"><span
+                                    class="fas fa-tasks px-2"></span>Tasks</a>
+                        </div>
+                        <div id="collapse3" class="panel-collapse collapse px-4" data-bs-parent="#accordion">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a href="{{ route('indextask') }}">All tasks</a></li>
+                                <li class="list-group-item"><a href="{{ route('tasks') }}">Assign task</a></li>
+                                {{-- <li class="list-group-item"><a href="#">Edit task</a></li> --}}
+                            </ul>
+                        </div>
+                        
                         <div class="panel-heading mt-2">
                             <a class="nav-link collapsed" href="{{ route('notify') }}">
 
