@@ -15,6 +15,7 @@ class AdminNotificationController extends Controller
      */
     public function index(){
         DB::table('tasks')->update(['on_progress' => 1, 'completed' => 1]);
+        
         $tasks = Task::where('status', '!=', 'pending')->get();
         // dd($tasks);
         return view('layouts.notification', compact('tasks'));
