@@ -10,7 +10,7 @@
     <input type="hidden" name="categoryId" value="{{$categories->id}}">
     <div class="form-group col-6">
         {!!Form::label('type','Type: ')!!}
-        {!!Form::text('type',$categories->type,['class'=>'form-control',"required","minlength"=>"3", "maxlength"=>"20",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z -]*$"])!!}
+        {!!Form::text('type',$categories->type,['class'=>'form-control',"required","minlength"=>"3", "maxlength"=>"50",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z -]*$"])!!}
     </div>
     <div class="row w-100" style="justify-content: between">
         <div class="form-group d-flex col-sm-3 p-4">

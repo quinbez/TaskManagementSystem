@@ -13,7 +13,7 @@
         {{-- <input type="text" required placeholder="add title" pattern="^[a-zA-Z ]*$" /> --}}
 
         {!!Form::label('title','Title: ')!!}
-        {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"20" ,'pattern'=>"^[a-zA-Z - 0-9]*$"])!!}
+        {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"50" ,'pattern'=>"^[a-zA-Z - 0-9]*$"])!!}
     </div>
     <div class="form-group col-sm-6">
         <label class="category_id">Category </label>

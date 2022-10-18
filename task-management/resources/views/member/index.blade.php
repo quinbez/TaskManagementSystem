@@ -7,7 +7,7 @@
     <thead>
         <tr>
             <th>Id</th>
-            <th>Role</th>
+            {{-- <th>Role</th> --}}
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
@@ -21,7 +21,7 @@
             @foreach($members as $member)
                 <tr>
                     <td>{{$member->id}}</td>
-                    <td>{{$member->role}}</td>
+                    {{-- <td>{{$member->role}}</td> --}}
                     <td>{{$member->name}}</td>
                     <td>{{$member->email}}</td>
                     <td>{{$member->phone_number}}</td>

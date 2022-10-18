@@ -9,7 +9,7 @@
     <input type="hidden" name="taskId" value="{{$tasks->id}}">
     <div class="form-group  col-sm-6">
         {!!Form::label('name','Task Name: ')!!}
-        {!!Form::text('name',$tasks->name,['class'=>'form-control',"required","minlength"=>"2", "maxlength"=>"20",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
+        {!!Form::text('name',$tasks->name,['class'=>'form-control',"required","minlength"=>"2", "maxlength"=>"50",'title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z ]*$"])!!}
     </div>
     <div class="form-group col-sm-6">
         {!!Form::label('status','Status')!!}

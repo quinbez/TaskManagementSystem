@@ -12,7 +12,7 @@
     <input type="hidden" name="projectId" value="{{$projects->id}}" >
     <div class="form-group col-sm-6">
         {!!Form::label('title','Title: ')!!}
-        {!!Form::text('title',$projects->title,['class'=>'form-control','required','title'=>"only alphabets are allowed" ,'pattern'=>"^[a-zA-Z -]*$"])!!}
+        {!!Form::text('title',$projects->title,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"50",'pattern'=>"^[a-zA-Z -]*$"])!!}
     </div>
 
     <div class="form-group col-sm-6">
