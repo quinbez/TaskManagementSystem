@@ -40,8 +40,9 @@
                                             <button class="btn btn-default" type="submit">
                                                 <span class="fa fa-search" id="searchhover"></span>
                                             </button>
-                                            </form>
-                                        </span>
+                                        </span> 
+                                </div>
+                        </form>
                                         <a href="#" class="px-2 "></a>
                                         <div class="dropdown bg-light">
                                             @if($count > 0 || $expiring > 0)
