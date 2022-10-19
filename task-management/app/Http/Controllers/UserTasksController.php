@@ -34,7 +34,7 @@ class UserTasksController extends Controller
             'status'=> 'on_progress'
         ];
         $tasks->update($taskUpdate);
-        return redirect('user/on_progress/task');
+        return redirect('user/onprogress/task');
 
 
     }
