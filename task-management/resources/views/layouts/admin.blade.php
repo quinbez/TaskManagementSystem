@@ -61,9 +61,9 @@ $count = App\Models\Task::where('status', '!=', 'pending')
                                         {{ $expiring > 0 ?  $count + $expiring : $count}}
                                     </span>
 
+                                    @endif
                             <span class="fas fa-bell " style="color: #9b34ae"></span></a>
 
-                            @endif
                             <div class="dropdown-content">
                                 <a href="@if ($count < 1) # @else {{ route('notify') }} @endif">{{ $count }}
                                     Notification</a>

@@ -41,7 +41,8 @@ class UserTasksController extends Controller
     public function toCompleted($id){
         $tasks = Task::findOrFail($id);
         $taskUpdate =[
-            'status'=> 'completed'
+            'status'=> 'completed',
+            'completed' => 0
         ];
         $tasks->update($taskUpdate);
         return redirect('user/completed/task');
