@@ -32,7 +32,7 @@
             @endforeach
             @else
             <tr>
-                <td colspan="6"><h5 style="color:grey;">No assigned projects yet</h5></td>
+                <td colspan="6"><h5 style="color:grey;">No task assigned for this project</h5></td>
             </tr>
         @endif
     </tbody>
