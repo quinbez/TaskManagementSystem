@@ -22,7 +22,8 @@ class UserOnProgressStatusController extends Controller
         $id = $request->onprogressId;
         $tasks = Task::findOrFail($id);
         $taskUpdate =[
-            'status'=>$request->status
+            'status'=> 'on_progress',
+            'completed'=> 0
         ];
         $tasks->update($taskUpdate);
         return redirect('user/onprogress/task');

@@ -45,21 +45,23 @@ class AdminProjectsController extends Controller
      */
     public function store(ProjectsRequest $request)
     {
-        $teamMembers = implode(',',$request->team_member);
+        // $teamMembers = implode(',',$request->team_member);
+        // $users = User::whereIn('id', $request->team_member)->get();
         $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
         $deadline = Carbon::parse($request->deadline)->format('Y-m-d');
         // dd($teamMembers);
         $addedProject=[
             'title' => $request->title,
             'category_id' => $request->category_id,
-            'team_member' => $teamMembers,
+            'team_member' => '0',
             'start_date' => $startDate,
             'deadline' => $deadline,
             'description' => $request->description,
             'status'=>'Pending'
         ];
 
-         Project::create($addedProject);
+         $project = Project::create($addedProject);
+         $project->users()->attach($request->team_member);
          return redirect('project/index');
 
     }
@@ -83,9 +85,9 @@ class AdminProjectsController extends Controller
      */
     public function edit($id)
     {
-        $teams = User::where('role', 'member')->get();
         $categories = Category::select('type', 'id')->get();
         $projects = Project::findOrFail($id);
+        $teams = User::where('role', 'member')->whereNotIn('id', $projects->users->pluck('id')->toArray())->get();
         return view('project.edit',compact('projects', 'categories','teams'));
     }
 

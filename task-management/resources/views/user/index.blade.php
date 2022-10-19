@@ -37,7 +37,7 @@
                                             <button class="dropbtn"><span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;font-size:10px;">
                                                 {{ $expiring > 0 ?  $count + $expiring : $count}}
                                                 @endif
-                                            </span><span class="fas fa-bell" style="color: #9b34ae;"></span></button>
+                                            </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
                                             <div class="dropdown-content">
 
                                                 <a href="@if($count < 1) # @else {{route('pending')}} @endif">{{$count}} Notifications</a>
@@ -47,10 +47,8 @@
 
                                             </div>
 
-                                        </div>
+                                          </div>
                     </ul>
-                </div>
-                    
                     <ul>
                         <div class="btn-group">
                             <button type="button" class="btn addcolor dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
