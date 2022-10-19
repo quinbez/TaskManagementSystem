@@ -20,7 +20,7 @@ class UserTasksController extends Controller
 
     public function expiring()
     {
-        $tasks = Task::where('status', '!=', 'completed')->where(function ($q) {
+        $tasks = Task::where('user_id', Auth::user()->id)->where('status', '!=', 'completed')->where(function ($q) {
             return $q->whereDate('end_date', '>=', Carbon::now())->whereDate('end_date', '<=',Carbon::now()->addDays(2));
         })->get();
 

@@ -1,7 +1,7 @@
 <?php
     $count =App\Models\Task::where('user_id',Auth::user()->id)->seen(0)->count();
 
-    $expiring = App\Models\Task::where('status', '!=', 'completed')->where(function ($q) {
+    $expiring = App\Models\Task::where('user_id', Auth::user()->id)->where('status', '!=', 'completed')->where(function ($q) {
         return $q->whereDate('end_date', '>=', Carbon\Carbon::now())->whereDate('end_date', '<=', Carbon\Carbon::now()->addDays(2));
     })->count();
 
@@ -40,7 +40,7 @@
                                             </span><span class="fas fa-bell" style="color: #9b34ae"></span></button>
                                             <div class="dropdown-content">
 
-                                                <a href="@if($count < 1) # @else {{route('pending')}} @endif">{{$count}} Notifications</a>
+                                                <a href="@if($count < 1) # @else {{route('pending')}} @endif">{{$count}} Pending task</a>
                                                 @if($expiring > 0)<a href="{{route('expiring') }}">
                                                     {{$expiring}} Tasks are expiring soon!</a>
                                                     @endif

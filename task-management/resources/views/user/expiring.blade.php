@@ -17,7 +17,7 @@
             <th>Created</th>
             <th>Updated</th>
             <th>Status</th>
-            <th>Update</th>
+            {{-- <th>Update</th> --}}
 
         </tr>
     </thead>
@@ -34,7 +34,7 @@
                     <td>{{$task->created_at?->diffForHumans()}}</td>
                     <td>{{$task->updated_at?->diffForHumans()}}</td>
                     <td>{{$task->status}}</td>
-                    <td><a href="{{url("status/edit/$task->id")}}" style="color:#efef27;">Edit</a></td>
+                    {{-- <td><a href="{{url("status/edit/$task->id")}}" style="color:#efef27;">Edit</a></td> --}}
 
                 </tr>
             @endforeach
