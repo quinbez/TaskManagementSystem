@@ -30,7 +30,7 @@
 <div class="row">
     <div class="form-group col-sm-6">
         <label class="project_id">Project</label>
-        <select name="project_id" id="project" class="form-control" required>
+        <select name="project_id" id="project" class="form-control" required="true">
             <option  disabled selected hidden value="{{$tasks->project->title}}">{{$tasks->project->title}}</option>
             @foreach ($project as $pro)
                 <option value="{{$pro->id}}">{{$pro->title}}</option>
@@ -39,7 +39,7 @@
     </div>
     <div class="form-group col-sm-6">
         <label class="user_id">Assigned to</label>
-        <select name="user_id" id="user" class="form-control" required>
+        <select name="user_id" id="user" class="form-control" required="true">
             <option disabled selected hidden value="{{$tasks->member->name}}">{{$tasks->member->name}}</option>
             @foreach ($members as $member)
                 <option value="{{$member->id}}">{{$member->name}}</option>
@@ -62,7 +62,7 @@
         <div class="form-group col-sm-6 p-4 backbtn2">
             <a class="" href="{{route('indextask')}}">Back</a>
         </div>
-       
+
     </div>
 </div>
 @if(count($errors)>0)

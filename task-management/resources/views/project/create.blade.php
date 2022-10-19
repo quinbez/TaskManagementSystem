@@ -17,7 +17,7 @@
     </div>
     <div class="form-group col-sm-6">
         <label class="category_id">Category </label>
-        <select name="category_id" id="category" class="form-control" required>
+        <select name="category_id" id="category" class="form-control" required="true">
             <option disabled selected hidden value="">Choose Option</option>
             @foreach ($categories as $category)
                 <option value="{{$category->id}}">{{$category->type}}</option>

@@ -13,7 +13,7 @@
 
     <div class="form-group col-sm-6">
         <label class="project_id">Project </label>
-        <select name="project_id" id="project" class="form-control" required>
+        <select name="project_id" id="project" class="form-control" required="true">
             <option disabled selected hidden value="">Choose Option</option>
             @foreach ($project as $pro)
                 <option value="{{$pro->id}}">{{$pro->title}}</option>
@@ -35,7 +35,7 @@
 <div class="row">
     <div class="form-group col-sm-6">
         <label class="user_id">Assigned to </label>
-        <select name="user_id" id="user" class="form-control" required>
+        <select name="user_id" id="user" class="form-control" required="true">
             <option disabled selected hidden value="">Choose Option</option>
             @foreach ($members as $member)
                 <option value="{{$member->id}}">{{$member->name}}</option>
