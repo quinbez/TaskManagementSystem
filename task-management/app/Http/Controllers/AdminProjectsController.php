@@ -102,18 +102,19 @@ class AdminProjectsController extends Controller
     {
         $id = $request->projectId;
         $projects = Project::findOrFail($id);
-        $teamMembers = implode(',',$request->team_member);
+        // $teamMembers = implode(',',$request->team_member);
         $startDate = Carbon::parse($request->start_date)->format('Y-m-d');
         $deadline = Carbon::parse($request->deadline)->format('Y-m-d');
         $projectUpdate =[
             'title'=>$request->title,
             'category_id'=>$request->category_id,
             'description'=>$request->description,
-            'team_member'=>$teamMembers,
+            // 'team_member'=>$teamMembers,
             'start_date'=>$startDate,
             'deadline'=>$deadline,
             'status_id'=>$request->status_id
         ];
+        $projects->users()->sync($request->team_member);
         $projects->update($projectUpdate);
         return redirect('project/index');
     }

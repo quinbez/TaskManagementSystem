@@ -92,7 +92,8 @@ a:hover {
     height: 150px;
     text-align: left;
 }
-.usercontainerstyle2{
+
+.usercontainerstyle2 {
     width: 350px;
     height: 150px;
     text-align: left;
@@ -163,7 +164,6 @@ div .textcolor {
 #icon8 {
     color: green;
 }
-
 
 .progressbar1 {
     height: 100vh;
@@ -293,6 +293,7 @@ tr {
     box-shadow: 1px 1px 1px 1px #efef27;
     z-index: 1;
 }
+
 .usercontainerstyle2:hover {
     transform: scale(1.2);
     box-shadow: 1px 1px 1px 1px #efef27;
@@ -327,7 +328,6 @@ ul a {
     border: none;
     background-color: #fff;
 }
-
 
 .dropbtn {
     color: white;
@@ -372,18 +372,21 @@ ul a {
 .badge {
     background-color: red;
 }
-.backbtn{
+
+.backbtn {
     text-align: right;
     padding-top: 50px;
     padding-right: 100px;
 }
-.backbtn2{
+
+.backbtn2 {
     text-align: right;
     padding-top: 50px;
     padding-right: 100px;
     margin-left: 200px;
     margin-top: 13px;
 }
+
 @media(min-width: 1476px) {
     .containerstyle {
         width: 200px;
@@ -392,21 +395,21 @@ ul a {
         font-size: large;
     }
     .usercontainerstyle {
-        width: 275px;
+        width: 300px;
         height: 150px;
         text-align: left;
         font-size: large;
     }
     .sidelinecontainerwidth {
-        width: 300px;
+        width: 320px;
         min-height: 95vh;
-
     }
     .list-group-item {
         width: 200px;
         font-size: large;
     }
 }
+
 @media ((max-width: 1476px))and (min-width: 1399.98px) {
     .containerstyle {
         width: 200px;
@@ -423,13 +426,13 @@ ul a {
     .sidelinecontainerwidth {
         width: 300px;
         min-height: 95vh;
-
     }
     .list-group-item {
         width: 200px;
         font-size: large;
     }
 }
+
 @media ((max-width: 1399.98px))and (min-width: 1199.98px) {
     .containerstyle {
         width: 200px;
@@ -446,7 +449,6 @@ ul a {
     .sidelinecontainerwidth {
         width: 300px;
         min-height: 95vh;
-
     }
     .list-group-item {
         width: 200px;
@@ -464,7 +466,6 @@ ul a {
     .sidelinecontainerwidth {
         width: 300px;
         min-height: 95vh;
-
     }
     .list-group-item {
         width: 250px;
@@ -485,7 +486,6 @@ ul a {
     .sidelinecontainerwidth {
         width: 300px;
         height: 1000px;
-
     }
     .list-group-item {
         width: 200px;
@@ -502,7 +502,6 @@ ul a {
     }
     .containerwidth {
         width: 960px;
-
     }
     .custom-search-form {
         width: 150px;
@@ -535,7 +534,8 @@ ul a {
         height: 1500px;
     }
 }
-@media(max-width:300px){
+
+@media(max-width:300px) {
     .containerstyle {
         width: 215px;
         height: 150px;
