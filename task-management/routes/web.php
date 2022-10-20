@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 Route::middleware([
     'auth:sanctum',
@@ -68,7 +68,7 @@ Route::get('/user/alltask', 'App\Http\Controllers\UserTasksController@index')->n
 
 Route::get('/totalteam/dashboard', "App\Http\Controllers\TotalTeamController@index")->name('totalteam');
 Route::get('/status/edit/{id}', 'App\Http\Controllers\UserPendingStatusController@edit')->name('edittaskstatus');
-// Route::get('/status/update/{id}', 'App\Http\Controllers\UserTasksController@update')->name('updatetaskstatus');
+Route::get('/status/update/{id}', 'App\Http\Controllers\UserTasksController@update')->name('updatetaskstatus');
 
 Route::get('onprogress/edit/{id}', 'App\Http\Controllers\UserOnProgressStatusController@edit')->name('onprogressedit');
 Route::get('onprogress/update/{id}', 'App\Http\Controllers\UserTasksController@toOnProgress')->name('onprogressupdate');
