@@ -5,7 +5,7 @@
 <h3>Edit Member</h3>
 <form action="{{ url('/member/update') }}" method="patch">
 
-{{-- {!!Form::model(['method'=>'patch', 'action'=>['App\Http\Controllers\AdminMembersController@update']])!!} --}}
+<!-- {{-- {!!Form::model(['method'=>'patch', 'action'=>['App\Http\Controllers\AdminMembersController@update']])!!} --}} -->
 {{ csrf_field() }}
 <div class="row">
     <input type="hidden" name="memberId" value="{{$members->id}}">

@@ -31,7 +31,7 @@
                     <h6>{{$total_project}} added</h6>
                 </div>
             </div>
-        {{-- flex-wrap --}}
+        <!-- {{-- flex-wrap --}} -->
             <div class="col-4 usercontainerstyle bg-light rounded">
                 <div class="col-4 bgcolor"><span class="fas fa-tasks icons px-3 py-3" id="icon3"></span></div>
                 <div class="col-9">Total Tasks</div>
@@ -40,8 +40,8 @@
                 </div>
             </div>
 
-        
-        {{-- <div class="container row gy-5 usercolstyle colpadding"> --}}
+
+        <!-- {{-- <div class="container row gy-5 usercolstyle colpadding"> --}} -->
             <div class="col-4 usercontainerstyle bg-light rounded">
                 <div class="col-3 bgcolor"><span class="fas fa-battery-half icons px-3 py-3" id="icon7"></span></div>
                 <div class="col-9">Pending Tasks</div>
@@ -69,7 +69,7 @@
 
                 </div>
             </div>
-        {{-- </div> --}}
+        <!-- {{-- </div> --}} -->
     </div>
     <div class="container overflow-hidden px-4 py-3">
         <div class="container row gy-5 colespace colpadding">

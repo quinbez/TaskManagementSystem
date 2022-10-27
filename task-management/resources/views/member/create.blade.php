@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-{{-- <link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}"> --}}
+<!-- {{-- <link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}"> --}} -->
 
 <h3>Create Member</h3>
 <form action="{{ route('store') }}" method="post" id="createMemberForm">
@@ -56,9 +56,9 @@
     <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
 <script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
-{{-- <script src="{{ url('js/bootstrapValidator.min.js') }}"></script> --}}
-{{-- <script>
-    $(function(){
+<!-- {{-- <script src="{{ url('js/bootstrapValidator.min.js') }}"></script> --}} -->
+<!-- {{-- <script> -->
+    <!-- $(function(){
         $('#createMemberForm').bootstrapValidator({
             message: "This value is not valid",
             fields:{
@@ -81,7 +81,7 @@
                 },
             }
         });
-    });
-    </script> --}}
+    }); -->
+    <!-- </script> --}} -->
 @endsection
 

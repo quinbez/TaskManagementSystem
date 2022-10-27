@@ -1,7 +1,6 @@
 @extends('layouts.admin')
 
 @section('content')
-{{-- <link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}"> --}}
 
 <h3>Create Category</h3>
 <form action="{{route('storecategory') }}" method="post" id="createCategoryForm">

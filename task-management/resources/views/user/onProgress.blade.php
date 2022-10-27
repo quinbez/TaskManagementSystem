@@ -24,10 +24,10 @@
                 <tr>
                     <td>{{$task->id}}</td>
                     <td>{{$task->name}}</td>
-                    {{-- <td></td> --}}
+                    <!-- {{-- <td></td> --}} -->
                     <td>{{$task->project?->title}}</td>
                     <td>{{$task->member?->name}}</td>
-                    {{-- <td></td> --}}
+                    <!-- {{-- <td></td> --}} -->
                     <td>{{$task->description}}</td>
                     <td>{{$task->start_date}}</td>
                     <td>{{$task->end_date}}</td>
@@ -35,9 +35,9 @@
                     <td>{{$task->updated_at->diffForHumans()}}</td>
                     <td>
                         @if($task->status == 'pending')
-                        <a href="{{url("onprogress/update/$task->id")}}">Change to on progress</a>
+                        <a href="{{url('onprogress\update\$task->id')}}">Change to on progress</a>
                         @elseif($task->status == 'on_progress')
-                        <a href="{{url("completed/update/$task->id")}}">Change to completed</a>
+                        <a href="{{url('completed\update\$task->id')}}">Change to completed</a>
                         @else
                             no action
                         @endif

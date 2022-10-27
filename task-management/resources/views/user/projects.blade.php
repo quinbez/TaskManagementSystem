@@ -26,7 +26,7 @@
                     <td><a href="{{route('showdetail', $project->id)}}">{{$project->title}}</a></td>
                     <td>{{$project->category?->type }}</td>
                     <td>{{$project->description}}</td>
-                    {{-- <td>{{implode(' , ',$project->users()->pluck('name')->toArray())}}</td> --}}
+                    <!-- {{-- <td>{{implode(' , ',$project->users()->pluck('name')->toArray())}}</td> --}} -->
                     <td>
                         @foreach ($project->users()->pluck('name', 'id') as $id => $name)
                         <a href="{{route('teamdetail',[ $project->id, $id])}}">{{$name}}</a>,

@@ -22,7 +22,7 @@
 
 </head>
 <body>
-{{-- <div id ="wrapper"> --}}
+<!-- {{-- <div id ="wrapper"> --}} -->
     <div class="d-flex flex-column flex-shrink-0 p-3 me-0 bg-light border border-grey containerwidth">
         <nav class="navbar navbar-default" id="navbar">
             <div class="container-fluid">
@@ -58,10 +58,10 @@
                                 <li><form method="POST" action="{{ route('logout') }}">
                                     @csrf
 
-                                    {{-- <x-jet-dropdown-link href="{{ route('logout') }}" --}}
-                                             {{-- @click.prevent="$root.submit();"> --}}
+                                    <!-- {{-- <x-jet-dropdown-link href="{{ route('logout') }}" --}} -->
+                                             <!-- {{-- @click.prevent="$root.submit();"> --}} -->
                                       <button class="logbord" type="submit">{{ __('Log Out') }}</button>
-                                    {{-- </x-jet-dropdown-link> --}}
+                                    <!-- {{-- </x-jet-dropdown-link> --}} -->
                                 </form></li>
                             </ul>
                          </div>
@@ -71,8 +71,8 @@
     </div>
     <div class="d-flex flex-nowrap">
     <div class="d-flex flex-column p-3 bg-light border border-grey border-top-0 sidelinecontainerwidth">
-        {{-- <ul class="navbar-nav" id="side-menu">
-            <hr> --}}
+        <!-- {{-- <ul class="navbar-nav" id="side-menu"> -->
+            <!-- <hr> --}} -->
             <ul class="nav nav-pills flex-column mb-auto mt-2">
                 <li class="nav-item">
                     <a href="{{ route('userdashboard') }}" class="nav-link"><span class="fas fa-dashboard px-2"></span>Dashboard</a>
@@ -81,9 +81,9 @@
                         <div class="panel-heading">
                             <a class="nav-link" href="{{route('userproject')}}" ><span class="fas fa-diagram-project px-2"></span>Assigned Projects</a>
                         </div>
-                        {{-- <div class="panel-heading">
+                        <!-- {{-- <div class="panel-heading">
                             <a class="nav-link" href="{{route('team')}}" ><span class="fas fa-users px-2"></span>Team Members</a>
-                        </div> --}}
+                        </div> --}} -->
 
                         <div class="panel-group" id="accordion">
                         <div class="panel-heading mt-2">
@@ -115,7 +115,7 @@
 
     <script src="{{asset('jquery/jquery.js')}}"></script>
     <script src="{{asset('jquery/jquery-ui.min.js')}}"></script>
-    {{-- <script src="{{asset('js/script.js')}}"></script> --}}
+    <!-- {{-- <script src="{{asset('js/script.js')}}"></script> --}} -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
 

@@ -74,12 +74,11 @@
 @endif
 <script src="{{ asset('jquery/jquery/jquery.js') }}"></script>
 <script src="{{ asset('jquery-ui/jquery-ui.min.js') }}"></script>
-{{-- <script src="{{ url('js/bootstrapValidator.min.js') }}"></script> --}}
+<!-- {{-- <script src="{{ url('js/bootstrapValidator.min.js') }}"></script> --}} -->
 
-<script>
-</script>
-{{-- <script>
-$(function(){
+
+<!-- {{-- <script> -->
+<!-- $(function(){
     $('#createTaskForm').bootstrapValidator({
         message: "This value is not valid",
         fields:{
@@ -103,5 +102,5 @@ $(function(){
         }
     });
 });
-</script> --}}
+</script> --}} -->
 @endsection

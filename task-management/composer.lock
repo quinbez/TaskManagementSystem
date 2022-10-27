@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "965eda1c9b40d9895e1aed7425e43902",
+    "content-hash": "5e5452e601a54be4e9152538bb6bf8ec",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1132,6 +1132,74 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "kris/laravel-form-builder",
+            "version": "1.51.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kristijanhusak/laravel-form-builder.git",
+                "reference": "f070631b96eea1128d4c67307d4b5e0072887626"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kristijanhusak/laravel-form-builder/zipball/f070631b96eea1128d4c67307d4b5e0072887626",
+                "reference": "f070631b96eea1128d4c67307d4b5e0072887626",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.6@dev|^6|^7|^8|^9",
+                "illuminate/validation": "^5.6@dev|^6|^7|^8|^9",
+                "laravelcollective/html": "^5.6|^6|^7|^8|^9",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.13"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kris\\LaravelFormBuilder\\FormBuilderServiceProvider"
+                    ],
+                    "aliases": {
+                        "FormBuilder": "Kris\\LaravelFormBuilder\\Facades\\FormBuilder"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-0": {
+                    "Kris\\LaravelFormBuilder": "src/"
+                },
+                "classmap": [
+                    "tests/FormBuilderTestCase.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kristijan Husak",
+                    "email": "husakkristijan@gmail.com"
+                }
+            ],
+            "description": "Laravel form builder - symfony like",
+            "keywords": [
+                "builder",
+                "form",
+                "laravel",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/kristijanhusak/laravel-form-builder/issues",
+                "source": "https://github.com/kristijanhusak/laravel-form-builder/tree/1.51.2"
+            },
+            "time": "2022-05-18T18:00:52+00:00"
         },
         {
             "name": "laravel/fortify",

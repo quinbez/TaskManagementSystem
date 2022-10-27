@@ -7,10 +7,10 @@
 <h3>Add Project</h3>
 <form action="{{ route('storeproj') }}" method="post" id="createProjectTable">
         {{ csrf_field() }}
-    {{-- {!!Form::open(['method'=>'post'])!!} --}}
+    <!-- {{-- {!!Form::open(['method'=>'post'])!!} --}} -->
 <div class="row">
     <div class="form-group col-sm-6">
-        {{-- <input type="text" required placeholder="add title" pattern="^[a-zA-Z ]*$" /> --}}
+        <!-- {{-- <input type="text" required placeholder="add title" pattern="^[a-zA-Z ]*$" /> --}} -->
 
         {!!Form::label('title','Title: ')!!}
         {!!Form::text('title',null,['class'=>'form-control','required','title'=>"only alphabets are allowed","minlength"=>"2", "maxlength"=>"50" ,'pattern'=>"^[a-zA-Z - 0-9]*$"])!!}
@@ -43,7 +43,7 @@
     <div class="form-group col-sm-6">
         <label class="team_member">Team members</label>
         <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" required="true" style="width:100%;" data-placeholder="select team members">
-            {{-- <option disabled selected hidden value="">Choose Option</option> --}}
+            <!-- {{-- <option disabled selected hidden value="">Choose Option</option> --}} -->
             @foreach ($teams as $team)
                 <option value="{{$team->id}}">{{$team->name}}</option>
             @endforeach
@@ -61,8 +61,7 @@
 @if(count($errors)>0)
     <div class="alert alert-danger">
         <ul>
-
-                @foreach($errors->all() as $error)
+            @foreach($errors->all() as $error)
                 <li>{{$error}}</li>
             @endforeach
         </ul>
@@ -79,8 +78,8 @@
                 width: 'element'
             });
 </script>
-{{-- <script>
-    $(function(){
+<!-- {{-- <script> -->
+    <!-- $(function(){
         $('#createProjectTable').bootstrapValidator({
             message: "This value is not valid",
             fields:{
@@ -111,8 +110,8 @@
                             min:10,
                             max:13,
                             message:"Title must be morethan two and lessthan 30 characters long"
-                        },
-                        // regexp:{
+                        }, -->
+                        <!-- // regexp:{
                         //     regexp:/^[a-zA-Z" "-\.]+$/,
                         //     message:"Title can only consist of alphabets"
                         // }
@@ -121,5 +120,5 @@
             }
         });
     });
-</script> --}}
+</script> --}} -->
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-{{-- <link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}"> --}}
+<!-- {{-- <link rel="stylesheet" href="{{ url('css/bootstrapValidator.min.css') }}"> --}} -->
 
 <h3>Edit Category</h3>
 <form action="{{route('updatecateg')}}" method="get" id="#editCategoryForm">
@@ -36,6 +36,6 @@
 <script src="{{url('bower_components/select2/dist/js/select2.full.min.js')}}"></script>
 
 
-   
+
 @endsection
 

@@ -7,7 +7,7 @@
 <h3>Edit Project</h3>
 <form action="{{ url('/project/update') }}" method="get">
         {{ csrf_field() }}
-    {{-- {!!Form::open(['method'=>'post'])!!} --}}
+    <!-- {{-- {!!Form::open(['method'=>'post'])!!} --}} -->
 <div class="row">
     <input type="hidden" name="projectId" value="{{$projects->id}}" >
     <div class="form-group col-sm-6">
@@ -18,7 +18,7 @@
     <div class="form-group col-sm-6">
         <label class="category_id">Category</label>
         <select name="category_id" id="category" class="form-control" required="true">
-            {{-- <option disabled selected hidden value="{{$projects->category->type}}">{{$projects->category->type}}</option> --}}
+            <!-- {{-- <option disabled selected hidden value="{{$projects->category->type}}">{{$projects->category->type}}</option> --}} -->
             @foreach ($categories as $category)
                 <option value="{{$category->id}}"  selected >{{$category->type}}</option>
             @endforeach
@@ -33,7 +33,7 @@
         <div class="form-group col-sm-6">
             <label class="team_member">Team members</label>
             <select class="form-control select2" name="team_member[]" id="team_member" multiple="multiple" style="width:100%;" data-placeholder="select team members" required="true">
-                {{-- <option value="{{$projects->team_member}}">{{$projects->team_member}}</option> --}}
+                <!-- {{-- <option value="{{$projects->team_member}}">{{$projects->team_member}}</option> --}} -->
 
                 @foreach ($projects->users as $user)
                     <option value="{{$user->id}}" selected >{{$user->name}}</option>
