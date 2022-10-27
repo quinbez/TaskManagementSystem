@@ -13,7 +13,8 @@
             <th>Phone</th>
             <th>Created</th>
             <th>Updated</th>
-
+            <th>Change</th>
+            <th>Remove</th>
         </tr>
     </thead>
     <tbody>
